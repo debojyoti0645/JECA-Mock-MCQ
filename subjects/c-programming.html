@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JECA C Programming MCQ Practice Set</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Define SUBJECT-SPECIFIC questions for C Programming here -->
+    <script>
+        const questions = [
+            {
+                question: "Which of the following is a valid C variable name?",
+                options: ["2myVar", "_my_Var", "my-Var", "my Var"],
+                correct: 1 // B) _my_Var
+            },
+            {
+                question: "What is the typical size of an `int` data type in a 32-bit system?",
+                options: ["1 byte", "2 bytes", "4 bytes", "8 bytes"],
+                correct: 2 // C) 4 bytes
+            },
+            {
+                question: "Which data type is best suited for storing a single character?",
+                options: ["`int`", "`float`", "`char`", "`double`"],
+                correct: 2 // C) `char`
+            },
+            {
+                question: "What will be the value of `x` after the following declaration?\n `int x;`",
+                options: ["0", "1", "Garbage value", "Depends on the compiler"],
+                correct: 2 // C) Garbage value
+            },
+            {
+                question: "The `const` keyword is used to:",
+                options: ["Declare a variable that cannot be modified.", "Define a constant value at compile time.", "Specify a constant pointer.", "Both A and B."],
+                correct: 3 // D) Both A and B.
+            },
+            {
+                question: "Which of the following data types would you use to store a person's average height (e.g., 175.5 cm)?",
+                options: ["`int`", "`char`", "`float`", "`void`"],
+                correct: 2 // C) `float`
+            },
+            {
+                question: "What is the purpose of the `unsigned` keyword in variable declaration?",
+                options: ["To allow negative values.", "To increase the precision of floating-point numbers.", "To store only non-negative values and extend the positive range.", "To define a constant."],
+                correct: 2 // C) To store only non-negative values and extend the positive range.
+            },
+            {
+                question: "Consider the declaration: `char grade = 'B';` What is the memory size typically allocated for `grade`?",
+                options: ["1 byte", "2 bytes", "4 bytes", "8 bytes"],
+                correct: 0 // A) 1 byte
+            },
+            {
+                question: "Which header file must be included for using `printf()` and `scanf()` functions?",
+                options: ["`stdlib.h`", "`string.h`", "`math.h`", "`stdio.h`"],
+                correct: 3 // D) `stdio.h`
+            },
+            {
+                question: "What is the correct format specifier to print a `double` variable using `printf()`?",
+                options: ["`%f`", "`%d`", "`%lf`", "`%c`"],
+                correct: 2 // C) `%lf`
+            },
+            {
+                question: "Which of the following functions is considered unsafe for reading strings due to potential buffer overflows?",
+                options: ["`scanf()` with `%s`", "`fgets()`", "`gets()`", "`getchar()`"],
+                correct: 2 // C) `gets()`
+            },
+            {
+                question: "To read an integer value from the keyboard and store it in a variable `num`, which `scanf()` statement is correct?",
+                options: ["`scanf(\"%d\", num);`", "`scanf(\"%d\", &num);`", "`scanf(\"d\", &num);`", "`scanf(\"%i\", num);`"],
+                correct: 1 // B) `scanf("%d", &num);`
+            },
+            {
+                question: "What is the purpose of the `\\n` escape sequence in `printf()`?",
+                options: ["Insert a tab", "Insert a backspace", "Insert a newline", "Insert a null character"],
+                correct: 2 // C) Insert a newline
+            },
+            {
+                question: "If you use `scanf(\"%c\", &ch);` to read a character, and the user types \"A\" followed by Enter, what character will be stored in `ch`?",
+                options: ["'A'", "'\\n'", "' ' (space)", "Both 'A' and then '\\n' (depending on subsequent reads)"],
+                correct: 0 // A) 'A'
+            },
+            {
+                question: "What is the result of `10 / 3` in C?",
+                options: ["3.33", "3", "1", "0"],
+                correct: 1 // B) 3
+            },
+            {
+                question: "What is the value of `5 % 2`?",
+                options: ["2", "1", "0", "2.5"],
+                correct: 1 // B) 1
+            },
+            {
+                question: "Which operator is used to check for equality?",
+                options: ["`=`", "`==`", "`!=`", "`=`="],
+                correct: 1 // B) `==`
+            },
+            {
+                question: "If `x = 5; y = 10;`, what is the result of the expression `(x > 0 && y < 15)`?",
+                options: ["`true`", "`false`", "`1`", "`0`"],
+                correct: 2 // C) `1`
+            },
+            {
+                question: "What is the output of the following code snippet?\n ```c\n int a = 5;\n printf(\"%d\", a++);\n ```",
+                options: ["5", "6", "Undefined", "Compilation error"],
+                correct: 0 // A) 5
+            },
+            {
+                question: "Which operator is used to get the memory address of a variable?",
+                options: ["`*`", "`&`", "`.`", "`->`"],
+                correct: 1 // B) `&`
+            },
+            {
+                question: "What is the value of `c` after the following operations?\n `int a = 10, b = 4;`\n `int c = a / b;`",
+                options: ["2.5", "2", "3", "Undefined"],
+                correct: 1 // B) 2
+            },
+            {
+                question: "The expression `(condition) ? expr1 : expr2;` is known as the:",
+                options: ["Logical operator", "Relational operator", "Conditional operator", "Bitwise operator"],
+                correct: 2 // C) Conditional operator
+            },
+            {
+                question: "Which loop guarantees to execute its body at least once?",
+                options: ["`for` loop", "`while` loop", "`do-while` loop", "`if` statement"],
+                correct: 2 // C) `do-while` loop
+            },
+            {
+                question: "What will be the output of the following code?\n ```c\n for (int i = 0; i < 5; i++) {\n if (i == 3) {\n break;\n }\n printf(\"%d \", i);\n }\n ```",
+                options: ["`0 1 2 3 4`", "`0 1 2 3`", "`0 1 2`", "`0 1 2 4`"],
+                correct: 2 // C) `0 1 2`
+            },
+            {
+                question: "Which statement is used to skip the rest of the current iteration of a loop and proceed to the next iteration?",
+                options: ["`break`", "`return`", "`continue`", "`exit`"],
+                correct: 2 // C) `continue`
+            },
+            {
+                question: "In a `switch` statement, what happens if `break` is omitted from a `case` block?",
+                options: ["Compilation error", "The program terminates", "Execution falls through to the next `case`", "The `default` block is executed"],
+                correct: 2 // C) Execution falls through to the next `case`
+            },
+            {
+                question: "What is the initial value of `i` in the `for` loop `for(i=1; i<=5; i++)`?",
+                options: ["0", "1", "Undefined", "Garbage value"],
+                correct: 1 // B) 1
+            },
+            {
+                question: "Which of the following is generally considered bad practice in modern C programming due to making code harder to read and maintain?",
+                options: ["`if-else` statements", "`while` loops", "`goto` statement", "`switch` statements"],
+                correct: 2 // C) `goto` statement
+            },
+            {
+                question: "How many times will the `printf` statement execute?\n ```c\n int count = 0;\n while (count < 3) {\n printf(\"Hello\\n\");\n count++;\n }\n ```",
+                options: ["0", "1", "3", "Infinite"],
+                correct: 2 // C) 3
+            },
+            {
+                question: "Which of the following statements about functions in C is true?",
+                options: ["A function must always return a value.", "A function cannot call itself.", "Functions help in modularizing code.", "Function parameters are always passed by reference."],
+                correct: 2 // C) Functions help in modularizing code.
+            },
+            {
+                question: "What is a function prototype?",
+                options: ["The definition of the function's body.", "A declaration that tells the compiler about the function's signature.", "The actual call to the function.", "A predefined library function."],
+                correct: 1 // B) A declaration that tells the compiler about the function's signature.
+            },
+            {
+                question: "In C, how are arguments typically passed to functions by default?",
+                options: ["Call by reference", "Call by value", "Call by address", "Call by pointer"],
+                correct: 1 // B) Call by value
+            },
+            {
+                question: "A function that calls itself is known as:",
+                options: ["Inline function", "Recursive function", "Library function", "Nested function"],
+                correct: 1 // B) Recursive function
+            },
+            {
+                question: "What will be the output of the following C code?\n ```c\n void modify(int x) {\n x = x + 10;\n }\n int main() {\n int a = 5;\n modify(a);\n printf(\"%d\\n\", a);\n return 0;\n }\n ```",
+                options: ["5", "15", "Undefined", "Compilation error"],
+                correct: 0 // A) 5
+            },
+            {
+                question: "Which keyword is used to indicate that a function does not return any value?",
+                options: ["`null`", "`void`", "`empty`", "`none`"],
+                correct: 1 // B) `void`
+            },
+            {
+                question: "Which of the following is the correct way to declare an integer array named `numbers` of size 10?",
+                options: ["`int numbers[];`", "`int numbers[10];`", "`numbers int[10];`", "`array numbers[10] int;`"],
+                correct: 1 // B) `int numbers[10];`
+            },
+            {
+                question: "What is the index of the first element in a C array?",
+                options: ["1", "0", "-1", "Varies"],
+                correct: 1 // B) 0
+            },
+            {
+                question: "What happens if you try to access an array element beyond its declared size in C?",
+                options: ["A compile-time error occurs.", "A runtime error occurs with a clear message.", "The program might crash, or produce unpredictable results (undefined behavior).", "The array automatically resizes."],
+                correct: 2 // C) The program might crash, or produce unpredictable results (undefined behavior).
+            },
+            {
+                question: "How do you initialize an array `arr` of 5 integers with all elements set to 0?",
+                options: ["`int arr[5] = {0};`", "`int arr[5]; arr = {0,0,0,0,0};`", "`int arr[5] = {};`", "`memset(arr, 0, sizeof(arr));` (This is also correct, but A is a direct initialization option for declaration)"],
+                correct: 0 // A) `int arr[5] = {0};`
+            },
+            {
+                question: "If `int matrix[2][3];` is declared, how many elements can it store?",
+                options: ["2", "3", "5", "6"],
+                correct: 3 // D) 6
+            },
+            {
+                question: "When an array is passed to a function in C, what is actually passed?",
+                options: ["A copy of the entire array.", "The address of the first element of the array.", "The number of elements in the array.", "A pointer to the last element of the array."],
+                correct: 1 // B) The address of the first element of the array.
+            },
+            {
+                question: "A pointer variable stores:",
+                options: ["The value of another variable.", "The memory address of another variable.", "The data type of another variable.", "The name of another variable."],
+                correct: 1 // B) The memory address of another variable.
+            },
+            {
+                question: "What is the output of the following code?\n ```c\n int num = 25;\n int *ptr = &num;\n printf(\"%d\", *ptr);\n ```",
+                options: ["Address of `num`", "25", "Garbage value", "Compilation error"],
+                correct: 1 // B) 25
+            },
+            {
+                question: "Which operator is used for dereferencing a pointer?",
+                options: ["`&`", "`*`", "`.`", "`->`"],
+                correct: 1 // B) `*`
+            },
+            {
+                question: "If `int arr[] = {10, 20, 30}; int *p = arr;`, what does `*(p + 1)` evaluate to?",
+                options: ["10", "20", "30", "The address of `arr[1]`"],
+                correct: 1 // B) 20
+            },
+            {
+                question: "What is a `NULL` pointer?",
+                options: ["A pointer that points to the first element of an array.", "A pointer that points to no valid memory location.", "A pointer that has not been initialized.", "A pointer that points to a void type."],
+                correct: 1 // B) A pointer that points to no valid memory location.
+            },
+            {
+                question: "Which of the following is true about pointer arithmetic?",
+                options: ["Pointers can be multiplied.", "Pointers can be divided.", "An integer can be added to or subtracted from a pointer.", "Pointers of different types can be subtracted from each other."],
+                correct: 2 // C) An integer can be added to or subtracted from a pointer.
+            },
+            {
+                question: "If `int *ptr;` is declared but not initialized, what type of pointer is it?",
+                options: ["Null pointer", "Void pointer", "Wild pointer", "Dangling pointer"],
+                correct: 2 // C) Wild pointer
+            },
+            {
+                question: "In C, a string is an array of characters terminated by which special character?",
+                options: ["`\\t`", "`\\n`", "`\\0`", "`\\b`"],
+                correct: 2 // C) `\0`
+            },
+            {
+                question: "Which function is used to calculate the length of a string?",
+                options: ["`strlength()`", "`size()`", "`strlen()`", "`length()`"],
+                correct: 2 // C) `strlen()`
+            },
+            {
+                question: "To copy string `s2` to string `s1`, which function should be used?",
+                options: ["`strcpy(s1, s2);`", "`s1 = s2;`", "`strcopy(s1, s2);`", "`copy(s1, s2);`"],
+                correct: 0 // A) `strcpy(s1, s2);`
+            },
+            {
+                question: "What does `strcmp(\"apple\", \"banana\")` return?",
+                options: ["0", "A positive integer", "A negative integer", "A random value"],
+                correct: 2 // C) A negative integer
+            },
+            {
+                question: "Which function is generally preferred for safe string input from the user?",
+                options: ["`scanf(\"%s\", ...)`", "`gets()`", "`fgets()`", "`getchar()`"],
+                correct: 2 // C) `fgets()`
+            },
+            {
+                question: "What is the purpose of `strcat()`?",
+                options: ["To compare two strings.", "To concatenate (join) two strings.", "To find a substring.", "To copy a string."],
+                correct: 1 // B) To concatenate (join) two strings.
+            },
+            {
+                question: "Which keyword is used to define a structure in C?",
+                options: ["`class`", "`struct`", "`union`", "`type`"],
+                correct: 1 // B) `struct`
+            },
+            {
+                question: "In a `struct`, how are its members stored in memory?",
+                options: ["All members share the same memory location.", "Members are stored in contiguous memory locations, each with its own distinct space.", "Members are stored randomly in memory.", "Only the first member is allocated memory."],
+                correct: 1 // B) Members are stored in contiguous memory locations, each with its own distinct space.
+            },
+            {
+                question: "To access members of a `struct` variable, which operator is used?",
+                options: ["`->`", "`*`", "`.`", "`&`"],
+                correct: 2 // C) `.`
+            },
+            {
+                question: "What is the key difference between a `struct` and a `union` regarding memory allocation?",
+                options: ["`struct` members share memory; `union` members have separate memory.", "`struct` members have separate memory; `union` members share the same memory location.", "Both `struct` and `union` members share memory.", "Both `struct` and `union` members have separate memory."],
+                correct: 1 // B) `struct` members have separate memory; `union` members share the same memory location.
+            },
+            {
+                question: "If you have a pointer `ptr` to a structure, how do you access its member `data`?",
+                options: ["`(*ptr).data`", "`ptr->data`", "`ptr.data`", "Both A and B"],
+                correct: 3 // D) Both A and B
+            },
+            {
+                question: "What is the purpose of the `typedef` keyword when used with structures?",
+                options: ["To define a new structure.", "To create an alias (alternative name) for a data type.", "To allocate memory for a structure.", "To initialize structure members."],
+                correct: 1 // B) To create an alias (alternative name) for a data type.
+            },
+            {
+                question: "Which function is used to open a file in C?",
+                options: ["`openfile()`", "`file_open()`", "`fopen()`", "`createfile()`"],
+                correct: 2 // C) `fopen()`
+            },
+            {
+                question: "What is the correct mode to open a file for reading and writing, but where the file must already exist?",
+                options: ["`\"w+\"`", "`\"a+\"`", "``\"r+\"`", "`\"x\"`"],
+                correct: 2 // C) `"r+"`
+            },
+            {
+                question: "Which function is used to close a file after operations are complete?",
+                options: ["`close()`", "`fileclose()`", "`fclose()`", "`endfile()`"],
+                correct: 2 // C) `fclose()`
+            },
+            {
+                question: "Which function is used to write formatted data to a file?",
+                options: ["`printf()`", "`scanf()`", "`fprintf()`", "`fputc()`"],
+                correct: 2 // C) `fprintf()`
+            },
+            {
+                question: "What value does `fopen()` return if the file opening operation fails?",
+                options: ["0", "1", "`NULL`", "`EOF`"],
+                correct: 2 // C) `NULL`
+            },
+            {
+                question: "To read a single character from a file pointed to by `fp`, which function would you use?",
+                options: ["`fgetc(fp)`", "`fread(fp)`", "`getc(fp)`", "`fscanf(fp, \"%c\", &ch)`"],
+                correct: 0 // A) `fgetc(fp)`
+            },
+            {
+                question: "The `feof()` function is used to check for:",
+                options: ["File open errors", "End of file condition", "File permissions", "Current file pointer position"],
+                correct: 1 // B) End of file condition
+            },
+            {
+                question: "Which symbol indicates a pre-processor directive in C?",
+                options: ["`@`", "`#`", "`$`", "`!`"],
+                correct: 1 // B) `#`
+            },
+            {
+                question: "What is the difference between `#include <stdio.h>` and `#include \"myheader.h\"`?",
+                options: ["There is no difference.", "The first is for user-defined headers, the second for standard library.", "The first searches standard directories, the second searches the current directory first.", "The first is for C++, the second for C."],
+                correct: 2 // C) The first searches standard directories, the second searches the current directory first.
+            },
+            {
+                question: "The `#define` directive is used to:",
+                options: ["Declare a function.", "Define a macro (text substitution).", "Create a new variable.", "Include an external file."],
+                correct: 1 // B) Define a macro (text substitution).
+            },
+            {
+                question: "Which pre-processor directive is used for conditional compilation based on whether a macro is defined?",
+                options: ["`#if`", "`#ifdef`", "`#ifndef`", "Both B and C"],
+                correct: 3 // D) Both B and C
+            },
+            {
+                question: "What will be the value of `PI` after preprocessing in the following code?\n `#define PI 3.14`\n `float circumference = 2 * PI * radius;`",
+                options: ["`\"PI\"`", "`3.14`", "Undefined", "Error"],
+                correct: 1 // B) `3.14`
+            },
+            {
+                question: "Which directive signals the end of an `#if` or `#ifdef` block?",
+                options: ["`#end`", "`#terminate`", "`#endif`", "`#stop`"],
+                correct: 2 // C) `#endif`
+            },
+            {
+                question: "The `argc` parameter in `main(int argc, char *argv[])` represents:",
+                options: ["The total number of characters in all arguments.", "The total number of command-line arguments, including the program name.", "The number of arguments passed by the user, excluding the program name.", "The size of the `argv` array in bytes."],
+                correct: 1 // B) The total number of command-line arguments, including the program name.
+            },
+            {
+                question: "If you execute your program as `./myprogram arg1 123`, what will be the value of `argv[0]`?",
+                options: ["`myprogram`", "`arg1`", "`123`", "`NULL`"],
+                correct: 0 // A) `myprogram`
+            },
+            {
+                question: "In the same execution (`./myprogram arg1 123`), what will be the value of `argc`?",
+                options: ["1", "2", "3", "4"],
+                correct: 2 // C) 3
+            },
+            {
+                question: "Command-line arguments are always received by the program as:",
+                options: ["Integers", "Floating-point numbers", "Strings", "Characters"],
+                correct: 2 // C) Strings
+            },
+            {
+                question: "Which standard library function can be used to convert a command-line argument (which is a string) into an integer?",
+                options: ["`itoa()`", "`atoi()`", "`convert_to_int()`", "`str_to_int()`"],
+                correct: 1 // B) `atoi()`
+            }
+        ];
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">JECA C Programming MCQ Practice Set</h1>
+
+        <!-- Quiz Section -->
+        <div id="quiz-section">
+            <div class="question-container">
+                <p id="question-text" class="text-xl font-semibold text-gray-700 mb-4"></p>
+                <div id="options-container" class="space-y-3">
+                    <!-- Options will be dynamically inserted here by script.js -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Section (Initially hidden) -->
+        <div id="result-section" class="hidden result-container">
+            <h2 class="text-2xl font-bold mb-4">Quiz Completed!</h2>
+            <p class="text-xl">Final Score: <span id="score-display" class="font-bold">0</span></p>
+            <p class="text-lg">Correct Answers: <span id="correct-count" class="font-semibold">0</span></p>
+            <p class="text-lg">Wrong Answers: <span id="wrong-count" class="font-semibold">0</span></p>
+            <p class="text-lg">Accuracy: <span id="accuracy-display" class="font-semibold">0%</span></p>
+            <button id="restart-btn" class="submit-btn mt-6">Restart Quiz</button>
+        </div>
+
+        <!-- Message Box for alerts (replaces alert()) -->
+        <div id="message-box" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white rounded-lg p-6 shadow-lg text-center max-w-sm w-full">
+                <p id="message-text" class="text-lg mb-4"></p>
+                <button id="message-ok-btn" class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition-colors">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

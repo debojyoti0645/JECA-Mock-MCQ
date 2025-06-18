@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JECA 2025: Software Engineering - Comprehensive MCQ Set</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Define SUBJECT-SPECIFIC questions for Software Engineering here -->
+    <script>
+        const questions = [
+            {
+                question: "Which of the following is NOT a primary goal of Software Engineering?",
+                options: ["To produce high-quality software", "To develop software within budget", "To deliver software on time", "To eliminate the need for maintenance"],
+                correct: 3 // d) To eliminate the need for maintenance
+            },
+            {
+                question: "A systematic, disciplined, and quantifiable approach to the development, operation, and maintenance of software is known as:",
+                options: ["Software Programming", "Software Designing", "Software Engineering", "Software Testing"],
+                correct: 2 // c) Software Engineering
+            },
+            {
+                question: "Which attribute of good software refers to its ability to be easily modified to correct faults or adapt to new environments?",
+                options: ["Reliability", "Efficiency", "Maintainability", "Usability"],
+                correct: 2 // c) Maintainability
+            },
+            {
+                question: "Which of the following is typically NOT considered part of a \"software product\" in a commercial context?",
+                options: ["User manuals", "Source code", "Configuration data", "A single, standalone program written for personal use"],
+                correct: 3 // d) A single, standalone program written for personal use
+            },
+            {
+                question: "Which activity in the generic software process framework involves creating a plan for project scope, resources, and timeline?",
+                options: ["Communication", "Planning", "Modeling", "Construction"],
+                correct: 1 // b) Planning
+            },
+            {
+                question: "In which software process model is it most difficult to accommodate changes once a phase is completed?",
+                options: ["Agile Model", "Spiral Model", "Waterfall Model", "Incremental Model"],
+                correct: 2 // c) Waterfall Model
+            },
+            {
+                question: "The V-Model explicitly links development phases with their corresponding:",
+                options: ["Coding phases", "Testing phases", "Deployment phases", "Maintenance phases"],
+                correct: 1 // b) Testing phases
+            },
+            {
+                question: "Which software process model is best suited for projects with high risk and evolving requirements?",
+                options: ["Waterfall Model", "Spiral Model", "RAD Model", "Incremental Model"],
+                correct: 1 // b) Spiral Model
+            },
+            {
+                question: "A key advantage of the Incremental Model is:",
+                options: ["It eliminates the need for formal documentation.", "It allows for early delivery of working software and user feedback.", "It guarantees zero defects in the final product.", "It is ideal for projects with completely static requirements."],
+                correct: 1 // b) It allows for early delivery of working software and user feedback.
+            },
+            {
+                question: "Which of the following is a characteristic of Agile software development?",
+                options: ["Rigid, detailed upfront planning", "Emphasis on comprehensive documentation", "Iterative and incremental approach with adaptive planning", "Strict adherence to the original project plan without changes"],
+                correct: 2 // c) Iterative and incremental approach with adaptive planning
+            },
+            {
+                question: "If a software project prioritizes getting early user feedback on the user interface and functionality, which model would be most appropriate initially?",
+                options: ["Waterfall Model", "V-Model", "Prototyping Model", "Formal Methods Model"],
+                correct: 2 // c) Prototyping Model
+            },
+            {
+                question: "The Rapid Application Development (RAD) model emphasizes:",
+                options: ["Long development cycles", "Formal, extensive documentation", "Extensive user involvement and rapid prototyping", "Development by a single, isolated team"],
+                correct: 2 // c) Extensive user involvement and rapid prototyping
+            },
+            {
+                question: "Which of the following is an example of a Functional Requirement?",
+                options: ["The system shall be available 99.9% of the time.", "The system shall encrypt user passwords.", "The system shall allow users to search for products by category.", "The user interface shall be responsive within 1 second."],
+                correct: 2 // c) The system shall allow users to search for products by category.
+            },
+            {
+                question: "\"The system shall process 100 transactions per second.\" This is an example of a:",
+                options: ["Functional Requirement", "Usability Requirement", "Performance Requirement", "Security Requirement"],
+                correct: 2 // c) Performance Requirement
+            },
+            {
+                question: "Which characteristic of a good requirement means that it can be proven through testing?",
+                options: ["Unambiguous", "Complete", "Feasible", "Verifiable"],
+                correct: 3 // d) Verifiable
+            },
+            {
+                question: "The process of gathering requirements from stakeholders using various techniques is called:",
+                options: ["Requirements Validation", "Requirements Elaboration", "Requirements Elicitation", "Requirements Management"],
+                correct: 2 // c) Requirements Elicitation
+            },
+            {
+                question: "Which document formally specifies all functional and non-functional requirements of a software system?",
+                options: ["Design Document Specification (DDS)", "Software Test Plan (STP)", "Software Requirements Specification (SRS)", "User Manual"],
+                correct: 2 // c) Software Requirements Specification (SRS)
+            },
+            {
+                question: "During which requirements engineering activity are conflicts between requirements resolved and priorities assigned?",
+                options: ["Inception", "Elaboration", "Negotiation", "Validation"],
+                correct: 2 // c) Negotiation
+            },
+            {
+                question: "Which of the following is a technique used during requirements validation?",
+                options: ["Brainstorming", "Prototyping", "Use Case Modeling", "Interviews"],
+                correct: 1 // b) Prototyping
+            },
+            {
+                question: "A requirement stating \"The system must be compatible with Windows, macOS, and Linux operating systems\" is an example of a:",
+                options: ["Performance Requirement", "Portability Requirement", "Reliability Requirement", "Maintainability Requirement"],
+                correct: 1 // b) Portability Requirement
+            },
+            {
+                question: "A diagram that shows the boundaries of a system and its interactions with external entities is a:",
+                options: ["Class Diagram", "Sequence Diagram", "System Context Diagram", "State Machine Diagram"],
+                correct: 2 // c) System Context Diagram
+            },
+            {
+                question: "Which UML diagram is used to represent the different states an object can be in and the transitions between those states?",
+                options: ["Use Case Diagram", "Activity Diagram", "State Machine Diagram", "ER Diagram"],
+                correct: 2 // c) State Machine Diagram
+            },
+            {
+                question: "Which type of model describes the data structure that the system will store and manipulate?",
+                options: ["Behavioral Model", "Architectural Model", "Data Model", "Context Model"],
+                correct: 2 // c) Data Model
+            },
+            {
+                question: "In UML, a diagram that illustrates the time-ordered interactions between objects is a:",
+                options: ["Activity Diagram", "Class Diagram", "Sequence Diagram", "Component Diagram"],
+                correct: 2 // c) Sequence Diagram
+            },
+            {
+                question: "An Entity-Relationship (ER) Diagram is primarily used for:",
+                options: ["Modeling system behavior", "Showing component interactions", "Representing data structures and relationships", "Defining user interfaces"],
+                correct: 2 // c) Representing data structures and relationships
+            },
+            {
+                question: "Which design concept refers to hiding complex implementation details and showing only essential features?",
+                options: ["Modularity", "Information Hiding", "Abstraction", "Coupling"],
+                correct: 2 // c) Abstraction
+            },
+            {
+                question: "The degree to which elements within a module belong together is known as:",
+                options: ["Coupling", "Cohesion", "Modularity", "Abstraction"],
+                correct: 1 // b) Cohesion
+            },
+            {
+                question: "Which of the following is considered desirable in software design?",
+                options: ["High Coupling, High Cohesion", "High Coupling, Low Cohesion", "Low Coupling, High Cohesion", "Low Coupling, Low Cohesion"],
+                correct: 2 // c) Low Coupling, High Cohesion
+            },
+            {
+                question: "Defining the overall structure of the system, its main components, and their interactions falls under:",
+                options: ["Component-level design", "Data design", "Architectural design", "Interface design"],
+                correct: 2 // c) Architectural design
+            },
+            {
+                question: "User Interface (UI) design is a part of:",
+                options: ["Architectural design", "Interface design", "Data design", "Component-level design"],
+                correct: 1 // b) Interface design
+            },
+            {
+                question: "Testing individual program units or components in isolation is called:",
+                options: ["Integration Testing", "System Testing", "Unit Testing", "Acceptance Testing"],
+                correct: 2 // c) Unit Testing
+            },
+            {
+                question: "Which type of testing focuses on finding defects in the interfaces and interactions between integrated modules?",
+                options: ["Unit Testing", "Integration Testing", "Performance Testing", "Security Testing"],
+                correct: 1 // b) Integration Testing
+            },
+            {
+                question: "Testing conducted by potential end-users at their own sites is known as:",
+                options: ["Alpha Testing", "Beta Testing", "Regression Testing", "Unit Testing"],
+                correct: 1 // b) Beta Testing
+            },
+            {
+                question: "Which testing approach involves testing the functionality of the software without knowing its internal structure or code?",
+                options: ["White-Box Testing", "Black-Box Testing", "Grey-Box Testing", "Structural Testing"],
+                correct: 1 // b) Black-Box Testing
+            },
+            {
+                question: "Equivalence Partitioning and Boundary Value Analysis are techniques primarily used in:",
+                options: ["White-Box Testing", "Unit Testing", "Black-Box Testing", "Performance Testing"],
+                correct: 2 // c) Black-Box Testing
+            },
+            {
+                question: "Re-running tests to ensure that changes or bug fixes have not introduced new defects is called:",
+                options: ["System Testing", "Acceptance Testing", "Regression Testing", "Stress Testing"],
+                correct: 2 // c) Regression Testing
+            },
+            {
+                question: "\"The system must handle 1000 concurrent users without degradation in response time.\" This statement would primarily be verified during:",
+                options: ["Usability Testing", "Security Testing", "Performance Testing", "Reliability Testing"],
+                correct: 2 // c) Performance Testing
+            },
+            {
+                question: "Which type of testing aims to identify vulnerabilities and weaknesses in the software's protection mechanisms?",
+                options: ["Usability Testing", "Compatibility Testing", "Security Testing", "Portability Testing"],
+                correct: 2 // c) Security Testing
+            },
+            {
+                question: "The testing principle that states \"Testing shows the presence of defects, not their absence\" highlights:",
+                options: ["The impossibility of exhaustive testing.", "The importance of early testing.", "The pesticide paradox.", "The need for automated testing."],
+                correct: 0 // a) The impossibility of exhaustive testing.
+            },
+            {
+                question: "Which product metric is independent of the programming language used?",
+                options: ["Lines of Code (LOC)", "Cyclomatic Complexity", "Function Points (FPs)", "Defects per KLOC"],
+                correct: 2 // c) Function Points (FPs)
+            },
+            {
+                question: "A higher value for Cyclomatic Complexity usually indicates:",
+                options: ["Lower code complexity", "Easier maintainability", "More independent paths, thus higher complexity", "Better test coverage"],
+                correct: 2 // c) More independent paths, thus higher complexity
+            },
+            {
+                question: "Defect Density is typically measured as:",
+                options: ["Number of defects per Function Point", "Total defects found", "Time between failures", "Number of defects found per person-hour"],
+                correct: 0 // a) Number of defects per Function Point (or KLOC)
+            },
+            {
+                question: "Which metric directly assesses the efficiency of defect detection activities?",
+                options: ["Mean Time To Failure (MTTF)", "Defect Density", "Defect Removal Efficiency (DRE)", "Cyclomatic Complexity"],
+                correct: 2 // c) Defect Removal Efficiency (DRE)
+            },
+            {
+                question: "Which of the following is primarily a process metric?",
+                options: ["Number of Function Points", "Defects reported by customers", "Cyclomatic Complexity of a module", "Lines of code"],
+                correct: 1 // b) Defects reported by customers (as it reflects process effectiveness in preventing defects from reaching the customer)
+            },
+            {
+                question: "If the \"Defect Injection Rate\" during the coding phase is very high, what impact might it have on product quality?",
+                options: ["It ensures higher product quality due to extensive coding.", "It likely leads to a higher \"Defect Density\" in the final product.", "It will reduce the need for testing in later stages.", "It has no direct relation to product quality."],
+                correct: 1 // b) It likely leads to a higher "Defect Density" in the final product.
+            },
+            {
+                question: "A potential problem that might occur in the future and could negatively impact a software project is defined as a:",
+                options: ["Issue", "Bug", "Requirement", "Risk"],
+                correct: 3 // d) Risk
+            },
+            {
+                question: "Which type of risk threatens the project plan, schedule, and resources?",
+                options: ["Technical Risk", "Business Risk", "Project Risk", "Financial Risk"],
+                correct: 2 // c) Project Risk
+            },
+            {
+                question: "The product of the probability of a risk occurring and its impact (loss) is known as:",
+                options: ["Risk Mitigation", "Risk Exposure", "Risk Contingency", "Risk Identification"],
+                correct: 1 // b) Risk Exposure
+            },
+            {
+                question: "Developing alternative plans to execute if a risk materializes despite efforts to reduce its likelihood is called:",
+                options: ["Risk Identification", "Risk Mitigation", "Risk Contingency Planning", "Risk Monitoring"],
+                correct: 2 // c) Risk Contingency Planning
+            },
+            {
+                question: "Identifying potential difficulties related to unproven technology or complex designs falls under:",
+                options: ["Project Risks", "Technical Risks", "Business Risks", "Personnel Risks"],
+                correct: 1 // b) Technical Risks
+            },
+            {
+                question: "Which activity in Software Quality Management is primarily preventative in nature, focusing on process adherence?",
+                options: ["Quality Control", "Quality Assurance", "Testing", "Defect Removal"],
+                correct: 1 // b) Quality Assurance
+            },
+            {
+                question: "The \"fitness for purpose\" or conformance to requirements defines:",
+                options: ["Efficiency", "Reliability", "Quality", "Usability"],
+                correct: 2 // c) Quality
+            },
+            {
+                question: "Which standard is an international framework for quality management systems?",
+                options: ["Agile Manifesto", "IEEE 802.11", "ISO 9001", "TCP/IP"],
+                correct: 2 // c) ISO 9001
+            },
+            {
+                question: "If a software team performs code reviews and design reviews to ensure adherence to standards, this activity is part of:",
+                options: ["Quality Control", "Testing", "Quality Assurance", "Risk Management"],
+                correct: 2 // c) Quality Assurance
+            },
+            {
+                question: "According to McCall's quality factors, \"Maintainability\" falls under which category?",
+                options: ["Product Operation", "Product Revision", "Product Transition", "Product Design"],
+                correct: 1 // b) Product Revision
+            },
+            {
+                question: "The CMMI (Capability Maturity Model Integration) primarily aims to:",
+                options: ["Provide a specific software development methodology.", "Offer a framework for process improvement.", "Certify software products as defect-free.", "Dictate specific programming languages."],
+                correct: 1 // b) Offer a framework for process improvement.
+            },
+            {
+                question: "Which of the following is more associated with \"detection\" of defects rather than \"prevention\"?",
+                options: ["Quality Assurance Audits", "Process Standards", "Testing", "Training on best practices"],
+                correct: 2 // c) Testing
+            }
+        ];
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">JECA 2025: Software Engineering - Comprehensive MCQ Set</h1>
+
+        <!-- Quiz Section -->
+        <div id="quiz-section">
+            <div class="question-container">
+                <p id="question-text" class="text-xl font-semibold text-gray-700 mb-4"></p>
+                <div id="options-container" class="space-y-3">
+                    <!-- Options will be dynamically inserted here by script.js -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Section (Initially hidden) -->
+        <div id="result-section" class="hidden result-container">
+            <h2 class="text-2xl font-bold mb-4">Quiz Completed!</h2>
+            <p class="text-xl">Final Score: <span id="score-display" class="font-bold">0</span></p>
+            <p class="text-lg">Correct Answers: <span id="correct-count" class="font-semibold">0</span></p>
+            <p class="text-lg">Wrong Answers: <span id="wrong-count" class="font-semibold">0</span></p>
+            <p class="text-lg">Accuracy: <span id="accuracy-display" class="font-semibold">0%</span></p>
+            <button id="restart-btn" class="submit-btn mt-6">Restart Quiz</button>
+        </div>
+
+        <!-- Message Box for alerts (replaces alert()) -->
+        <div id="message-box" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white rounded-lg p-6 shadow-lg text-center max-w-sm w-full">
+                <p id="message-text" class="text-lg mb-4"></p>
+                <button id="message-ok-btn" class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition-colors">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JECA Exam - Computer Networks MCQs</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        const questions = [
+            {
+                question: "Which of the following is NOT a primary benefit of a computer network?",
+                options: ["Resource Sharing", "High Reliability", "Increased individual hardware cost", "Enhanced Communication Medium"],
+                correct: 2 // c) Increased individual hardware cost
+            },
+            {
+                question: "A device that connects a computer to the network and allows it to communicate is called a:",
+                options: ["Router", "Switch", "Network Interface Card (NIC)", "Hub"],
+                correct: 2 // c) Network Interface Card (NIC)
+            },
+            {
+                question: "What is the main purpose of a network operating system (NOS)?",
+                options: ["To manage individual user applications", "To run network games", "To manage network resources and services", "To connect to the internet directly"],
+                correct: 2 // c) To manage network resources and services
+            },
+            {
+                question: "Which application area primarily uses networks for online shopping, banking, and stock trading?",
+                options: ["Home Applications", "Business Applications", "Mobile Applications", "Social Applications"],
+                correct: 1 // b) Business Applications
+            },
+            {
+                question: "Telemedicine, which involves remote healthcare consultations, falls under which application area of computer networks?",
+                options: ["Home", "Business", "Mobile", "Social"],
+                correct: 3 // d) Social
+            },
+            {
+                question: "A network that covers a small geographical area, typically within a building or a campus, is known as a:",
+                options: ["WAN", "MAN", "LAN", "PAN"],
+                correct: 2 // c) LAN
+            },
+            {
+                question: "Which network topology connects all devices to a single central cable, where a break in the cable can halt the entire network?",
+                options: ["Star", "Ring", "Bus", "Mesh"],
+                correct: 2 // c) Bus
+            },
+            {
+                question: "In a client-server network architecture:",
+                options: ["All devices can act as both clients and servers.", "There are no dedicated servers.", "Dedicated servers provide services to clients.", "It is primarily used for small, temporary networks."],
+                correct: 2 // c) Dedicated servers provide services to clients.
+            },
+            {
+                question: "Which of the following is an example of an unguided transmission medium?",
+                options: ["Fiber Optic Cable", "Coaxial Cable", "Twisted-Pair Cable", "Radio Waves"],
+                correct: 3 // d) Radio Waves
+            },
+            {
+                question: "Which layer of the OSI model is responsible for logical addressing and routing packets across different networks?",
+                options: ["Data Link Layer", "Network Layer", "Transport Layer", "Application Layer"],
+                correct: 1 // b) Network Layer
+            },
+            {
+                question: "The TCP/IP model's Application Layer combines which OSI layers?",
+                options: ["Physical and Data Link", "Network and Transport", "Session, Presentation, and Application", "Transport and Session"],
+                correct: 2 // c) Session, Presentation, and Application
+            },
+            {
+                question: "Which device operates primarily at the Data Link Layer (Layer 2) of the OSI model?",
+                options: ["Router", "Hub", "Switch", "Repeater"],
+                correct: 2 // c) Switch
+            },
+            {
+                question: "The process of establishing, managing, and terminating sessions between applications is the responsibility of which OSI layer?",
+                options: ["Transport Layer", "Session Layer", "Presentation Layer", "Application Layer"],
+                correct: 1 // b) Session Layer
+            },
+            {
+                question: "Which guided transmission medium offers the highest bandwidth and immunity to electromagnetic interference?",
+                options: ["UTP (Unshielded Twisted Pair)", "STP (Shielded Twisted Pair)", "Coaxial Cable", "Fiber Optic Cable"],
+                correct: 3 // d) Fiber Optic Cable
+            },
+            {
+                question: "What is the IEEE standard associated with Wi-Fi technology?",
+                options: ["802.3", "802.5", "802.11", "802.16"],
+                correct: 2 // c) 802.11
+            },
+            {
+                question: "Which of the following wireless technologies is primarily used for short-range communication between personal devices?",
+                options: ["Wi-Fi", "Cellular (e.g., 5G)", "Bluetooth", "Satellite communication"],
+                correct: 2 // c) Bluetooth
+            },
+            {
+                question: "Which routing algorithm manually configures routes and is suitable for small, stable networks?",
+                options: ["Distance Vector Routing", "Link State Routing", "Static Routing", "Path Vector Routing"],
+                correct: 2 // c) Static Routing
+            },
+            {
+                question: "OSPF (Open Shortest Path First) is an example of which type of dynamic routing protocol?",
+                options: ["Distance Vector", "Link State", "Path Vector", "Static"],
+                correct: 1 // b) Link State
+            },
+            {
+                question: "What is the primary metric used by RIP (Routing Information Protocol) to determine the best path?",
+                options: ["Bandwidth", "Delay", "Hop Count", "Cost"],
+                correct: 2 // c) Hop Count
+            },
+            {
+                question: "Which protocol operates at the Transport Layer and provides connectionless, unreliable datagram service?",
+                options: ["IP", "TCP", "UDP", "ICMP"],
+                correct: 2 // c) UDP
+            },
+            {
+                question: "What is the main characteristic of TCP (Transmission Control Protocol)?",
+                options: ["Connectionless and unreliable", "Connection-oriented and unreliable", "Connectionless and reliable", "Connection-oriented and reliable"],
+                correct: 3 // d) Connection-oriented and reliable
+            },
+            {
+                question: "The 3-way handshake is a mechanism used by which protocol to establish a connection?",
+                options: ["UDP", "IP", "TCP", "ICMP"],
+                correct: 2 // c) TCP
+            },
+            {
+                question: "Which protocol is primarily responsible for logical addressing and routing packets between networks?",
+                options: ["TCP", "UDP", "IP", "HTTP"],
+                correct: 2 // c) IP
+            },
+            {
+                question: "What is the address length of an IPv4 address?",
+                options: ["64 bits", "128 bits", "32 bits", "48 bits"],
+                correct: 2 // c) 32 bits
+            },
+            {
+                question: "The primary reason for the development and adoption of IPv6 is:",
+                options: ["Improved security for all applications.", "Exhaustion of IPv4 addresses.", "Simpler header format.", "Built-in mobility support."],
+                correct: 1 // b) Exhaustion of IPv4 addresses.
+            },
+            {
+                question: "Which of the following is a characteristic of IPv6?",
+                options: ["Dotted decimal notation", "Uses classes (A, B, C)", "Built-in IPsec", "Variable header length"],
+                correct: 2 // c) Built-in IPsec
+            },
+            {
+                question: "In reliable data transfer, what is the purpose of acknowledgments (ACKs)?",
+                options: ["To indicate a corrupted packet.", "To request retransmission of a packet.", "To confirm successful reception of data.", "To send data in reverse order."],
+                correct: 2 // c) To confirm successful reception of data.
+            },
+            {
+                question: "Which reliable data transfer technique allows the sender to transmit multiple packets without waiting for an ACK for each, but retransmits all packets from the lost one onwards?",
+                options: ["Stop-and-Wait ARQ", "Selective Repeat ARQ", "Go-Back-N (GBN) ARQ", "RDT 1.0"],
+                correct: 2 // c) Go-Back-N (GBN) ARQ
+            },
+            {
+                question: "What is the primary role of sequence numbers in reliable data transfer?",
+                options: ["To define the priority of packets.", "To ensure ordered delivery and detect duplicates.", "To indicate the size of the packet.", "To encrypt the data."],
+                correct: 1 // b) To ensure ordered delivery and detect duplicates.
+            },
+            {
+                question: "Which protocol is used for sending email messages between mail servers?",
+                options: ["POP3", "IMAP", "SMTP", "HTTP"],
+                correct: 2 // c) SMTP
+            },
+            {
+                question: "What is the default TCP port number for HTTP?",
+                options: ["21", "23", "80", "443"],
+                correct: 2 // c) 80
+            },
+            {
+                question: "The Domain Name System (DNS) primarily performs which function?",
+                options: ["Transfers files between clients and servers.", "Sends and receives email.", "Translates domain names to IP addresses.", "Provides secure remote access."],
+                correct: 2 // c) Translates domain names to IP addresses.
+            },
+            {
+                question: "Which protocol is used to automatically assign IP addresses to devices on a network?",
+                options: ["FTP", "SSH", "DHCP", "SNMP"],
+                correct: 2 // c) DHCP
+            },
+            {
+                question: "Which of the following is NOT one of the primary goals of network security (CIA Triad)?",
+                options: ["Confidentiality", "Integrity", "Availability", "Redundancy"],
+                correct: 3 // d) Redundancy
+            },
+            {
+                question: "A network security device that monitors and filters incoming and outgoing network traffic based on predefined security rules is called a:",
+                options: ["Router", "Switch", "Firewall", "Hub"],
+                correct: 2 // c) Firewall
+            },
+            {
+                question: "What is the main advantage of using SSH over Telnet for remote access?",
+                options: ["Faster connection speed", "Graphical user interface", "Encrypted communication", "Lower bandwidth consumption"],
+                correct: 2 // c) Encrypted communication
+            },
+            {
+                question: "What type of attack aims to make a system or network unavailable by overwhelming it with traffic?",
+                options: ["Phishing", "SQL Injection", "Denial of Service (DoS)", "Malware"],
+                correct: 2 // c) Denial of Service (DoS)
+            },
+            {
+                question: "Which network management function involves detecting, isolating, identifying, and correcting problems in the network?",
+                options: ["Performance Management", "Configuration Management", "Fault Management", "Security Management"],
+                correct: 2 // c) Fault Management
+            },
+            {
+                question: "SNMP (Simple Network Management Protocol) primarily operates at which layer of the TCP/IP model?",
+                options: ["Network Layer", "Transport Layer", "Application Layer", "Data Link Layer"],
+                correct: 2 // c) Application Layer
+            },
+            {
+                question: "Which tool is commonly used to analyze network traffic by capturing and displaying packets?",
+                options: ["Ping", "Traceroute", "Wireshark", "Telnet"],
+                correct: 2 // c) Wireshark
+            },
+            {
+                question: "Which of the following is a major challenge in the future of communication networks due to the increasing number of connected devices?",
+                options: ["Reducing the number of IP addresses", "Decreased bandwidth requirements", "Scalability", "Eliminating the need for security"],
+                correct: 2 // c) Scalability
+            },
+            {
+                question: "What is the core concept behind Software-Defined Networking (SDN)?",
+                options: ["Increasing reliance on hardware-specific configurations.", "Decoupling the control plane from the data plane.", "Eliminating the need for routing protocols.", "Centralizing all network traffic through a single server."],
+                correct: 1 // b) Decoupling the control plane from the data plane.
+            },
+            {
+                question: "Which emerging technology aims to process data closer to the source (edge of the network) to reduce latency?",
+                options: ["Cloud Computing", "Centralized Data Centers", "Quantum Networking", "Edge Computing"],
+                correct: 3 // d) Edge Computing
+            }
+        ];
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">JECA Exam - Computer Networks MCQs</h1>
+
+        <!-- Quiz Section -->
+        <div id="quiz-section">
+            <div class="question-container">
+                <p id="question-text" class="text-xl font-semibold text-gray-700 mb-4"></p>
+                <div id="options-container" class="space-y-3">
+                    <!-- Options will be dynamically inserted here by script.js -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Section (Initially hidden) -->
+        <div id="result-section" class="hidden result-container">
+            <h2 class="text-2xl font-bold mb-4">Quiz Completed!</h2>
+            <p class="text-xl">Final Score: <span id="score-display" class="font-bold">0</span></p>
+            <p class="text-lg">Correct Answers: <span id="correct-count" class="font-semibold">0</span></p>
+            <p class="text-lg">Wrong Answers: <span id="wrong-count" class="font-semibold">0</span></p>
+            <p class="text-lg">Accuracy: <span id="accuracy-display" class="font-semibold">0%</span></p>
+            <button id="restart-btn" class="submit-btn mt-6">Restart Quiz</button>
+        </div>
+
+        <!-- Message Box for alerts (replaces alert()) -->
+        <div id="message-box" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white rounded-lg p-6 shadow-lg text-center max-w-sm w-full">
+                <p id="message-text" class="text-lg mb-4"></p>
+                <button id="message-ok-btn" class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition-colors">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

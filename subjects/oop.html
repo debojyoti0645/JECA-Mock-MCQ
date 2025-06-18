@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JECA Object-Oriented Programming MCQ Practice Set</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Define SUBJECT-SPECIFIC questions for Object-Oriented Programming here -->
+    <script>
+        const questions = [
+            {
+                question: "Which of the following is NOT a fundamental data type in C++?",
+                options: ["`int`", "`bool`", "`string`", "`char`"],
+                correct: 2 // C) string
+            },
+            {
+                question: "What is the purpose of the `else if` statement?",
+                options: ["To execute a block of code if the `if` condition is false, regardless of other conditions.", "To check another condition if the preceding `if` or `else if` conditions were false.", "To mark the end of an `if` statement block.", "To create an infinite loop."],
+                correct: 1 // B) To check another condition if the preceding if or else if conditions were false.
+            },
+            {
+                question: "Which loop guarantees to execute its body at least once?",
+                options: ["`for` loop", "`while` loop", "`do-while` loop", "`foreach` loop"],
+                correct: 2 // C) do-while loop
+            },
+            {
+                question: "A function that does not return any value should have which return type?",
+                options: ["`int`", "`void`", "`null`", "`no_return`"],
+                correct: 1 // B) void
+            },
+            {
+                question: "In a `switch` statement, what keyword is used to transfer control out of the `switch` block after a case is matched?",
+                options: ["`continue`", "`exit`", "`break`", "`return`"],
+                correct: 2 // C) break
+            },
+            {
+                question: "What does a pointer variable store?",
+                options: ["The value of another variable.", "The memory address of another variable.", "The data type of another variable.", "The name of another variable."],
+                correct: 1 // B) The memory address of another variable.
+            },
+            {
+                question: "Which operator is used to dereference a pointer in C++?",
+                options: ["`&`", "`.`", "`*`", "`->`"],
+                correct: 2 // C) *
+            },
+            {
+                question: "By default, members of a `struct` in C++ are:",
+                options: ["`private`", "`protected`", "`public`", "`virtual`"],
+                correct: 2 // C) public
+            },
+            {
+                question: "Which of the following is TRUE about arrays?",
+                options: ["They can store elements of different data types.", "Elements are stored at non-contiguous memory locations.", "They are fixed in size once declared.", "They are always dynamically allocated."],
+                correct: 2 // C) They are fixed in size once declared.
+            },
+            {
+                question: "What is the primary difference between a C-style string (`char[]`) and `std::string`?",
+                options: ["C-style strings are mutable, `std::string` is immutable.", "C-style strings are null-terminated, `std::string` manages its own memory and length.", "`std::string` can only store numeric data.", "C-style strings are dynamically allocated by default."],
+                correct: 1 // B) C-style strings are null-terminated, `std::string` manages its own memory and length.
+            },
+            {
+                question: "What is the C++ feature that allows a function to have multiple definitions with the same name but different parameters?",
+                options: ["Function Overriding", "Function Hiding", "Function Overloading", "Function Templating"],
+                correct: 2 // C) Function Overloading
+            },
+            {
+                question: "Which keyword is used to define a function template?",
+                options: ["`class`", "`template`", "`type`", "`generic`"],
+                correct: 1 // B) template
+            },
+            {
+                question: "A variable declared inside a function has which type of scope?",
+                options: ["Global scope", "Class scope", "Local scope", "Namespace scope"],
+                correct: 2 // C) Local scope
+            },
+            {
+                question: "Which of the following is the modern C++ (C++11 onwards) way to create a type alias?",
+                options: ["`typedef`", "`using`", "`alias`", "`define`"],
+                correct: 1 // B) using
+            },
+            {
+                question: "What is a key characteristic of a `union` in C++?",
+                options: ["All members can hold values simultaneously.", "It can store only members of the same data type.", "Only one member can hold a value at any given time, occupying the same memory space.", "It uses a linked list internally."],
+                correct: 2 // C) Only one member can hold a value at any given time, occupying the same memory space.
+            },
+            {
+                question: "What does an `enum` type primarily provide?",
+                options: ["A way to create new data types with dynamic values.", "A set of named integer constants.", "A mechanism for runtime type identification.", "A collection of arbitrary data."],
+                correct: 1 // B) A set of named integer constants.
+            },
+            {
+                question: "Which of the following is NOT an access specifier in C++ classes?",
+                options: ["`public`", "`private`", "`protected`", "`universal`"],
+                correct: 3 // D) universal
+            },
+            {
+                question: "What is the primary purpose of a class constructor?",
+                options: ["To destroy objects when they go out of scope.", "To declare static members of a class.", "To initialize the data members of an object when it is created.", "To provide an alternative name for a class."],
+                correct: 2 // C) To initialize the data members of an object when it is created.
+            },
+            {
+                question: "How many constructors can a class have?",
+                options: ["Exactly one", "Zero (if not explicitly defined)", "As many as needed, provided they have different parameter lists (overloaded).", "Only a default constructor and a copy constructor."],
+                correct: 2 // C) As many as needed, provided they have different parameter lists (overloaded).
+            },
+            {
+                question: "Which method is generally preferred for initializing member variables in a constructor, especially for `const` or reference members?",
+                options: ["Assignment inside the constructor body", "Member initialization list", "Using a `friend` function", "Static initialization block"],
+                correct: 1 // B) Member initialization list
+            },
+            {
+                question: "If `objPtr` is a pointer to an object, how do you access its member function `calculate()`?",
+                options: ["`objPtr.calculate()`", "`objPtr::calculate()`", "`objPtr->calculate()`", "`*objPtr.calculate()`"],
+                correct: 2 // C) `objPtr->calculate()`
+            },
+            {
+                question: "Which of the following operators CANNOT be overloaded in C++?",
+                options: ["`+`", "`==`", "`()`", "`::`"],
+                correct: 3 // D) `::`
+            },
+            {
+                question: "What does the `this` pointer refer to?",
+                options: ["The address of the class definition.", "The address of the `main` function.", "The address of the current object on which a member function is invoked.", "The address of the base class."],
+                correct: 2 // C) The address of the current object on which a member function is invoked.
+            },
+            {
+                question: "What is true about a `static` member variable of a class?",
+                options: ["Each object of the class has its own copy.", "It must be initialized within the class definition.", "There is only one copy shared by all objects of the class.", "It can only be accessed by `static` member functions."],
+                correct: 2 // C) There is only one copy shared by all objects of the class.
+            },
+            {
+                question: "A `const` member function:",
+                options: ["Can modify any data member of the object.", "Cannot modify any non-static data member of the object.", "Can only be called by `const` objects.", "Must return a `const` value."],
+                correct: 1 // B) Cannot modify any non-static data member of the object.
+            },
+            {
+                question: "What is the primary benefit of using class templates?",
+                options: ["To restrict the data types that can be used with a class.", "To create classes that can work with generic data types, avoiding code duplication.", "To allow dynamic resizing of class members.", "To achieve runtime polymorphism."],
+                correct: 1 // B) To create classes that can work with generic data types, avoiding code duplication.
+            },
+            {
+                question: "When is template specialization used?",
+                options: ["To make a template work with all data types uniformly.", "To provide a specific implementation for a template for a particular data type.", "To define a default template argument.", "To prevent template instantiation."],
+                correct: 1 // B) To provide a specific implementation for a template for a particular data type.
+            },
+            {
+                question: "What is the main purpose of a `namespace`?",
+                options: ["To allow direct access to private members of a class.", "To define global variables only.", "To organize code and prevent naming collisions.", "To inherit properties from multiple classes."],
+                correct: 2 // C) To organize code and prevent naming collisions.
+            },
+            {
+                question: "If function `foo()` is declared as a `friend` of class `MyClass`, what can `foo()` access?",
+                options: ["Only `public` members of `MyClass`.", "Only `protected` members of `MyClass`.", "All members (`public`, `private`, `protected`) of `MyClass`.", "Only `static` members of `MyClass`."],
+                correct: 2 // C) All members (`public`, `private`, `protected`) of `MyClass`.
+            },
+            {
+                question: "Which OOP principle describes the \"is-a\" relationship between classes?",
+                options: ["Encapsulation", "Polymorphism", "Inheritance", "Abstraction"],
+                correct: 2 // C) Inheritance
+            },
+            {
+                question: "In C++, what is the default access specifier for inheritance if not explicitly mentioned?",
+                options: ["`public`", "`private`", "`protected`", "It depends on the context."],
+                correct: 1 // B) private
+            },
+            {
+                question: "If `ClassB` inherits `publicly` from `ClassA`, and `ClassA` has a `protected` member `x`, what is the access level of `x` in `ClassB`?",
+                options: ["`public`", "`private`", "`protected`", "Inaccessible"],
+                correct: 2 // C) protected
+            },
+            {
+                question: "Which type of polymorphism is achieved through Function Overloading and Operator Overloading?",
+                options: ["Runtime Polymorphism", "Dynamic Polymorphism", "Compile-time Polymorphism", "Virtual Polymorphism"],
+                correct: 2 // C) Compile-time Polymorphism
+            },
+            {
+                question: "What keyword is used to declare a function that enables runtime polymorphism?",
+                options: ["`abstract`", "`dynamic`", "`virtual`", "`override`"],
+                correct: 2 // C) virtual
+            },
+            {
+                question: "Consider the following code:\n```cpp\nclass Base {\npublic:\n    virtual void show() { cout << \"Base::show\" << endl; }\n};\n\nclass Derived : public Base {\npublic:\n    void show() { cout << \"Derived::show\" << endl; }\n};\n\nint main() {\n    Base* bptr = new Derived();\n    bptr->show();\n    delete bptr;\n    return 0;\n}\n```\nWhat will be the output?",
+                options: ["`Base::show`", "`Derived::show`", "Compile-time error", "Runtime error"],
+                correct: 1 // B) Derived::show
+            },
+            {
+                question: "A class that contains at least one pure virtual function is known as a(n):",
+                options: ["Concrete class", "Derived class", "Abstract base class", "Final class"],
+                correct: 2 // C) Abstract base class
+            },
+            {
+                question: "Which of the following statements is true about an abstract base class?",
+                options: ["Objects of an abstract base class can be created directly.", "It must have a default constructor.", "Derived classes must provide implementations for all its pure virtual functions to be instantiated.", "It cannot have any non-virtual functions."],
+                correct: 2 // C) Derived classes must provide implementations for all its pure virtual functions to be instantiated.
+            },
+            {
+                question: "Which of the following best describes encapsulation in OOP?",
+                options: ["The ability to create new classes from existing classes.", "The process of hiding the implementation details and exposing only the necessary interface.", "The ability of an object to take on many forms.", "The technique of defining multiple functions with the same name."],
+                correct: 1 // B) The process of hiding the implementation details and exposing only the necessary interface.
+            },
+            {
+                question: "What is the consequence of not defining a destructor in a class that dynamically allocates memory?",
+                options: ["Compile-time error.", "Runtime error.", "Memory leak.", "The compiler automatically creates a perfectly functioning destructor."],
+                correct: 2 // C) Memory leak.
+            },
+            {
+                question: "When should you use `protected` access specifier for a member?",
+                options: ["When the member needs to be accessed from anywhere in the program.", "When the member should only be accessible from within the class itself.", "When the member needs to be accessible within the class and by derived classes, but not by outside code.", "When the member is a static constant."],
+                correct: 2 // C) When the member needs to be accessible within the class and by derived classes, but not by outside code.
+            },
+            {
+                question: "Which of the following is an example of an \"is-a\" relationship?",
+                options: ["A Car has an Engine.", "A Dog is an Animal.", "A Book has Pages.", "A Student studies a Course."],
+                correct: 1 // B) A Dog is an Animal.
+            },
+            {
+                question: "What is the purpose of the `virtual` keyword when defining a base class destructor?",
+                options: ["To allow the base class destructor to be called only by derived classes.", "To prevent the base class destructor from being called.", "To ensure that the correct destructor (derived class then base class) is called when deleting an object through a base class pointer.", "To make the destructor automatically public."],
+                correct: 2 // C) To ensure that the correct destructor (derived class then base class) is called when deleting an object through a base class pointer.
+            },
+            {
+                question: "In a class hierarchy, if a derived class needs to provide its own specific implementation for a function that is already present in the base class (and is virtual), what is this concept called?",
+                options: ["Function Overloading", "Function Hiding", "Function Overriding", "Function Templating"],
+                correct: 2 // C) Function Overriding
+            },
+            {
+                question: "Consider a scenario where you have a base class `Shape` and derived classes `Circle` and `Square`. You want to store a collection of `Shape` pointers, and when you call a `draw()` method on each pointer, the correct `draw()` for `Circle` or `Square` should be invoked. Which OOP concept is essential here?",
+                options: ["Encapsulation", "Data Abstraction", "Compile-time Polymorphism", "Runtime Polymorphism (using virtual functions)"],
+                correct: 3 // D) Runtime Polymorphism (using virtual functions)
+            },
+            {
+                question: "Which of the following correctly declares a pure virtual function?",
+                options: ["`virtual void func() = 0;`", "`void func() pure;`", "`abstract void func();`", "`virtual void func() { /* implementation */ }`"],
+                correct: 0 // A) `virtual void func() = 0;`
+            },
+            {
+                question: "What will be the output of the following C++ code snippet?\n```cpp\n#include <iostream>\n\nclass Counter {\nprivate:\n    static int count;\npublic:\n    Counter() { count++; }\n    static int getCount() { return count; }\n};\n\nint Counter::count = 0; // Definition of static member\n\nint main() {\n    Counter c1;\n    Counter c2;\n    Counter c3;\n    std::cout << Counter::getCount() << std::endl;\n    return 0;\n}\n```\nWhat will be the output?",
+                options: ["0", "1", "3", "Compiler Error"],
+                correct: 2 // C) 3
+            },
+            {
+                question: "What is the disadvantage of using `friend` functions/classes?",
+                options: ["They cannot access private members.", "They increase code complexity unnecessarily.", "They violate the principle of encapsulation.", "They slow down program execution."],
+                correct: 2 // C) They violate the principle of encapsulation.
+            },
+            {
+                question: "You have a `typedef` declaration: `typedef int Integer;`. Which of the following is equivalent using `using`?",
+                options: ["`using int = Integer;`", "`using Integer = int;`", "`Integer = int;`", "`alias Integer = int;`"],
+                correct: 1 // B) `using Integer = int;`
+            },
+            {
+                question: "Which of the following scenarios is best suited for using a `do-while` loop?",
+                options: ["Iterating through an array of a known size.", "Reading user input until a valid non-negative number is entered.", "Performing a task a fixed number of times.", "Processing elements in a linked list."],
+                correct: 1 // B) Reading user input until a valid non-negative number is entered.
+            },
+            {
+                question: "What is the role of the copy constructor?",
+                options: ["To create a new object by copying an existing object of the same class.", "To assign values from one object to another existing object.", "To convert one data type to another.", "To destroy an object when it goes out of scope."],
+                correct: 0 // A) To create a new object by copying an existing object of the same class.
+            }
+        ];
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">JECA Object-Oriented Programming MCQ Practice Set</h1>
+
+        <!-- Quiz Section -->
+        <div id="quiz-section">
+            <div class="question-container">
+                <p id="question-text" class="text-xl font-semibold text-gray-700 mb-4"></p>
+                <div id="options-container" class="space-y-3">
+                    <!-- Options will be dynamically inserted here by script.js -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Section (Initially hidden) -->
+        <div id="result-section" class="hidden result-container">
+            <h2 class="text-2xl font-bold mb-4">Quiz Completed!</h2>
+            <p class="text-xl">Final Score: <span id="score-display" class="font-bold">0</span></p>
+            <p class="text-lg">Correct Answers: <span id="correct-count" class="font-semibold">0</span></p>
+            <p class="text-lg">Wrong Answers: <span id="wrong-count" class="font-semibold">0</span></p>
+            <p class="text-lg">Accuracy: <span id="accuracy-display" class="font-semibold">0%</span></p>
+            <button id="restart-btn" class="submit-btn mt-6">Restart Quiz</button>
+        </div>
+
+        <!-- Message Box for alerts (replaces alert()) -->
+        <div id="message-box" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white rounded-lg p-6 shadow-lg text-center max-w-sm w-full">
+                <p id="message-text" class="text-lg mb-4"></p>
+                <button id="message-ok-btn" class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition-colors">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

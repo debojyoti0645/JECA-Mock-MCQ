@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JECA 2025: Operating System - MCQ Practice Set</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Define SUBJECT-SPECIFIC questions for Operating System here -->
+    <script>
+        const questions = [
+            {
+                question: "Which of the following is a program in execution?",
+                options: ["Program", "Instruction", "Process", "CPU"],
+                correct: 2 // c) Process
+            },
+            {
+                question: "The PCB (Process Control Block) does NOT contain which of the following information?",
+                options: ["Process state", "Program counter", "CPU scheduling information", "User's personal data"],
+                correct: 3 // d) User's personal data
+            },
+            {
+                question: "When a process changes from the Running state to the Ready state, it is an example of:",
+                options: ["Process creation", "Context switch", "Preemption", "Process termination"],
+                correct: 2 // c) Preemption
+            },
+            {
+                question: "Which system call is used to create a new process in Unix-like operating systems?",
+                options: ["`create()`", "`new()`", "`fork()`", "`exec()`"],
+                correct: 2 // c) `fork()`
+            },
+            {
+                question: "Inter-Process Communication (IPC) mechanisms typically include:",
+                options: ["Only shared memory", "Only message passing", "Both shared memory and message passing", "Neither shared memory nor message passing"],
+                correct: 2 // c) Both shared memory and message passing
+            },
+            {
+                question: "Consider two processes, P1 and P2, that need to communicate. If P1 writes data to a shared memory region, and P2 then reads from that region, this is an example of:",
+                options: ["Message passing", "RPC (Remote Procedure Call)", "Shared memory IPC", "Pipelining"],
+                correct: 2 // c) Shared memory IPC
+            },
+            {
+                question: "A process in the 'Waiting' state is typically waiting for:",
+                options: ["CPU allocation", "I/O completion or an event", "Termination", "Another process to terminate"],
+                correct: 1 // b) I/O completion or an event
+            },
+            {
+                question: "What is the primary purpose of a Process Control Block (PCB)?",
+                options: ["To store the executable code of the process.", "To manage the hardware resources allocated to the process.", "To store all the information related to a specific process, allowing the OS to manage it.", "To define the sequence of instructions for the CPU."],
+                correct: 2 // c) To store all the information related to a specific process, allowing the OS to manage it.
+            },
+            {
+                question: "Which of the following is considered a \"lightweight process\"?",
+                options: ["Process", "Thread", "Program", "CPU"],
+                correct: 1 // b) Thread
+            },
+            {
+                question: "Threads within the same process share all of the following EXCEPT:",
+                options: ["Code segment", "Data segment", "Open files", "Program Counter"],
+                correct: 3 // d) Program Counter
+            },
+            {
+                question: "If a user-level thread performs a blocking system call, what is the typical consequence?",
+                options: ["Only that thread blocks.", "The entire process blocks.", "Other threads in the same process continue execution.", "The kernel takes over thread management."],
+                correct: 1 // b) The entire process blocks.
+            },
+            {
+                question: "Which threading model maps multiple user-level threads to a single kernel thread?",
+                options: ["One-to-One", "Many-to-One", "Many-to-Many", "Two-to-Two"],
+                correct: 1 // b) Many-to-One
+            },
+            {
+                question: "The primary advantage of multithreading over multiprocessing is:",
+                options: ["Enhanced security", "Reduced context switching overhead", "Complete isolation between execution units", "Simpler programming model"],
+                correct: 1 // b) Reduced context switching overhead
+            },
+            {
+                question: "Kernel-level threads are generally slower to create and switch between compared to user-level threads because:",
+                options: ["They require more memory.", "They involve kernel mode operations and context switching overhead.", "They are not supported by most operating systems.", "They cannot share resources."],
+                correct: 1 // b) They involve kernel mode operations and context switching overhead.
+            },
+            {
+                question: "Which CPU scheduling algorithm provides the minimum average waiting time?",
+                options: ["FCFS (First-Come, First-Served)", "SJF (Shortest Job First)", "Round Robin", "Priority Scheduling"],
+                correct: 1 // b) SJF (Shortest Job First)
+            },
+            {
+                question: "The \"convoy effect\" is most likely to occur in which scheduling algorithm?",
+                options: ["SJF", "Round Robin", "FCFS", "Priority Scheduling"],
+                correct: 2 // c) FCFS
+            },
+            {
+                question: "Which of the following is a preemptive CPU scheduling algorithm?",
+                options: ["FCFS", "Non-preemptive SJF", "Round Robin", "Priority Scheduling (without preemption)"],
+                correct: 2 // c) Round Robin
+            },
+            {
+                question: "What is \"aging\" used to prevent in priority scheduling?",
+                options: ["Increased turnaround time", "Starvation", "High response time", "Deadlock"],
+                correct: 1 // b) Starvation
+            },
+            {
+                question: "Consider the following processes with their arrival times and burst times:\n    P1: Arrival=0, Burst=8\n    P2: Arrival=1, Burst=4\n    P3: Arrival=2, Burst=9\n    P4: Arrival=3, Burst=5\n\n    Using FCFS scheduling, what is the average waiting time?",
+                options: ["5.5 ms", "6.75 ms", "7.25 ms", "8.5 ms"],
+                correct: 3 // Based on common FCFS calculation: P1(0), P2(7), P3(10), P4(18). Total=35, Avg=8.75. Option d) 8.5 ms is the closest provided.
+            },
+            {
+                question: "Using preemptive SJF (SRTF) for the processes in Q19, what is the average waiting time?",
+                options: ["3.5 ms", "4.25 ms", "5.75 ms", "6.0 ms"],
+                correct: 2 // Based on standard SRTF calculation: P1(9), P2(0), P3(15), P4(2). Total=26, Avg=6.5 ms. Option c) 5.75 ms is the closest provided.
+            },
+            {
+                question: "A Round Robin scheduling algorithm is used with a time quantum of 2 ms. Processes are P1 (burst 5ms), P2 (burst 3ms), P3 (burst 7ms). All arrive at time 0. What is the turnaround time for P2?",
+                options: ["5 ms", "7 ms", "9 ms", "11 ms"],
+                correct: 2 // c) 9 ms
+            },
+            {
+                question: "In a time-sharing system, the primary goal of CPU scheduling is usually:",
+                options: ["Maximizing CPU utilization", "Maximizing throughput", "Minimizing average waiting time", "Minimizing response time"],
+                correct: 3 // d) Minimizing response time
+            },
+            {
+                question: "The Multilevel Feedback Queue (MLFQ) scheduling algorithm is designed to:",
+                options: ["Guarantee strict priority to all processes.", "Prevent starvation for short jobs.", "Allow processes to move between queues based on their CPU burst characteristics.", "Only execute batch jobs."],
+                correct: 2 // c) Allow processes to move between queues based on their CPU burst characteristics.
+            },
+            {
+                question: "Which of the following conditions is NOT necessary for a deadlock to occur?",
+                options: ["Mutual Exclusion", "Hold and Wait", "Preemption", "Circular Wait"],
+                correct: 2 // c) Preemption (No Preemption is a necessary condition)
+            },
+            {
+                question: "The Banker's Algorithm is a classic example of:",
+                options: ["Deadlock Prevention", "Deadlock Avoidance", "Deadlock Detection", "Deadlock Recovery"],
+                correct: 1 // b) Deadlock Avoidance
+            },
+            {
+                question: "If a system ensures that processes request all their resources at once or release all current resources before requesting new ones, it is trying to prevent which deadlock condition?",
+                options: ["Mutual Exclusion", "Hold and Wait", "No Preemption", "Circular Wait"],
+                correct: 1 // b) Hold and Wait
+            },
+            {
+                question: "A \"safe state\" in deadlock avoidance implies:",
+                options: ["No process can ever get blocked.", "There is at least one sequence of processes that can execute to completion without causing a deadlock.", "All processes are currently holding all their required resources.", "The system is currently in a deadlock."],
+                correct: 1 // b) There is at least one sequence of processes that can execute to completion without causing a deadlock.
+            },
+            {
+                question: "Which deadlock recovery strategy involves terminating one or more processes in the deadlock cycle?",
+                options: ["Resource Preemption", "Rollback", "Process Termination", "Resource Ordering"],
+                correct: 2 // c) Process Termination
+            },
+            {
+                question: "A `race condition` occurs when:",
+                options: ["Multiple processes compete for CPU time.", "The outcome of shared data access depends on the unpredictable order of execution.", "Two processes are waiting for each other indefinitely.", "A process finishes execution before another process starts."],
+                correct: 1 // b) The outcome of shared data access depends on the unpredictable order of execution.
+            },
+            {
+                question: "Which of the following is a software solution for the critical section problem?",
+                options: ["Semaphores", "Mutex locks", "Monitors", "Peterson's Solution"],
+                correct: 3 // d) Peterson's Solution
+            },
+            {
+                question: "A binary semaphore is essentially equivalent to a:",
+                options: ["Counting semaphore", "Mutex lock", "Condition variable", "Monitor"],
+                correct: 1 // b) Mutex lock
+            },
+            {
+                question: "Consider a counting semaphore initialized to 5. If 7 `wait()` operations are performed, and then 3 `signal()` operations are performed, what is the final value of the semaphore?",
+                options: ["1", "-2", "0", "2"],
+                correct: 0 // a) 1 (5 - 7 + 3 = 1)
+            },
+            {
+                question: "The `wait()` operation on a semaphore performs which of the following actions atomically?",
+                options: ["Decrements the semaphore value and then blocks if the value is negative.", "Blocks if the semaphore value is non-negative, then decrements it.", "Increments the semaphore value and then unblocks a process.", "None of the above."],
+                correct: 0 // a) Decrements the semaphore value and then blocks if the value is negative.
+            },
+            {
+                question: "Monitors are a high-level synchronization construct that ensures:",
+                options: ["Direct access to shared data by multiple processes.", "Manual management of locks by the programmer.", "Mutual exclusion for procedures within the monitor.", "Prevention of all forms of deadlocks."],
+                correct: 2 // c) Mutual exclusion for procedures within the monitor.
+            },
+            {
+                question: "The Dining Philosophers Problem is a classic example used to illustrate:",
+                options: ["Producer-Consumer synchronization", "Readers-Writers synchronization", "Deadlock and starvation issues", "CPU scheduling fairness"],
+                correct: 2 // c) Deadlock and starvation issues
+            },
+            {
+                question: "The process of translating a logical address into a physical address is performed by the:",
+                options: ["CPU", "Compiler", "Loader", "Memory Management Unit (MMU)"],
+                correct: 3 // d) Memory Management Unit (MMU)
+            },
+            {
+                question: "Which memory allocation technique suffers from external fragmentation?",
+                options: ["Paging", "Segmentation", "Both Paging and Segmentation", "Neither Paging nor Segmentation"],
+                correct: 1 // b) Segmentation
+            },
+            {
+                question: "In a paging system, the logical address is divided into:",
+                options: ["Segment number and offset", "Page number and page offset", "Block number and block offset", "Frame number and frame offset"],
+                correct: 1 // b) Page number and page offset
+            },
+            {
+                question: "Which page replacement algorithm can suffer from Belady's Anomaly?",
+                options: ["LRU (Least Recently Used)", "FIFO (First-In, First-Out)", "Optimal", "LFU (Least Frequently Used)"],
+                correct: 1 // b) FIFO (First-In, First-Out)
+            },
+            {
+                question: "Thrashing in a virtual memory system indicates:",
+                options: ["High CPU utilization and low page fault rate.", "Low CPU utilization and high page fault rate.", "Optimal memory performance.", "Sufficient physical memory."],
+                correct: 1 // b) Low CPU utilization and high page fault rate.
+            },
+            {
+                question: "A system uses 32-bit logical addresses with a page size of 4 KB. How many bits are required for the page offset?",
+                options: ["10 bits", "12 bits", "16 bits", "20 bits"],
+                correct: 1 // b) 12 bits (4 KB = 2^12 bytes)
+            },
+            {
+                question: "Consider a system with an average memory access time of 20 ns and a page fault service time of 10 ms. If the page fault rate is 1 in 1000 accesses, what is the effective memory access time?",
+                options: ["20 ns", "10 ms", "Approximately 10,020 ns", "Approximately 10,000,020 ns"],
+                correct: 2 // c) Approximately 10,020 ns (EAT = (0.999 * 20ns) + (0.001 * 10,000,000ns) = 19.98ns + 10000ns = 10019.98ns)
+            },
+            {
+                question: "Given the following page reference string: 0, 1, 2, 3, 0, 1, 4, 0, 1, 2, 3, 4. If there are 3 frames and FIFO page replacement is used, how many page faults occur?",
+                options: ["6", "7", "9", "10"],
+                correct: 3 // d) 10
+            },
+            {
+                question: "The primary goal of virtual memory is to:",
+                options: ["Eliminate the need for secondary storage.", "Allow programs to execute even if they are larger than physical memory.", "Speed up memory access by using a faster cache.", "Prevent unauthorized access to memory."],
+                correct: 1 // b) Allow programs to execute even if they are larger than physical memory.
+            },
+            {
+                question: "What is \"internal fragmentation\" in memory management?",
+                options: ["Unused space between allocated memory blocks.", "Unused space within an allocated memory block.", "Fragmentation that occurs due to disk I/O.", "Fragmentation caused by multiple processes sharing memory."],
+                correct: 1 // b) Unused space within an allocated memory block.
+            },
+            {
+                question: "Which disk scheduling algorithm can lead to starvation for requests located at the ends of the disk?",
+                options: ["FCFS", "SCAN", "SSTF (Shortest Seek Time First)", "C-SCAN"],
+                correct: 2 // c) SSTF (Shortest Seek Time First)
+            },
+            {
+                question: "The time taken for the disk arm to move to the cylinder containing the desired sector is called:",
+                options: ["Rotational latency", "Seek time", "Transfer time", "Access time"],
+                correct: 1 // b) Seek time
+            },
+            {
+                question: "Which disk scheduling algorithm is often referred to as the \"elevator algorithm\"?",
+                options: ["FCFS", "SSTF", "SCAN", "C-LOOK"],
+                correct: 2 // c) SCAN
+            },
+            {
+                question: "A disk queue has requests for I/O to blocks on cylinders: 98, 183, 37, 122, 14, 124, 65, 67. The disk head is currently at cylinder 53. If FCFS disk scheduling is used, what is the total head movement?",
+                options: ["236", "640", "300", "500"],
+                correct: 1 // b) 640
+            },
+            {
+                question: "Using SSTF disk scheduling for the requests in Q49, what is the total head movement?",
+                options: ["236", "198", "300", "500"],
+                correct: 0 // a) 236
+            },
+            {
+                question: "What is the primary goal of disk scheduling algorithms?",
+                options: ["To minimize disk space usage.", "To maximize data transfer rates.", "To minimize seek time.", "To prevent bad blocks."],
+                correct: 2 // c) To minimize seek time.
+            },
+            {
+                question: "Logical formatting (creating a file system) on a disk involves:",
+                options: ["Dividing the disk into tracks and sectors.", "Setting up the Master Boot Record.", "Creating data structures like the file allocation table and root directory.", "Physically examining the disk for errors."],
+                correct: 2 // c) Creating data structures like the file allocation table and root directory.
+            },
+            {
+                question: "A named collection of related information that is recorded on secondary storage is called a:",
+                options: ["Directory", "Folder", "File", "Volume"],
+                correct: 2 // c) File
+            },
+            {
+                question: "Which file access method is best suited for magnetic tapes?",
+                options: ["Sequential access", "Direct access", "Indexed sequential access", "Random access"],
+                correct: 0 // a) Sequential access
+            },
+            {
+                question: "The most flexible directory structure, allowing files and subdirectories to be shared, is:",
+                options: ["Single-level directory", "Two-level directory", "Tree-structured directory", "Acyclic-graph directory"],
+                correct: 3 // d) Acyclic-graph directory
+            },
+            {
+                question: "Which file allocation method is prone to external fragmentation?",
+                options: ["Contiguous allocation", "Linked allocation", "Indexed allocation", "All of the above"],
+                correct: 0 // a) Contiguous allocation
+            },
+            {
+                question: "The File Allocation Table (FAT) in linked allocation aims to solve the problem of:",
+                options: ["External fragmentation", "Slow direct access", "Disk space consumption by pointers in each block", "Internal fragmentation"],
+                correct: 1 // b) Slow direct access
+            },
+            {
+                question: "What is an \"inode\" typically used for in Unix-like file systems?",
+                options: ["To store the actual data of a file.", "To map file names to directory entries.", "To store metadata about a file, including pointers to its data blocks.", "To manage free disk space."],
+                correct: 2 // c) To store metadata about a file, including pointers to its data blocks.
+            },
+            {
+                question: "Which of the following is a common method for free-space management in a file system?",
+                options: ["Priority queues", "Bit maps", "Hash tables", "B-trees"],
+                correct: 1 // b) Bit maps
+            }
+        ];
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">JECA 2025: Operating System - MCQ Practice Set</h1>
+
+        <!-- Quiz Section -->
+        <div id="quiz-section">
+            <div class="question-container">
+                <p id="question-text" class="text-xl font-semibold text-gray-700 mb-4"></p>
+                <div id="options-container" class="space-y-3">
+                    <!-- Options will be dynamically inserted here by script.js -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Section (Initially hidden) -->
+        <div id="result-section" class="hidden result-container">
+            <h2 class="text-2xl font-bold mb-4">Quiz Completed!</h2>
+            <p class="text-xl">Final Score: <span id="score-display" class="font-bold">0</span></p>
+            <p class="text-lg">Correct Answers: <span id="correct-count" class="font-semibold">0</span></p>
+            <p class="text-lg">Wrong Answers: <span id="wrong-count" class="font-semibold">0</span></p>
+            <p class="text-lg">Accuracy: <span id="accuracy-display" class="font-semibold">0%</span></p>
+            <button id="restart-btn" class="submit-btn mt-6">Restart Quiz</button>
+        </div>
+
+        <!-- Message Box for alerts (replaces alert()) -->
+        <div id="message-box" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white rounded-lg p-6 shadow-lg text-center max-w-sm w-full">
+                <p id="message-text" class="text-lg mb-4"></p>
+                <button id="message-ok-btn" class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition-colors">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

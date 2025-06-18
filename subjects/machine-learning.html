@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JECA Machine Learning MCQ Practice Set</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Define SUBJECT-SPECIFIC questions for Machine Learning here -->
+    <script>
+        const questions = [
+            {
+                question: "Which of the following is a supervised learning task?",
+                options: ["Clustering", "Dimensionality Reduction", "Classification", "Association Rule Mining"],
+                correct: 2 // c) Classification
+            },
+            {
+                question: "What is the primary goal of a classification algorithm?",
+                options: ["To group similar data points together.", "To predict a continuous output value.", "To assign data points to predefined categories.", "To discover hidden patterns in unlabeled data."],
+                correct: 2 // c) To assign data points to predefined categories.
+            },
+            {
+                question: "Which of the following metrics is used to evaluate the performance of a classification model?",
+                options: ["Mean Squared Error (MSE)", "R-squared", "Accuracy", "Root Mean Squared Error (RMSE)"],
+                correct: 2 // c) Accuracy
+            },
+            {
+                question: "In a classification problem, if a model predicts a positive class, but the actual class is negative, this is known as a:",
+                options: ["True Positive", "True Negative", "False Positive", "False Negative"],
+                correct: 2 // c) False Positive
+            },
+            {
+                question: "Which of the following is an example of a binary classification problem?",
+                options: ["Predicting house prices", "Classifying email as spam or not spam", "Grouping customers into segments", "Forecasting stock market trends"],
+                correct: 1 // b) Classifying email as spam or not spam
+            },
+            {
+                question: "Consider a confusion matrix for a binary classification problem where the positive class is \"Disease Present.\"\n\n* True Positives (TP) = 80\n* True Negatives (TN) = 150\n* False Positives (FP) = 20\n* False Negatives (FN) = 10\n\nWhich of the following statements about this model's performance are correct?\nI. The accuracy is 0.86.\nII. The precision for the positive class is 0.8.\nIII. The recall for the positive class is approximately 0.89.\nIV. The F1-score is approximately 0.84.",
+                options: ["I and II only", "I, II, and III only", "II, III, and IV only", "All of the above"],
+                correct: 2 // c) II, III, and IV only
+            },
+            {
+                question: "Which of the following statements correctly differentiates between supervised and unsupervised learning?\nI. Supervised learning requires labeled training data, while unsupervised learning works with unlabeled data.\nII. Classification and Regression are examples of supervised learning.\nIII. Clustering and Dimensionality Reduction are examples of unsupervised learning.\nIV. The primary goal of supervised learning is to predict an output, while for unsupervised learning it is to discover hidden patterns or structures.",
+                options: ["I and II only", "II and III only", "I, II, and III only", "All of the above"],
+                correct: 3 // d) All of the above
+            },
+            {
+                question: "What is the primary role of \"Entropy\" in Decision Tree algorithms like ID3 or C4.5?",
+                options: ["To measure the accuracy of the tree.", "To quantify the impurity or disorder of a set of data.", "To determine the maximum depth of the tree.", "To calculate the number of leaf nodes."],
+                correct: 1 // b) To quantify the impurity or disorder of a set of data.
+            },
+            {
+                question: "Which of the following is a common problem associated with Decision Trees, especially if they are very deep?",
+                options: ["Underfitting", "High Bias", "Overfitting", "Low Variance"],
+                correct: 2 // c) Overfitting
+            },
+            {
+                question: "In a Decision Tree, what does a leaf node represent?",
+                options: ["A test on an attribute.", "A split in the dataset.", "The final decision or class prediction.", "The root of a subtree."],
+                correct: 2 // c) The final decision or class prediction.
+            },
+            {
+                question: "Which of the following is NOT an advantage of Decision Trees?",
+                options: ["Easy to understand and interpret.", "Can handle both numerical and categorical data.", "Highly robust to noisy data and outliers.", "Requires minimal data preprocessing."],
+                correct: 2 // c) Highly robust to noisy data and outliers.
+            },
+            {
+                question: "Consider a dataset with two classes, \"Yes\" and \"No\". Before splitting, the dataset has 10 \"Yes\" instances and 10 \"No\" instances.\nWhich of the following statements about its entropy are correct?\nI. The entropy of this dataset is 1 (maximum impurity).\nII. If an attribute splits the data into two subsets: Subset A (5 \"Yes\", 0 \"No\") and Subset B (5 \"Yes\", 10 \"No\"), the information gain would be positive.\nIII. If an attribute perfectly separates the classes, the information gain will be 0.\nIV. Gini impurity would also be 0 for a perfectly pure node.",
+                options: ["I and II only", "I, II, and IV only", "I, III, and IV only", "All of the above"],
+                correct: 1 // b) I, II, and IV only
+            },
+            {
+                question: "What is the purpose of an \"activation function\" in an artificial neural network?",
+                options: ["To sum the weighted inputs.", "To introduce non-linearity into the network.", "To calculate the error during backpropagation.", "To initialize the weights of the neurons."],
+                correct: 1 // b) To introduce non-linearity into the network.
+            },
+            {
+                question: "Which algorithm is primarily used to train Artificial Neural Networks by adjusting weights and biases based on the error?",
+                options: ["K-Means", "Support Vector Machine", "Backpropagation", "Decision Tree Induction"],
+                correct: 2 // c) Backpropagation
+            },
+            {
+                question: "What does a \"hidden layer\" in an ANN do?",
+                options: ["It directly receives input from the environment.", "It produces the final output of the network.", "It performs most of the complex computations and feature transformations.", "It defines the number of output classes."],
+                correct: 2 // c) It performs most of the complex computations and feature transformations.
+            },
+            {
+                question: "Which of the following is a common disadvantage of Artificial Neural Networks?",
+                options: ["They are generally too simple for complex tasks.", "They require very little training data.", "Their decision-making process can be difficult to interpret (\"black box\").", "They are very fast to train on large datasets."],
+                correct: 2 // c) Their decision-making process can be difficult to interpret (\"black box\").
+            },
+            {
+                question: "Which of the following statements about common activation functions used in ANNs are true?\nI. The Sigmoid function outputs values between 0 and 1, making it suitable for binary classification output layers.\nII. ReLU (Rectified Linear Unit) helps mitigate the vanishing gradient problem compared to Sigmoid or Tanh in hidden layers.\nIII. Tanh (Hyperbolic Tangent) outputs values between -1 and 1, centered around zero.\nIV. A network with only linear activation functions can approximate any non-linear function.",
+                options: ["I and III only", "II and IV only", "I, II, and III only", "All of the above"],
+                correct: 2 // c) I, II, and III only
+            },
+            {
+                question: "You are designing an Artificial Neural Network for a multiclass classification problem. Which of the following choices would be most appropriate for the output layer and its activation function?\nI. A single output neuron with a Sigmoid activation.\nII. One output neuron per class with a Softmax activation.\nIII. A single output neuron with a Linear activation.\nIV. One output neuron per class with a ReLU activation.",
+                options: ["I only", "II only", "I and III only", "II and IV only"],
+                correct: 1 // b) II only
+            },
+            {
+                question: "In Support Vector Machines, what is the main objective?",
+                options: ["To minimize the number of support vectors.", "To find a hyperplane that maximizes the margin between classes.", "To cluster data points into K groups.", "To iteratively adjust centroids."],
+                correct: 1 // b) To find a hyperplane that maximizes the margin between classes.
+            },
+            {
+                question: "What are \"Support Vectors\" in SVMs?",
+                options: ["All data points in the training set.", "The data points that are closest to the decision boundary (hyperplane).", "The data points that are furthest from the decision boundary.", "The centroids of the clusters."],
+                correct: 1 // b) The data points that are closest to the decision boundary (hyperplane).
+            },
+            {
+                question: "Which technique allows SVMs to handle non-linearly separable data by implicitly mapping it into a higher-dimensional space?",
+                options: ["Feature Scaling", "Dimensionality Reduction", "Kernel Trick", "Gradient Descent"],
+                correct: 2 // c) Kernel Trick
+            },
+            {
+                question: "The 'C' parameter in Soft Margin SVMs controls the trade-off between:",
+                options: ["Number of support vectors and model complexity.", "Training time and prediction time.", "Maximizing the margin and minimizing misclassification errors.", "Bias and variance."],
+                correct: 2 // c) Maximizing the margin and minimizing misclassification errors.
+            },
+            {
+                question: "Which of the following statements about different SVM kernels are true?\nI. The Linear Kernel is suitable when the data is linearly separable.\nII. The Radial Basis Function (RBF) kernel is commonly used for non-linearly separable data.\nIII. The Kernel Trick explicitly transforms the data into a higher-dimensional space before finding a linear separator.\nIV. Polynomial kernels can only create linear decision boundaries.",
+                options: ["I and II only", "I, II, and III only", "I and IV only", "I, II, and IV only"],
+                correct: 0 // a) I and II only
+            },
+            {
+                question: "Consider an SVM classifier. Which of the following factors could lead to poor performance or increased training time?\nI. A very large dataset with millions of samples.\nII. A dataset where classes are highly overlapping and noisy.\nIII. An inappropriate choice of the kernel function.\nIV. Too few support vectors.",
+                options: ["I and II only", "II and III only", "I, II, and III only", "All of the above"],
+                correct: 2 // c) I, II, and III only
+            },
+            {
+                question: "Bayesian learning methods are fundamentally based on which theorem?",
+                options: ["Central Limit Theorem", "Pythagoras Theorem", "Bayes' Theorem", "No Free Lunch Theorem"],
+                correct: 2 // c) Bayes' Theorem
+            },
+            {
+                question: "In Bayes' Theorem, $P(H|D)$ represents the:",
+                options: ["Prior probability of hypothesis H.", "Likelihood of observing data D given hypothesis H.", "Posterior probability of hypothesis H given data D.", "Evidence of observing data D."],
+                correct: 2 // c) Posterior probability of hypothesis H given data D.
+            },
+            {
+                question: "The \"Naive\" assumption in Naive Bayes classifier refers to:",
+                options: ["The assumption that all features are irrelevant.", "The assumption that the class labels are independent.", "The assumption that features are conditionally independent given the class.", "The assumption that the dataset is very small."],
+                correct: 2 // c) The assumption that features are conditionally independent given the class.
+            },
+            {
+                question: "Which type of probability distribution represents our initial belief about a hypothesis before observing any data?",
+                options: ["Likelihood", "Posterior Probability", "Prior Probability", "Conditional Probability"],
+                correct: 2 // c) Prior Probability
+            },
+            {
+                question: "Which of the following are advantages of Bayesian learning methods?\nI. They can incorporate prior knowledge into the model.\nII. They provide a principled way to quantify uncertainty in predictions.\nIII. They are generally robust to the \"black box\" problem of ANNs.\nIV. Naive Bayes is computationally efficient and can work well with smaller datasets.",
+                options: ["I and II only", "III and IV only", "I, II, and IV only", "All of the above"],
+                correct: 2 // c) I, II, and IV only
+            },
+            {
+                question: "Suppose you are building a spam email classifier using Naive Bayes. Which of the following conditional probabilities would you need to calculate during training?\nI. $P(\\text{word = \"buy\" | class = \"spam\"})$\nII. $P(\\text{class = \"spam\" | word = \"buy\"})$\nIII. $P(\\text{class = \"spam\"})$\nIV. $P(\\text{word = \"free\" | class = \"not spam\"})$",
+                options: ["I and III only", "II and IV only", "I, III, and IV only", "All of the above"],
+                correct: 2 // c) I, III, and IV only
+            },
+            {
+                question: "Clustering is an example of what type of machine learning?",
+                options: ["Supervised Learning", "Semi-supervised Learning", "Unsupervised Learning", "Reinforcement Learning"],
+                correct: 2 // c) Unsupervised Learning
+            },
+            {
+                question: "What is the main characteristic distinguishing clustering from classification?",
+                options: ["Clustering predicts a continuous value.", "Clustering requires labeled training data.", "Clustering groups data without predefined labels.", "Clustering uses decision trees."],
+                correct: 2 // c) Clustering groups data without predefined labels.
+            },
+            {
+                question: "Which of the following is a common challenge when using K-Means clustering?",
+                options: ["It can discover clusters of arbitrary shapes.", "It does not require specifying the number of clusters beforehand.", "It is sensitive to the initial placement of centroids.", "It is very slow for small datasets."],
+                correct: 2 // c) It is sensitive to the initial placement of centroids.
+            },
+            {
+                question: "What is a \"centroid\" in the context of clustering algorithms like K-Means?",
+                options: ["An outlier data point.", "The center point of a cluster.", "A data point that is furthest from any cluster.", "The maximum distance between two points in a cluster."],
+                correct: 1 // b) The center point of a cluster.
+            },
+            {
+                question: "Which of the following statements about Hierarchical Clustering are true?\nI. Agglomerative hierarchical clustering starts with individual data points as clusters and merges them.\nII. It requires the number of clusters (K) to be specified beforehand.\nIII. The output can be visualized as a dendrogram.\nIV. It is generally more computationally efficient than K-Means for very large datasets.",
+                options: ["I and II only", "I and III only", "II and IV only", "I, III, and IV only"],
+                correct: 1 // b) I and III only
+            },
+            {
+                question: "You are using DBSCAN for clustering. Which of the following statements about its parameters `epsilon (eps)` and `MinPts` are correct?\nI. `eps` defines the maximum distance for a point to be considered in the neighborhood of another.\nII. `MinPts` is the minimum number of points required to form a dense region (core point).\nIII. DBSCAN can effectively find clusters of varying densities.\nIV. Points that are not core points and do not fall within the `eps` neighborhood of a core point are classified as noise/outliers.",
+                options: ["I and II only", "III and IV only", "I, II, and IV only", "All of the above"],
+                correct: 2 // c) I, II, and IV only
+            },
+            {
+                question: "In a Hidden Markov Model, what distinguishes \"hidden states\" from \"observable symbols\"?",
+                options: ["Hidden states are directly measurable, while observable symbols are not.", "Hidden states represent the underlying process, while observable symbols are the outputs generated.", "Hidden states are always fewer than observable symbols.", "Observable symbols are determined by a Markov process, not hidden states."],
+                correct: 1 // b) Hidden states represent the underlying process, while observable symbols are the outputs generated.
+            },
+            {
+                question: "Which problem in HMMs involves finding the most likely sequence of hidden states given an observed sequence?",
+                options: ["Evaluation Problem", "Decoding Problem", "Learning Problem", "Prediction Problem"],
+                correct: 1 // b) Decoding Problem
+            },
+            {
+                question: "The Baum-Welch algorithm is used to solve which fundamental problem of HMMs?",
+                options: ["Calculating the probability of an observed sequence.", "Finding the most likely hidden state sequence.", "Learning the optimal HMM parameters (transition, emission, initial probabilities).", "Predicting the next observable symbol."],
+                correct: 2 // c) Learning the optimal HMM parameters (transition, emission, initial probabilities).
+            },
+            {
+                question: "Which of the following is a common application area for Hidden Markov Models?",
+                options: ["Customer Segmentation", "Image Compression", "Speech Recognition", "House Price Prediction"],
+                correct: 2 // c) Speech Recognition
+            },
+            {
+                question: "You are given an HMM and an observed sequence. Which of the following algorithms would you use to calculate the probability of that sequence being generated by the HMM?\nI. Viterbi Algorithm\nII. Forward Algorithm\nIII. Backward Algorithm\nIV. Baum-Welch Algorithm",
+                options: ["I only", "II only", "II and III only", "I, II, and III only"],
+                correct: 2 // c) II and III only
+            },
+            {
+                question: "Consider an HMM with parameters $\\lambda = (A, B, \\pi)$. Which of the following correctly describes what each parameter represents?\nI. $A$: The probability of transitioning from one hidden state to another.\nII. $B$: The probability of observing a symbol from a given hidden state.\nIII. $\\pi$: The probability distribution over the initial hidden states.\nIV. $N$: The number of observable symbols.",
+                options: ["I and II only", "III and IV only", "I, II, and III only", "All of the above"],
+                correct: 2 // c) I, II, and III only
+            }
+        ];
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">JECA Machine Learning MCQ Practice Set</h1>
+
+        <!-- Quiz Section -->
+        <div id="quiz-section">
+            <div class="question-container">
+                <p id="question-text" class="text-xl font-semibold text-gray-700 mb-4"></p>
+                <div id="options-container" class="space-y-3">
+                    <!-- Options will be dynamically inserted here by script.js -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Section (Initially hidden) -->
+        <div id="result-section" class="hidden result-container">
+            <h2 class="text-2xl font-bold mb-4">Quiz Completed!</h2>
+            <p class="text-xl">Final Score: <span id="score-display" class="font-bold">0</span></p>
+            <p class="text-lg">Correct Answers: <span id="correct-count" class="font-semibold">0</span></p>
+            <p class="text-lg">Wrong Answers: <span id="wrong-count" class="font-semibold">0</span></p>
+            <p class="text-lg">Accuracy: <span id="accuracy-display" class="font-semibold">0%</span></p>
+            <button id="restart-btn" class="submit-btn mt-6">Restart Quiz</button>
+        </div>
+
+        <!-- Message Box for alerts (replaces alert()) -->
+        <div id="message-box" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white rounded-lg p-6 shadow-lg text-center max-w-sm w-full">
+                <p id="message-text" class="text-lg mb-4"></p>
+                <button id="message-ok-btn" class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition-colors">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JECA 2025: Introduction to Computers - MCQ Practice Set</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Define SUBJECT-SPECIFIC questions for Introduction to Computers here -->
+    <script>
+        const questions = [
+            {
+                question: "Which of the following buses is typically unidirectional?",
+                options: ["Data Bus", "Address Bus", "Control Bus", "All of the above"],
+                correct: 1 // b) Address Bus
+            },
+            {
+                question: "The width of the data bus determines the:",
+                options: ["Maximum memory addressable by the CPU", "Number of bits transferred at a time", "Speed of the CPU clock", "Number of I/O devices that can be connected"],
+                correct: 1 // b) Number of bits transferred at a time
+            },
+            {
+                question: "Signals like \"Memory Read\" and \"I/O Write\" are typically carried by the:",
+                options: ["Data Bus", "Address Bus", "Control Bus", "Expansion Bus"],
+                correct: 2 // c) Control Bus
+            },
+            {
+                question: "If a computer has an 20-bit address bus, what is the maximum amount of memory (in bytes) it can directly address?",
+                options: ["1 MB", "2 MB", "4 MB", "16 MB"],
+                correct: 0 // a) 1 MB (2^20 bytes = 1 MB)
+            },
+            {
+                question: "A wider data bus primarily contributes to:",
+                options: ["More accessible memory locations", "Faster data transfer rate", "Better CPU cooling", "Lower power consumption"],
+                correct: 1 // b) Faster data transfer rate
+            },
+            {
+                question: "Which I/O technique involves the CPU continuously checking the status of an I/O device until the operation is complete?",
+                options: ["Interrupt-Driven I/O", "DMA", "Programmed I/O", "Spooling"],
+                correct: 2 // c) Programmed I/O
+            },
+            {
+                question: "The main disadvantage of Programmed I/O is:",
+                options: ["It requires complex hardware.", "It can only handle one device at a time.", "The CPU wastes cycles polling the device.", "It is prone to data corruption."],
+                correct: 2 // c) The CPU wastes cycles polling the device.
+            },
+            {
+                question: "An I/O controller acts as an interface between:",
+                options: ["CPU and RAM", "RAM and ROM", "A peripheral device and the system bus", "Software applications and the operating system"],
+                correct: 2 // c) A peripheral device and the system bus
+            },
+            {
+                question: "In which I/O technique does the I/O device signal the CPU when it's ready, freeing the CPU for other tasks in the meantime?",
+                options: ["Programmed I/O", "Interrupt-Driven I/O", "DMA", "Polling"],
+                correct: 1 // b) Interrupt-Driven I/O
+            },
+            {
+                question: "The primary advantage of using subroutines in programming is:",
+                options: ["Increased program execution speed", "Reduced memory consumption", "Code reusability and modularity", "Simplified debugging for all errors"],
+                correct: 2 // c) Code reusability and modularity
+            },
+            {
+                question: "When a subroutine is called, where is the return address typically stored?",
+                options: ["In a CPU register", "In the instruction cache", "On the program stack", "In a dedicated ROM area"],
+                correct: 2 // c) On the program stack
+            },
+            {
+                question: "Which of the following is NOT a common term for a subroutine?",
+                options: ["Function", "Procedure", "Macro", "Method"],
+                correct: 2 // c) Macro
+            },
+            {
+                question: "If subroutine A calls subroutine B, and then subroutine B calls subroutine C, which subroutine's return address will be popped first from the stack when returning?",
+                options: ["Subroutine A's", "Subroutine B's", "Subroutine C's", "It depends on the programming language."],
+                correct: 2 // c) Subroutine C's (LIFO principle for stack)
+            },
+            {
+                question: "A signal to the processor from hardware or software indicating an event that needs immediate attention is called a/an:",
+                options: ["System Call", "Subroutine", "Interrupt", "Pipeline stall"],
+                correct: 2 // c) Interrupt
+            },
+            {
+                question: "Which of the following is an example of a hardware interrupt?",
+                options: ["Division by zero", "A page fault", "A key press on the keyboard", "A request for operating system service"],
+                correct: 2 // c) A key press on the keyboard
+            },
+            {
+                question: "What is the purpose of an Interrupt Service Routine (ISR)?",
+                options: ["To save the CPU's context", "To handle the specific event that caused the interrupt", "To resume the interrupted program", "To generate new interrupts"],
+                correct: 1 // b) To handle the specific event that caused the interrupt
+            },
+            {
+                question: "Which type of interrupt cannot be ignored or disabled by the CPU?",
+                options: ["Maskable Interrupt", "Software Interrupt", "Non-Maskable Interrupt (NMI)", "Timer Interrupt"],
+                correct: 2 // c) Non-Maskable Interrupt (NMI)
+            },
+            {
+                question: "In the interrupt handling process, what happens immediately after the CPU acknowledges an interrupt?",
+                options: ["The CPU jumps to the ISR.", "The CPU restores the saved context.", "The CPU saves the current program's context.", "The interrupt is ignored."],
+                correct: 2 // c) The CPU saves the current program's context.
+            },
+            {
+                question: "DMA is primarily used to:",
+                options: ["Speed up CPU calculations", "Allow I/O devices to transfer data directly to/from memory", "Manage memory allocation for processes", "Control peripheral devices directly from the CPU"],
+                correct: 1 // b) Allow I/O devices to transfer data directly to/from memory
+            },
+            {
+                question: "Which component takes over the memory bus from the CPU during a DMA transfer?",
+                options: ["Northbridge", "Southbridge", "DMA Controller (DMAC)", "I/O Controller"],
+                correct: 2 // c) DMA Controller (DMAC)
+            },
+            {
+                question: "What is the main advantage of DMA over interrupt-driven I/O for large data transfers?",
+                options: ["It requires less complex hardware.", "It uses less power.", "It frees the CPU from byte-by-byte data management.", "It is more secure."],
+                correct: 2 // c) It frees the CPU from byte-by-byte data management.
+            },
+            {
+                question: "In which DMA mode does the DMAC take full control of the bus and transfer the entire block of data in one go?",
+                options: ["Cycle Stealing Mode", "Burst Mode", "Transparent Mode", "Programmed Mode"],
+                correct: 1 // b) Burst Mode
+            },
+            {
+                question: "After a DMA transfer is complete, how does the DMAC typically notify the CPU?",
+                options: ["By sending a system call", "By generating a software interrupt", "By generating a hardware interrupt", "By setting a status flag in a CPU register"],
+                correct: 2 // c) By generating a hardware interrupt
+            },
+            {
+                question: "Which of the following is a characteristic of RAM?",
+                options: ["Non-volatile", "Contents are permanent", "Volatile", "Used for storing BIOS"],
+                correct: 2 // c) Volatile
+            },
+            {
+                question: "What is the primary difference between SRAM and DRAM?",
+                options: ["SRAM is non-volatile, DRAM is volatile.", "SRAM requires periodic refresh, DRAM does not.", "SRAM uses latches, DRAM uses capacitors.", "SRAM is cheaper per bit than DRAM."],
+                correct: 2 // c) SRAM uses latches, DRAM uses capacitors.
+            },
+            {
+                question: "Which type of RAM is typically used for CPU cache memory (L1, L2, L3)?",
+                options: ["DRAM", "SRAM", "EEPROM", "PROM"],
+                correct: 1 // b) SRAM
+            },
+            {
+                question: "The term \"Random Access\" in RAM implies that:",
+                options: ["Data can be accessed in any order.", "Any memory location can be accessed directly in roughly the same amount of time.", "Memory access times are unpredictable.", "It's primarily used for random data generation."],
+                correct: 1 // b) Any memory location can be accessed directly in roughly the same amount of time.
+            },
+            {
+                question: "Which of the following is a characteristic of ROM?",
+                options: ["Volatile", "Requires constant power to retain data", "Non-volatile", "Primarily used for active program data"],
+                correct: 2 // c) Non-volatile
+            },
+            {
+                question: "Which type of ROM is programmed during the manufacturing process and cannot be altered by the user?",
+                options: ["PROM", "EPROM", "MROM", "EEPROM"],
+                correct: 2 // c) MROM
+            },
+            {
+                question: "Flash memory, commonly used in USB drives and SSDs, is a type of:",
+                options: ["SRAM", "DRAM", "EEPROM", "PROM"],
+                correct: 2 // c) EEPROM
+            },
+            {
+                question: "How is data typically erased from an EPROM?",
+                options: ["Electrically", "By exposure to strong ultraviolet light", "By heating the chip", "It cannot be erased."],
+                correct: 1 // b) By exposure to strong ultraviolet light
+            },
+            {
+                question: "The BIOS (Basic Input/Output System) of a computer is typically stored in:",
+                options: ["RAM", "Hard Disk Drive", "ROM (Flash Memory/EEPROM)", "CPU registers"],
+                correct: 2 // c) ROM (Flash Memory/EEPROM)
+            },
+            {
+                question: "The main goal of instruction pipelining is to:",
+                options: ["Reduce the CPU's power consumption", "Increase the CPU's clock speed", "Improve instruction throughput", "Simplify the CPU's design"],
+                correct: 2 // c) Improve instruction throughput
+            },
+            {
+                question: "In a 4-stage pipeline (Fetch, Decode, Execute, Write Back), how many instructions can theoretically be in different stages of execution at any given moment after the pipeline is filled?",
+                options: ["1", "2", "3", "4"],
+                correct: 3 // d) 4
+            },
+            {
+                question: "A situation where an instruction depends on the result of a previous instruction that has not yet completed its execution is known as a:",
+                options: ["Structural Hazard", "Data Hazard", "Control Hazard", "External Hazard"],
+                correct: 1 // b) Data Hazard
+            },
+            {
+                question: "Which type of pipeline hazard is caused by conditional branch instructions?",
+                options: ["Structural Hazard", "Data Hazard", "Control Hazard", "Resource Hazard"],
+                correct: 2 // c) Control Hazard
+            },
+            {
+                question: "What is a common technique to mitigate data hazards in a pipeline?",
+                options: ["Increasing the number of pipeline stages", "Decreasing the CPU clock speed", "Forwarding (Bypassing)", "Disabling interrupts"],
+                correct: 2 // c) Forwarding (Bypassing)
+            },
+            {
+                question: "A program requests a service from the operating system kernel via a/an:",
+                options: ["Subroutine call", "Function pointer", "System call", "Hardware interrupt"],
+                correct: 2 // c) System call
+            },
+            {
+                question: "Why do user programs need to make system calls to perform operations like reading a file?",
+                options: ["To avoid direct memory access.", "To request privileged operations that user mode programs cannot perform.", "To inform the CPU about program completion.", "To synchronize with other running programs."],
+                correct: 1 // b) To request privileged operations that user mode programs cannot perform.
+            },
+            {
+                question: "When a system call is made, the CPU typically transitions from:",
+                options: ["Kernel mode to User mode", "User mode to Kernel mode", "Interrupt mode to Normal mode", "Read-only mode to Write mode"],
+                correct: 1 // b) User mode to Kernel mode
+            },
+            {
+                question: "Which of the following is an example of a system call related to process control?",
+                options: ["`read()`", "`open()`", "`fork()`", "`time()`"],
+                correct: 2 // c) `fork()`
+            },
+            {
+                question: "How are parameters typically passed from a user program to the operating system during a system call?",
+                options: ["Only via CPU registers", "Only via the program stack", "Via registers, a block in memory, or the stack", "They are hardcoded within the system call."],
+                correct: 2 // c) Via registers, a block in memory, or the stack
+            }
+        ];
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">JECA 2025: Introduction to Computers - MCQ Practice Set</h1>
+
+        <!-- Quiz Section -->
+        <div id="quiz-section">
+            <div class="question-container">
+                <p id="question-text" class="text-xl font-semibold text-gray-700 mb-4"></p>
+                <div id="options-container" class="space-y-3">
+                    <!-- Options will be dynamically inserted here by script.js -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Section (Initially hidden) -->
+        <div id="result-section" class="hidden result-container">
+            <h2 class="text-2xl font-bold mb-4">Quiz Completed!</h2>
+            <p class="text-xl">Final Score: <span id="score-display" class="font-bold">0</span></p>
+            <p class="text-lg">Correct Answers: <span id="correct-count" class="font-semibold">0</span></p>
+            <p class="text-lg">Wrong Answers: <span id="wrong-count" class="font-semibold">0</span></p>
+            <p class="text-lg">Accuracy: <span id="accuracy-display" class="font-semibold">0%</span></p>
+            <button id="restart-btn" class="submit-btn mt-6">Restart Quiz</button>
+        </div>
+
+        <!-- Message Box for alerts (replaces alert()) -->
+        <div id="message-box" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white rounded-lg p-6 shadow-lg text-center max-w-sm w-full">
+                <p id="message-text" class="text-lg mb-4"></p>
+                <button id="message-ok-btn" class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition-colors">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

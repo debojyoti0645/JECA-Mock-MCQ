@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JECA DBMS MCQ Practice Set</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Define SUBJECT-SPECIFIC questions for DBMS here -->
+    <script>
+        const questions = [
+            {
+                question: "Which of the following is NOT a primary purpose of a Database Management System (DBMS)?",
+                options: ["Controlling data redundancy", "Ensuring data inconsistency", "Facilitating data sharing", "Providing data security"],
+                correct: 1 // B) Ensuring data inconsistency
+            },
+            {
+                question: "Which level of data abstraction describes *what* data is stored in the database and the relationships among that data?",
+                options: ["Physical level", "Conceptual level", "External level", "Internal level"],
+                correct: 1 // B) Conceptual level
+            },
+            {
+                question: "The ability to modify the conceptual schema without affecting the external schemas is known as:",
+                options: ["Physical data independence", "Logical data independence", "Data redundancy", "Data integrity"],
+                correct: 1 // B) Logical data independence
+            },
+            {
+                question: "Which type of DBMS organizes data in a tree-like structure with a parent-child relationship?",
+                options: ["Relational DBMS", "Network DBMS", "Hierarchical DBMS", "Object-Oriented DBMS"],
+                correct: 2 // C) Hierarchical DBMS
+            },
+            {
+                question: "A collection of related data is called a:",
+                options: ["Program", "File", "Database", "Report"],
+                correct: 2 // C) Database
+            },
+            {
+                question: "Which of the following is a disadvantage of the file processing system compared to DBMS?",
+                options: ["Increased data security", "Better data sharing", "Data isolation", "Reduced data redundancy"],
+                correct: 2 // C) Data isolation
+            },
+            {
+                question: "In an ER diagram, a strong entity is represented by:",
+                options: ["A double rectangle", "A single rectangle", "A diamond", "An oval"],
+                correct: 1 // B) A single rectangle
+            },
+            {
+                question: "An attribute that can have multiple values for a single entity (e.g., phone numbers) is represented as a:",
+                options: ["Key attribute", "Composite attribute", "Multivalued attribute", "Derived attribute"],
+                correct: 2 // C) Multivalued attribute
+            },
+            {
+                question: "What does a double diamond symbol in an ER diagram represent?",
+                options: ["A unary relationship", "An identifying relationship for a weak entity", "A many-to-many relationship", "An aggregation"],
+                correct: 1 // B) An identifying relationship for a weak entity
+            },
+            {
+                question: "A relationship where each entity in set A can be related to at most one entity in set B, and each entity in set B can be related to at most one entity in set A, is called:",
+                options: ["One-to-many", "Many-to-one", "One-to-one", "Many-to-many"],
+                correct: 2 // C) One-to-one
+            },
+            {
+                question: "If every entity in an entity set *must* participate in a relationship, it is known as:",
+                options: ["Partial participation", "Total participation", "Mandatory participation", "Optional participation"],
+                correct: 1 // B) Total participation
+            },
+            {
+                question: "Consider an ER diagram with \"Employees\" and \"Departments\". If each employee works in exactly one department, and each department can have multiple employees, the cardinality ratio between Employee and Department is:",
+                options: ["1:1", "1:N", "N:1", "M:N"],
+                correct: 2 // C) N:1
+            },
+            {
+                question: "Which relational algebra operation filters rows (tuples) from a relation based on a given condition?",
+                options: ["Projection ($\\pi$)", "Selection ($\\sigma$)", "Union ($\\cup$)", "Cartesian Product ($\\times$)"],
+                correct: 1 // B) Selection ($\\sigma$)
+            },
+            {
+                question: "The operation that removes duplicate rows and selects specific columns from a relation is:",
+                options: ["$\\sigma$", "$\\pi$", "$\\rho$", "$\\cup$"],
+                correct: 1 // B) $\pi$
+            },
+            {
+                question: "Given two relations R and S, both with attributes (A, B, C). Which operation returns all tuples that are in R but not in S?",
+                options: ["$R \\cup S$", "$R \\cap S$", "$R - S$", "$R \\times S$"],
+                correct: 2 // C) $R - S$
+            },
+            {
+                question: "Which type of join combines related tuples from two relations based on an equality condition on common attributes, eliminating duplicate common attributes?",
+                options: ["Theta Join", "Equijoin", "Natural Join", "Outer Join"],
+                correct: 2 // C) Natural Join
+            },
+            {
+                question: "If relation $R(A, B)$ has tuples $\{(1, x), (2, y)\}$ and relation $S(B, C)$ has tuples $\{(x, p), (y, q)\}$, what is the result of $R \\bowtie S$?",
+                options: ["$\\{(1, x, p), (2, y, q)\\}$", "$\\{(1, x), (2, y), (x, p), (y, q)\\}$", "$\\{(1, p), (2, q)\\}$", "$\\{(1, x, p), (2, y, q), (\\text{null}, \\text{null}, \\text{null})\\}$"],
+                correct: 0 // A) $\{(1, x, p), (2, y, q)\}$
+            },
+            {
+                question: "To find departments that employ *all* the employees listed in a separate \"RequiredEmployees\" relation, which relational algebra operation would be most appropriate?",
+                options: ["Union", "Intersection", "Join", "Division"],
+                correct: 3 // D) Division
+            },
+            {
+                question: "Which of the following is a declarative query language based on mathematical logic?",
+                options: ["Relational Algebra", "SQL", "Relational Calculus", "DDL"],
+                correct: 2 // C) Relational Calculus
+            },
+            {
+                question: "In Tuple Relational Calculus (TRC), variables range over:",
+                options: ["Attribute values", "Tuples of relations", "Domains of attributes", "Relations themselves"],
+                correct: 1 // B) Tuples of relations
+            },
+            {
+                question: "The expression $\\{t | \\text{Student}(t) \\land t.\\text{Age} > 20\\}$ is an example of a query in:",
+                options: ["Domain Relational Calculus", "Tuple Relational Calculus", "Relational Algebra", "SQL"],
+                correct: 1 // B) Tuple Relational Calculus
+            },
+            {
+                question: "Which quantifier means \"There exists\" in Relational Calculus?",
+                options: ["$\\forall$", "$\\exists$", "$\\in$", "$\\notin$"],
+                correct: 1 // B) $\exists$
+            },
+            {
+                question: "Which of the following is TRUE regarding Relational Completeness?",
+                options: ["Relational Algebra is more powerful than Relational Calculus.", "SQL is not relationally complete.", "Both TRC and DRC are relationally complete.", "Relational Calculus cannot express all queries expressible in Relational Algebra."],
+                correct: 2 // C) Both TRC and DRC are relationally complete.
+            },
+            {
+                question: "Which SQL command is used to add new rows to a table?",
+                options: ["`UPDATE`", "`MODIFY`", "`INSERT INTO`", "`ADD ROW`"],
+                correct: 2 // C) `INSERT INTO`
+            },
+            {
+                question: "To permanently save the changes made during a transaction, which TCL command is used?",
+                options: ["`ROLLBACK`", "`SAVEPOINT`", "`COMMIT`", "`BEGIN TRANSACTION`"],
+                correct: 2 // C) `COMMIT`
+            },
+            {
+                question: "Which SQL clause is used to filter groups based on aggregate conditions?",
+                options: ["`WHERE`", "`ORDER BY`", "`GROUP BY`", "`HAVING`"],
+                correct: 3 // D) `HAVING`
+            },
+            {
+                question: "Consider two tables: `Customers (CustomerID, Name)` and `Orders (OrderID, CustomerID, OrderDate)`. To get all customers and their orders, including customers who have not placed any orders, which type of JOIN would you use?",
+                options: ["`INNER JOIN`", "`RIGHT JOIN`", "`LEFT JOIN`", "`FULL JOIN`"],
+                correct: 2 // C) `LEFT JOIN`
+            },
+            {
+                question: "Which of the following is a DDL command?",
+                options: ["`SELECT`", "`INSERT`", "`GRANT`", "`CREATE TABLE`"],
+                correct: 3 // D) `CREATE TABLE`
+            },
+            {
+                question: "What does the `UNIQUE` constraint ensure in a column?",
+                options: ["Values in the column cannot be NULL.", "Values in the column are unique across all rows.", "Values in the column must be greater than zero.", "Values in the column are encrypted."],
+                correct: 1 // B) Values in the column are unique across all rows.
+            },
+            {
+                question: "Which SQL statement is used to remove a specific table from the database?",
+                options: ["`DELETE TABLE`", "`REMOVE TABLE`", "`DROP TABLE`", "`ERASE TABLE`"],
+                correct: 2 // C) `DROP TABLE`
+            },
+            {
+                question: "Which anomaly occurs when deleting a record results in the loss of other, unrelated data?",
+                options: ["Insertion Anomaly", "Deletion Anomaly", "Update Anomaly", "Retrieval Anomaly"],
+                correct: 1 // B) Deletion Anomaly
+            },
+            {
+                question: "A relation is in 1NF if:",
+                options: ["It has no partial dependencies.", "It has no transitive dependencies.", "All attributes are atomic.", "Every determinant is a candidate key."],
+                correct: 2 // C) All attributes are atomic.
+            },
+            {
+                question: "Consider a relation $R(A, B, C, D)$ with functional dependencies $A \\rightarrow B$ and $B \\rightarrow C$. Which of the following is a transitive dependency?",
+                options: ["$A \\rightarrow B$", "$B \\rightarrow C$", "$A \\rightarrow C$", "$A \\rightarrow D$"],
+                correct: 2 // C) $A \rightarrow C$
+            },
+            {
+                question: "A relation is in 2NF if it is in 1NF and:",
+                options: ["No non-key attribute is partially dependent on a candidate key.", "No non-key attribute is transitively dependent on the primary key.", "Every determinant is a candidate key.", "It has no multi-valued dependencies."],
+                correct: 0 // A) No non-key attribute is partially dependent on a candidate key.
+            },
+            {
+                question: "Which normal form states that every determinant must be a candidate key?",
+                options: ["1NF", "2NF", "3NF", "BCNF"],
+                correct: 3 // D) BCNF
+            },
+            {
+                question: "A relation $R(A, B, C)$ has primary key $A$. If we have functional dependencies $A \\rightarrow B$ and $B \\rightarrow C$, then to convert this relation to 3NF, we should:",
+                options: ["Do nothing, it's already in 3NF.", "Decompose it into $R1(A, B)$ and $R2(B, C)$.", "Decompose it into $R1(A, C)$ and $R2(B, C)$.", "Add a new attribute."],
+                correct: 1 // B) Decompose it into R1(A, B) and R2(B, C).
+            },
+            {
+                question: "The \"A\" in ACID properties of transactions stands for:",
+                options: ["Atomicity", "Authenticity", "Availability", "Accessibility"],
+                correct: 0 // A) Atomicity
+            },
+            {
+                question: "Which property ensures that a transaction, once committed, its changes are permanently stored and survive system failures?",
+                options: ["Atomicity", "Consistency", "Isolation", "Durability"],
+                correct: 3 // D) Durability
+            },
+            {
+                question: "The problem where one transaction reads data written by another uncommitted transaction is known as:",
+                options: ["Lost Update", "Dirty Read", "Unrepeatable Read", "Phantom Read"],
+                correct: 1 // B) Dirty Read
+            },
+            {
+                question: "In Two-Phase Locking (2PL), the phase during which a transaction can only release locks, not acquire new ones, is called the:",
+                options: ["Growing phase", "Shrinking phase", "Commit phase", "Rollback phase"],
+                correct: 1 // B) Shrinking phase
+            },
+            {
+                question: "A situation where two or more transactions are waiting indefinitely for each other to release locks is called:",
+                options: ["Concurrency", "Starvation", "Deadlock", "Livelock"],
+                correct: 2 // C) Deadlock
+            },
+            {
+                question: "Which of the following is a common technique for database recovery after a system failure?",
+                options: ["Normalization", "Query optimization", "Log-based recovery", "Indexing"],
+                correct: 2 // C) Log-based recovery
+            },
+            {
+                question: "Which type of index physically orders the data rows in the same order as the index?",
+                options: ["Secondary index", "Non-clustering index", "Clustering index", "Hash index"],
+                correct: 2 // C) Clustering index
+            },
+            {
+                question: "A B+ tree is commonly used for indexing in relational databases primarily because:",
+                options: ["It allows very fast equality searches only.", "It stores all data pointers at leaf nodes, linked for efficient range queries.", "It eliminates data redundancy.", "It is a simple binary tree."],
+                correct: 1 // B) It stores all data pointers at leaf nodes, linked for efficient range queries.
+            },
+            {
+                question: "Which of the following is a disadvantage of using indexes?",
+                options: ["Slower data retrieval for `SELECT` queries.", "Increased storage space and overhead for writes (INSERT, UPDATE, DELETE).", "Cannot be used on `PRIMARY KEY` columns.", "Only supports numerical data."],
+                correct: 1 // B) Increased storage space and overhead for writes (INSERT, UPDATE, DELETE).
+            },
+            {
+                question: "An index on a non-key attribute that does not physically order the data is known as a:",
+                options: ["Primary index", "Clustering index", "Secondary index (non-clustering)", "Unique index"],
+                correct: 2 // C) Secondary index (non-clustering)
+            },
+            {
+                question: "The primary goal of query optimization is to:",
+                options: ["Increase data redundancy.", "Select the most efficient execution plan for a query.", "Ensure data inconsistency.", "Reduce the number of tables in the database."],
+                correct: 1 // B) Select the most efficient execution plan for a query.
+            },
+            {
+                question: "Which phase of query processing involves generating multiple execution plans and estimating their costs?",
+                options: ["Parsing and Translation", "Evaluation", "Optimization", "Execution"],
+                correct: 2 // C) Optimization
+            },
+            {
+                question: "Which of the following is a heuristic commonly used in query optimization?",
+                options: ["Perform join operations before selection operations.", "Push down selection and projection operations as early as possible.", "Ignore the presence of indexes.", "Prioritize Cartesian products."],
+                correct: 1 // B) Push down selection and projection operations as early as possible.
+            },
+            {
+                question: "What type of information is crucial for a cost-based query optimizer to make informed decisions?",
+                options: ["User interface preferences", "Database statistics (e.g., number of rows, data distribution)", "Operating system version", "Network speed between client and server"],
+                correct: 1 // B) Database statistics (e.g., number of rows, data distribution)
+            }
+        ];
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">JECA DBMS MCQ Practice Set</h1>
+
+        <!-- Quiz Section -->
+        <div id="quiz-section">
+            <div class="question-container">
+                <p id="question-text" class="text-xl font-semibold text-gray-700 mb-4"></p>
+                <div id="options-container" class="space-y-3">
+                    <!-- Options will be dynamically inserted here by script.js -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Section (Initially hidden) -->
+        <div id="result-section" class="hidden result-container">
+            <h2 class="text-2xl font-bold mb-4">Quiz Completed!</h2>
+            <p class="text-xl">Final Score: <span id="score-display" class="font-bold">0</span></p>
+            <p class="text-lg">Correct Answers: <span id="correct-count" class="font-semibold">0</span></p>
+            <p class="text-lg">Wrong Answers: <span id="wrong-count" class="font-semibold">0</span></p>
+            <p class="text-lg">Accuracy: <span id="accuracy-display" class="font-semibold">0%</span></p>
+            <button id="restart-btn" class="submit-btn mt-6">Restart Quiz</button>
+        </div>
+
+        <!-- Message Box for alerts (replaces alert()) -->
+        <div id="message-box" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white rounded-lg p-6 shadow-lg text-center max-w-sm w-full">
+                <p id="message-text" class="text-lg mb-4"></p>
+                <button id="message-ok-btn" class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition-colors">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

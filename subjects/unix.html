@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JECA Unix Commands MCQ Practice Set</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Define SUBJECT-SPECIFIC questions for Unix Commands here -->
+    <script>
+        const questions = [
+            {
+                question: "Which command is used to display the full pathname of the current working directory?",
+                options: ["dir", "list", "pwd", "cwd"],
+                correct: 2 // c) pwd
+            },
+            {
+                question: "To list files in a long format, showing permissions, owner, group, size, and modification date, which option is used with ls?",
+                options: ["-a", "-h", "-R", "-l"],
+                correct: 3 // d) -l
+            },
+            {
+                question: "Which command is used to copy a file named source.txt to destination.txt?",
+                options: ["mv source.txt destination.txt", "cp source.txt destination.txt", "copy source.txt destination.txt", "ln source.txt destination.txt"],
+                correct: 1 // b) cp source.txt destination.txt
+            },
+            {
+                question: "What does the command touch mynewfile.txt do if mynewfile.txt does not exist?",
+                options: ["Displays an error message.", "Creates an empty file named mynewfile.txt.", "Opens mynewfile.txt in the vi editor.", "Changes the owner of mynewfile.txt."],
+                correct: 1 // b) Creates an empty file named mynewfile.txt.
+            },
+            {
+                question: "Which cat command option is used to display line numbers for all output lines?",
+                options: ["-b", "-s", "-n", "-e"],
+                correct: 2 // c) -n
+            },
+            {
+                question: "You want to display the calendar for the entire current year. Which command would you use?",
+                options: ["cal today", "cal -y", "cal current", "cal year"],
+                correct: 1 // b) cal -y
+            },
+            {
+                question: "In vi editor, which key allows you to switch from Insert Mode back to Command Mode?",
+                options: ["Enter", "Tab", "Esc", "Ctrl+C"],
+                correct: 2 // c) Esc
+            },
+            {
+                question: "Which wildcard character matches any single character?",
+                options: ["*", "?", "[]", "/"],
+                correct: 1 // b) ?
+            },
+            {
+                question: "What is the purpose of the shebang line #!/bin/bash at the beginning of a shell script?",
+                options: ["It's a comment indicating the script's name.", "It specifies the default shell for the current user.", "It tells the operating system which interpreter to use to execute the script.", "It defines a variable named bash."],
+                correct: 2 // c) It tells the operating system which interpreter to use to execute the script.
+            },
+            {
+                question: "To create a hard link named mylink to an existing file original.txt, which command is correct?",
+                options: ["ln -s original.txt mylink", "ln original.txt mylink", "link original.txt mylink", "cp -l original.txt mylink"],
+                correct: 1 // b) ln original.txt mylink
+            },
+            {
+                question: "Which command is used to estimate file space usage of files or directories?",
+                options: ["df", "fdisk", "du", "ls -s"],
+                correct: 2 // c) du
+            },
+            {
+                question: "What does the command kill PID (without any signal option) typically send to the process with that PID?",
+                options: ["SIGKILL (9)", "SIGHUP (1)", "SIGTERM (15)", "SIGSTOP (19)"],
+                correct: 2 // c) SIGTERM (15)
+            },
+            {
+                question: "To pause a shell script for 10 seconds, which command would you use?",
+                options: ["wait 10", "pause 10s", "delay 10", "sleep 10"],
+                correct: 3 // d) sleep 10
+            },
+            {
+                question: "Which chmod numeric mode represents rwx for the owner, r-x for the group, and r-x for others?",
+                options: ["777", "644", "755", "666"],
+                correct: 2 // c) 755
+            },
+            {
+                question: "What is the primary purpose of the chown command?",
+                options: ["To change file permissions.", "To change the group ownership of a file.", "To change the user owner and/or group owner of files.", "To change file timestamps."],
+                correct: 2 // c) To change the user owner and/or group owner of files.
+            },
+            {
+                question: "Which command provides a dynamic, real-time view of running processes?",
+                options: ["ps aux", "top", "pstree", "htop (assuming standard utility for JECA context)"],
+                correct: 1 // b) top
+            },
+            {
+                question: "If you want to run a command with a lower CPU priority (more 'nicely'), which value would you typically assign using nice?",
+                options: ["A negative value (e.g., -10)", "A value of 0 (default)", "A positive value (e.g., 10)", "The nice command is only for increasing priority."],
+                correct: 2 // c) A positive value (e.g., 10)
+            },
+            {
+                question: "Which command is used to display only the number of lines in a file named data.txt?",
+                options: ["cat -l data.txt", "wc -l data.txt", "nl data.txt", "lines data.txt"],
+                correct: 1 // b) wc -l data.txt
+            },
+            {
+                question: "To compare two files, fileA.txt and fileB.txt, and show the differences between them, which command would you use?",
+                options: ["cmp fileA.txt fileB.txt", "diff fileA.txt fileB.txt", "compare fileA.txt fileB.txt", "match fileA.txt fileB.txt"],
+                correct: 1 // b) diff fileA.txt fileB.txt
+            },
+            {
+                question: "Which grep option is used to perform a case-insensitive search?",
+                options: ["-c", "-v", "-n", "-i"],
+                correct: 3 // d) -i
+            },
+            {
+                question: "What does the file command typically report about document.pdf?",
+                options: ["The content of document.pdf.", "The permissions of document.pdf.", "The file type (e.g., PDF document).", "The owner of document.pdf."],
+                correct: 2 // c) The file type (e.g., PDF document).
+            },
+            {
+                question: "Which command locates the binary, source, and manual page files for a command like ls?",
+                options: ["which ls", "locate ls", "whereis ls", "find / -name ls"],
+                correct: 2 // c) whereis ls
+            },
+            {
+                question: "What is the purpose of the PATH environment variable?",
+                options: ["It stores the current user's password.", "It specifies the directories where the shell looks for executable commands.", "It defines the default text editor.", "It indicates the path to the current working directory."],
+                correct: 1 // b) It specifies the directories where the shell looks for executable commands.
+            },
+            {
+                question: "In vi editor's Command Mode, what does typing dd do?",
+                options: ["Deletes the current character.", "Duplicates the current line.", "Deletes the current line.", "Moves the cursor down two lines."],
+                correct: 2 // c) Deletes the current line.
+            },
+            {
+                question: "Which shell operator is used to redirect the standard output of a command to a file, appending the output if the file already exists?",
+                options: [">", ">>", "<", "|"],
+                correct: 1 // b) >>
+            },
+            {
+                question: "What does ls -lh display?",
+                options: ["Hidden files in long format.", "Human-readable sizes in long format.", "Only symbolic links in long format.", "Recursive listing with human-readable sizes."],
+                correct: 1 // b) Human-readable sizes in long format.
+            },
+            {
+                question: "To rename oldname.txt to newname.txt, which command would you use?",
+                options: ["rename oldname.txt newname.txt", "mv oldname.txt newname.txt", "cp oldname.txt newname.txt && rm oldname.txt", "mod oldname.txt newname.txt"],
+                correct: 1 // b) mv oldname.txt newname.txt
+            },
+            {
+                question: "If a script starts with #!/bin/sh, which shell is typically used to execute it?",
+                options: ["Bash", "Zsh", "The system's default shell (often a symbolic link to bash or dash)", "Python"],
+                correct: 2 // c) The system's default shell (often a symbolic link to bash or dash)
+            },
+            {
+                question: "What is the output of echo \"My name is $NAME\" if the variable NAME has not been set?",
+                options: ["My name is $NAME", "My name is", "An error message", "My name is NAME"],
+                correct: 1 // b) My name is
+            },
+            {
+                question: "Which command would you use to change the group ownership of report.xlsx to accounts?",
+                options: ["chown :accounts report.xlsx", "chgrp accounts report.xlsx", "chmod g+w accounts report.xlsx", "Both a and b"],
+                correct: 3 // d) Both a and b
+            },
+            {
+                question: "To find all files with a .log extension in the current directory and its subdirectories, which find command is appropriate?",
+                options: ["find . -name \"*.log\"", "grep \".log\" .", "locate *.log", "search -ext .log"],
+                correct: 0 // a) find . -name "*.log"
+            },
+            {
+                question: "What is the primary use of the bc command?",
+                options: ["To browse file contents.", "To compile C programs.", "To perform arbitrary-precision arithmetic calculations.", "To backup file systems."],
+                correct: 2 // c) To perform arbitrary-precision arithmetic calculations.
+            },
+            {
+                question: "Which comm command option would display only the lines common to both file1.txt and file2.txt (assuming both are sorted)?",
+                options: ["comm -1 file1.txt file2.txt", "comm -2 file1.txt file2.txt", "comm -3 file1.txt file2.txt", "comm -12 file1.txt file2.txt"],
+                correct: 3 // d) comm -12 file1.txt file2.txt
+            },
+            {
+                question: "In vi editor's Last Line Mode, what command would you use to search for the string \"keyword\" forward in the file?",
+                options: ["s/keyword", "/keyword", "?keyword", "find keyword"],
+                correct: 1 // b) /keyword
+            },
+            {
+                question: "What is the purpose of the CLASSPATH environment variable?",
+                options: ["It specifies the directories for C++ header files.", "It's used by the Java Virtual Machine to locate user-defined classes and packages.", "It defines the path to standard library files for all programming languages.", "It sets the default command-line prompt."],
+                correct: 1 // b) It's used by the Java Virtual Machine to locate user-defined classes and packages.
+            },
+            {
+                question: "You have a file data.csv with fields separated by commas. You want to extract only the first and third fields from each line. Which command is suitable?",
+                options: ["grep -f 1,3 data.csv", "cut -d ',' -f 1,3 data.csv", "awk '{print $1, $3}' data.csv (assuming awk is implied as an option)", "paste -d ',' 1,3 data.csv"],
+                correct: 1 // b) cut -d ',' -f 1,3 data.csv
+            },
+            {
+                question: "Which command would you use to run a script in the background so that it doesn't tie up your terminal?",
+                options: ["script.sh --background", "bg script.sh", "script.sh &", "nohup script.sh (assuming for persistence, but & is immediate backgrounding)"],
+                correct: 2 // c) script.sh &
+            },
+            {
+                question: "What does echo $HOME typically display?",
+                options: ["The current date and time.", "The path to the user's home directory.", "The name of the current user.", "The size of the home directory."],
+                correct: 1 // b) The path to the user's home directory.
+            },
+            {
+                question: "To display only directories (not files) in the current location, which ls option combination would work effectively?",
+                options: ["ls -l | grep \"^d\"", "ls -d */", "ls -type d", "ls -f dir"],
+                correct: 0 // a) ls -l | grep "^d"
+            },
+            {
+                question: "What is the effect of the renice command?",
+                options: ["It renames a process.", "It changes the scheduling priority of an already running process.", "It resets the CPU usage statistics for a process.", "It restarts a terminated process."],
+                correct: 1 // b) It changes the scheduling priority of an already running process.
+            },
+            {
+                question: "In a shell script, how would you refer to the entire set of command-line arguments as separate strings (e.g., for iterating over them)?",
+                options: ["$*", "$@", "$ALL_ARGS", "$ARGV"],
+                correct: 1 // b) $@
+            },
+            {
+                question: "Which command is best suited for combining lines from multiple files side-by-side, column-wise?",
+                options: ["cat", "join", "paste", "merge"],
+                correct: 2 // c) paste
+            },
+            {
+                question: "Consider the command: ls -l | wc -l. What is its purpose?",
+                options: ["To list files and count words.", "To count the total number of files and directories in the current directory.", "To count the total number of lines in all files.", "To display the word count of the ls -l command itself."],
+                correct: 1 // b) To count the total number of files and directories in the current directory.
+            },
+            {
+                question: "What does the ps aux command typically show?",
+                options: ["Only processes owned by the current user.", "All processes running on the system, for all users, in a user-oriented format.", "Processes that are using the most memory.", "Processes that are waiting for user input."],
+                correct: 1 // b) All processes running on the system, for all users, in a user-oriented format.
+            },
+            {
+                question: "If you execute chmod +x my_script.sh, what change occurs to my_script.sh?",
+                options: ["Its ownership changes to the executing user.", "It becomes a hidden file.", "It becomes executable.", "It is marked as read-only."],
+                correct: 2 // c) It becomes executable.
+            },
+            {
+                question: "Which character is used for output redirection to a file, causing the file to be truncated (emptied) if it already exists?",
+                options: [">>", "|", "<", ">"],
+                correct: 3 // d) >
+            },
+            {
+                question: "In a shell script, what is the correct syntax for an if statement to check if a variable COUNT is greater than 10?",
+                options: ["if [ $COUNT > 10 ]", "if [ \"$COUNT\" -gt 10 ]", "if ( $COUNT > 10 )", "if [[ $COUNT > 10 ]] (while technically valid in bash, JECA might expect -gt with single brackets)"],
+                correct: 1 // b) if [ "$COUNT" -gt 10 ]
+            },
+            {
+                question: "Which command would you use to find out where the python executable that your shell would run is located?",
+                options: ["whereis python", "locate python", "which python", "find / -name python"],
+                correct: 2 // c) which python
+            },
+            {
+                question: "What is a \"wildcard\" in Unix shell?",
+                options: ["A special character that redirects command output.", "A special character used for pattern matching in filenames.", "A command that lists all files in a directory.", "A shell built-in function for variable assignment."],
+                correct: 1 // b) A special character used for pattern matching in filenames.
+            },
+            {
+                question: "What is the primary purpose of the env command when used without arguments?",
+                options: ["To open an interactive shell environment.", "To display all current environment variables.", "To execute a command in a new environment.", "To set a new environment variable."],
+                correct: 1 // b) To display all current environment variables.
+            }
+        ];
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">JECA Unix Commands MCQ Practice Set</h1>
+
+        <!-- Quiz Section -->
+        <div id="quiz-section">
+            <div class="question-container">
+                <p id="question-text" class="text-xl font-semibold text-gray-700 mb-4"></p>
+                <div id="options-container" class="space-y-3">
+                    <!-- Options will be dynamically inserted here by script.js -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Section (Initially hidden) -->
+        <div id="result-section" class="hidden result-container">
+            <h2 class="text-2xl font-bold mb-4">Quiz Completed!</h2>
+            <p class="text-xl">Final Score: <span id="score-display" class="font-bold">0</span></p>
+            <p class="text-lg">Correct Answers: <span id="correct-count" class="font-semibold">0</span></p>
+            <p class="text-lg">Wrong Answers: <span id="wrong-count" class="font-semibold">0</span></p>
+            <p class="text-lg">Accuracy: <span id="accuracy-display" class="font-semibold">0%</span></p>
+            <button id="restart-btn" class="submit-btn mt-6">Restart Quiz</button>
+        </div>
+
+        <!-- Message Box for alerts (replaces alert()) -->
+        <div id="message-box" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white rounded-lg p-6 shadow-lg text-center max-w-sm w-full">
+                <p id="message-text" class="text-lg mb-4"></p>
+                <button id="message-ok-btn" class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition-colors">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
