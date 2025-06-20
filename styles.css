@@ -123,6 +123,53 @@ footer {
     opacity: 0.95;
 }
 
+.cbt-practice {
+    background: #f8fafc;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    padding: 2rem 1.5rem;
+    margin-top: 2.5rem;
+    text-align: center;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: box-shadow 0.2s;
+}
+
+.cbt-practice:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.cbt-practice h2 {
+    margin-bottom: 0.5rem;
+    color: #1a237e;
+    font-size: 2rem;
+}
+
+.section-description {
+    color: #555;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.cbt-button {
+    background: linear-gradient(90deg, #1976d2 0%, #42a5f5 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.9rem 2.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.15);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.cbt-button:hover {
+    background: linear-gradient(90deg, #1565c0 0%, #1e88e5 100%);
+    transform: translateY(-2px) scale(1.03);
+}
+
 @media (max-width: 900px) {
     .container {
         padding: 18px 6px;

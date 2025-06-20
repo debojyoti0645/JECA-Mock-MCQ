@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JECA CBT Practice Tests</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Full viewport height */
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .timer-bar {
+            background-color: #e5e7eb;
+            border-radius: 9999px; /* Full rounded */
+            height: 8px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .timer-progress {
+            height: 100%;
+            background-color: #3b82f6; /* Blue progress bar */
+            width: 100%; /* Initial width, will be reduced by JS */
+            transition: width 1s linear; /* Smooth transition */
+            border-radius: 9999px;
+        }
+        .option-label {
+            display: block;
+            background-color: #f9fafb;
+            padding: 15px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            margin-bottom: 10px;
+            border: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .option-label:hover {
+            background-color: #eff6ff;
+            border-color: #bfdbfe;
+        }
+        .option-label input[type="radio"] {
+            margin-right: 10px;
+            appearance: none; /* Hide default radio button */
+            width: 18px;
+            height: 18px;
+            border: 2px solid #9ca3af;
+            border-radius: 50%;
+            display: grid;
+            place-content: center;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+        .option-label input[type="radio"]::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: 0.1s transform ease-in-out;
+            box-shadow: inset 1em 1em #3b82f6; /* Blue fill */
+            background-color: CanvasText; /* Fallback for older browsers */
+        }
+        .option-label input[type="radio"]:checked::before {
+            transform: scale(1);
+        }
+        .option-label.correct {
+            background-color: #d1fae5; /* Light green for correct */
+            border-color: #34d399; /* Green border */
+        }
+        .option-label.incorrect {
+            background-color: #fee2e2; /* Light red for incorrect */
+            border-color: #ef4444; /* Red border */
+        }
+        .option-label.selected-incorrect {
+            background-color: #fecaca; /* Slightly darker red if selected and incorrect */
+            border-color: #dc2626; /* Darker red border */
+        }
+        .button-primary {
+            background-color: #3b82f6;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+            border: none;
+        }
+        .button-primary:hover {
+            background-color: #2563eb;
+            transform: translateY(-1px);
+        }
+        .button-primary:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(59, 130, 246, 0.2);
+        }
+        .button-secondary {
+            background-color: #e5e7eb;
+            color: #4b5563;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            border: none;
+        }
+        .button-secondary:hover {
+            background-color: #d1d5db;
+        }
+        .button-danger {
+            background-color: #ef4444;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            border: none;
+        }
+        .button-danger:hover {
+            background-color: #dc2626;
+        }
+        .button-mark-review {
+            background-color: #f59e0b; /* Amber for review */
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            border: none;
+        }
+        .button-mark-review:hover {
+            background-color: #d97706;
+        }
+        .button-mark-review.marked {
+            background-color: #3b82f6; /* Blue when marked */
+        }
+        .result-item {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #e5e7eb;
+            background-color: #f9fafb;
+        }
+        .result-item.correct {
+            background-color: #ecfdf5;
+            border-color: #a7f3d0;
+        }
+        .result-item.incorrect {
+            background-color: #fef2f2;
+            border-color: #fca5a5;
+        }
+        .explanation {
+            margin-top: 10px;
+            padding-left: 10px;
+            border-left: 3px solid #60a5fa;
+            color: #4b5563;
+            font-size: 0.9em;
+        }
+        /* Custom scrollbar for options on smaller screens */
+        .options-container {
+            max-height: 40vh; /* Limit height to allow scrolling if many options */
+            overflow-y: auto;
+            padding-right: 10px; /* Space for scrollbar */
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .options-container::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .options-container {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        /* Modal styling */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+        }
+        .modal-content h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #1f2937;
+        }
+        .modal-content .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        /* Styles for the main selection page dropdowns and button */
+        .test-dropdown {
+            padding: 12px 15px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            background-color: #ffffff;
+            font-size: 1rem;
+            color: #374151;
+            appearance: none; /* Remove default arrow */
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%236b7280%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-6.1%200-11.6%203.1-14.8%208.1-3.1%205.1-3.2%2011.3-.1%2016.4l132.8%20132.8c3.2%203.2%207%204.9%2011.2%204.9s8-.4%2011.2-4.9l132.8-132.8c3.2-5.1%203.1-11.3-.1-16.4z%22%2F%3E%3C%2Fsvg%3E');
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 0.8em;
+            padding-right: 2.5rem; /* Make space for the custom arrow */
+            min-width: 200px;
+        }
+        .test-dropdown:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-5">
+
+    <div id="app" class="container">
+
+        <div id="main-selection-screen" class="text-center p-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">JECA CBT Practice Tests</h1>
+            <p class="text-lg text-gray-600 mb-8">Select your subject and duration to start practicing.</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <select id="subject-select" class="test-dropdown">
+                    <option value="">Select Subject</option>
+                    <option value="c-programming">C Programming</option>
+                    <option value="oop" disabled>Object-Oriented Programming (Coming Soon)</option>
+                    <option value="data-structures" disabled>Data Structures (Coming Soon)</option>
+                </select>
+                <select id="duration-select" class="test-dropdown">
+                    <option value="">Select Duration</option>
+                    <option value="5">5 Minutes</option>
+                    <option value="10">10 Minutes</option>
+                    <option value="15">15 Minutes</option>
+                    <option value="20">20 Minutes</option>
+                    <option value="25">25 Minutes</option>
+                    <option value="30">30 Minutes</option>
+                    <option value="60">60 Minutes</option>
+                </select>
+                <button id="start-test-btn" class="button-primary text-xl px-8 py-4">Start Practice Test</button>
+            </div>
+        </div>
+
+        <div id="exam-screen" class="hidden">
+            <div class="flex justify-between items-center mb-4">
+                <div class="text-sm font-medium text-gray-600">Question <span id="current-question-num">1</span> of <span id="total-questions">10</span></div>
+                <div class="flex items-center gap-2">
+                    <span class="text-sm font-medium text-gray-600">Time Left:</span>
+                    <span id="timer" class="text-lg font-bold text-blue-600">0s</span>
+                </div>
+            </div>
+            <div class="timer-bar mb-6">
+                <div id="timer-progress" class="timer-progress"></div>
+            </div>
+
+            <div class="question-area mb-6">
+                <h2 id="question-text" class="text-xl font-semibold text-gray-800 mb-4">Loading question...</h2>
+                <div id="options-container" class="options-container">
+                    </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-8">
+                <button id="prev-btn" class="button-secondary" disabled>Previous</button>
+                <button id="clear-answers-btn" class="button-danger">Clear Answers</button>
+                <button id="mark-for-review-btn" class="button-mark-review">Mark For Review</button>
+                <button id="skip-question-btn" class="button-secondary">Skip Question</button>
+                <button id="save-and-next-btn" class="button-primary col-span-2 md:col-span-1 lg:col-span-1">Save & Next</button>
+                <button id="submit-exam-btn" class="button-primary col-span-full mt-4">Submit Test</button>
+            </div>
+        </div>
+
+        <div id="result-screen" class="hidden">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4 text-center">Exam Results</h1>
+            <p class="text-xl text-gray-700 text-center mb-2">Total Score: <span id="score-display" class="font-bold text-blue-600">0.00</span></p>
+            <p class="text-xl text-gray-700 text-center mb-2">Total Questions: <span id="total-questions-result" class="font-bold text-blue-600">0</span></p>
+            <p class="text-xl text-gray-700 text-center mb-2">Time Taken: <span id="time-taken-display" class="font-bold text-gray-600">0m 0s</span></p>
+            <p class="text-xl text-gray-700 text-center mb-6">Accuracy: <span id="accuracy-display" class="font-bold text-purple-600">0.00%</span></p>
+
+            <div id="feedback-area" class="mt-8">
+                </div>
+
+            <div class="flex justify-center mt-8">
+                <button id="retake-exam-btn" class="button-primary px-6 py-3">Retake Exam</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="submit-modal-overlay" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h3 class="text-2xl font-bold">Confirm Submission</h3>
+            <p class="text-gray-700">Are you sure you want to submit your exam?</p>
+            <div class="button-group">
+                <button id="cancel-submit-btn" class="button-secondary">Cancel</button>
+                <button id="confirm-submit-btn" class="button-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Store questions for different subjects
+        const allSubjectsQuestions = {
+            "c-programming": [
+                // 1. Variables and Data Types
+                {
+                    question: "Which of the following is a valid C variable name?",
+                    options: ["2myVar", "_my_Var", "my-Var", "my Var"],
+                    correctAnswerIndex: 1,
+                    explanation: "Variable names in C can start with an underscore or an alphabet, followed by alphanumeric characters or underscores. They cannot start with a digit, contain hyphens, or spaces."
+                },
+                {
+                    question: "What is the typical size of an `int` data type in a 32-bit system?",
+                    options: ["1 byte", "2 bytes", "4 bytes", "8 bytes"],
+                    correctAnswerIndex: 2,
+                    explanation: "On most 32-bit systems, an `int` data type typically occupies 4 bytes of memory."
+                },
+                {
+                    question: "Which data type is best suited for storing a single character?",
+                    options: ["int", "float", "char", "double"],
+                    correctAnswerIndex: 2,
+                    explanation: "The `char` data type is designed to store single characters."
+                },
+                {
+                    question: "What will be the value of `x` after the following declaration?\n`int x;`",
+                    options: ["0", "1", "Garbage value", "Depends on the compiler"],
+                    correctAnswerIndex: 2,
+                    explanation: "Uninitialized local variables in C contain garbage values. Global and static variables are initialized to zero by default."
+                },
+                {
+                    question: "The `const` keyword is used to:",
+                    options: ["Declare a variable that cannot be modified.", "Define a constant value at compile time.", "Specify a constant pointer.", "Both A and B."],
+                    correctAnswerIndex: 3,
+                    explanation: "The `const` keyword makes a variable read-only, preventing its modification. It can also be used to define named constants that are typically resolved at compile time."
+                },
+                {
+                    question: "Which of the following data types would you use to store a person's average height (e.g., 175.5 cm)?",
+                    options: ["int", "char", "float", "void"],
+                    correctAnswerIndex: 2,
+                    explanation: "`float` (or `double`) is used for real numbers with decimal points."
+                },
+                {
+                    question: "What is the purpose of the `unsigned` keyword in variable declaration?",
+                    options: ["To allow negative values.", "To increase the precision of floating-point numbers.", "To store only non-negative values and extend the positive range.", "To define a constant."],
+                    correctAnswerIndex: 2,
+                    explanation: "`unsigned` types store only non-negative values, effectively doubling their positive range compared to their signed counterparts."
+                },
+                {
+                    question: "Consider the declaration: `char grade = 'B';` What is the memory size typically allocated for `grade`?",
+                    options: ["1 byte", "2 bytes", "4 bytes", "8 bytes"],
+                    correctAnswerIndex: 0,
+                    explanation: "A `char` data type typically occupies 1 byte of memory."
+                },
+
+                // 2. I/O Operations
+                {
+                    question: "Which header file must be included for using `printf()` and `scanf()` functions?",
+                    options: ["stdlib.h", "string.h", "math.h", "stdio.h"],
+                    correctAnswerIndex: 3,
+                    explanation: "The `stdio.h` (Standard Input/Output) header file contains declarations for input/output functions like `printf()` and `scanf()`."
+                },
+                {
+                    question: "What is the correct format specifier to print a `double` variable using `printf()`?",
+                    options: ["%f", "%d", "%lf", "%c"],
+                    correctAnswerIndex: 0,
+                    explanation: "For `printf()`, both `%f` and `%lf` can be used to print a `double`, but `%f` is the standard and typically preferred. `%lf` is technically correct for `scanf()` to read a `double`."
+                },
+                {
+                    question: "Which of the following functions is considered unsafe for reading strings due to potential buffer overflows?",
+                    options: ["scanf() with %s", "fgets()", "gets()", "getchar()"],
+                    correctAnswerIndex: 2,
+                    explanation: "`gets()` does not perform bounds checking, making it vulnerable to buffer overflows. `fgets()` is safer as it takes a maximum buffer size."
+                },
+                {
+                    question: "To read an integer value from the keyboard and store it in a variable `num`, which `scanf()` statement is correct?",
+                    options: ["scanf(\"%d\", num);", "scanf(\"%d\", &num);", "scanf(\"d\", &num);", "scanf(\"%i\", num);"],
+                    correctAnswerIndex: 1,
+                    explanation: "The `scanf()` function requires the address of the variable to store the input, hence the `&` operator (address-of operator) is used."
+                },
+                {
+                    question: "What is the purpose of the `\\n` escape sequence in `printf()`?",
+                    options: ["Insert a tab", "Insert a backspace", "Insert a newline", "Insert a null character"],
+                    correctAnswerIndex: 2,
+                    explanation: "`\\n` is the escape sequence for a newline character, moving the cursor to the beginning of the next line."
+                },
+                {
+                    question: "If you use `scanf(\"%c\", &ch);` to read a character, and the user types \"A\" followed by Enter, what character will be stored in `ch`?",
+                    options: ["'A'", "'\\n'", "' ' (space)", "Both 'A' and then '\\n' (depending on subsequent reads)"],
+                    correctAnswerIndex: 0,
+                    explanation: "When you type 'A' and press Enter, `scanf(\"%c\", &ch)` reads 'A'. The newline character `\\n` (from pressing Enter) remains in the input buffer for subsequent reads, but `ch` will only contain 'A'."
+                },
+
+                // 3. Operators and Expressions
+                {
+                    question: "What is the result of `10 / 3` in C?",
+                    options: ["3.33", "3", "1", "0"],
+                    correctAnswerIndex: 1,
+                    explanation: "In C, integer division `10 / 3` truncates the decimal part, resulting in `3`."
+                },
+                {
+                    question: "What is the value of `5 % 2`?",
+                    options: ["2", "1", "0", "2.5"],
+                    correctAnswerIndex: 1,
+                    explanation: "The modulo operator (`%`) gives the remainder of a division. `5` divided by `2` is `2` with a remainder of `1`."
+                },
+                {
+                    question: "Which operator is used to check for equality?",
+                    options: ["=", "==", "!=", "=="],
+                    correctAnswerIndex: 1,
+                    explanation: "The `==` operator is used for comparison (equality check), while `=` is the assignment operator."
+                },
+                {
+                    question: "If `x = 5; y = 10;`, what is the result of the expression `(x > 0 && y < 15)`?",
+                    options: ["true", "false", "1", "0"],
+                    correctAnswerIndex: 2,
+                    explanation: "In C, `true` is represented by `1` and `false` by `0` in boolean contexts. `x > 0` (5 > 0) is true (1), and `y < 15` (10 < 15) is true (1). `1 && 1` evaluates to `1`."
+                },
+                {
+                    question: "What is the output of the following code snippet?\n```c\nint a = 5;\nprintf(\"%d\", a++);\n```",
+                    options: ["5", "6", "Undefined", "Compilation error"],
+                    correctAnswerIndex: 0,
+                    explanation: "The post-increment operator (`a++`) uses the current value of `a` (which is 5) in the expression first, and then increments `a` to 6. So, `5` is printed."
+                },
+                {
+                    question: "Which operator is used to get the memory address of a variable?",
+                    options: ["*", "&", ".", "->"],
+                    correctAnswerIndex: 1,
+                    explanation: "The `&` (address-of) operator is used to retrieve the memory address of a variable."
+                },
+                {
+                    question: "What is the value of `c` after the following operations?\n`int a = 10, b = 4;`\n`int c = a / b;`",
+                    options: ["2.5", "2", "3", "Undefined"],
+                    correctAnswerIndex: 1,
+                    explanation: "Since both `a` and `b` are integers, the division `a / b` performs integer division, truncating the decimal part. `10 / 4` is `2`."
+                },
+                {
+                    question: "The expression `(condition) ? expr1 : expr2;` is known as the:",
+                    options: ["Logical operator", "Relational operator", "Conditional operator", "Bitwise operator"],
+                    correctAnswerIndex: 2,
+                    explanation: "This is the ternary conditional operator, which provides a concise way to write `if-else` statements."
+                },
+
+                // 4. Control Flow Statements
+                {
+                    question: "Which loop guarantees to execute its body at least once?",
+                    options: ["for loop", "while loop", "do-while loop", "if statement"],
+                    correctAnswerIndex: 2,
+                    explanation: "The `do-while` loop checks its condition after executing the loop body, guaranteeing at least one execution."
+                },
+                {
+                    question: "What will be the output of the following code?\n```c\nfor (int i = 0; i < 5; i++) {\n    if (i == 3) {\n        break;\n    }\n    printf(\"%d \", i);\n}\n```",
+                    options: ["0 1 2 3 4", "0 1 2 3", "0 1 2", "0 1 2 4"],
+                    correctAnswerIndex: 2,
+                    explanation: "The `break` statement terminates the loop when `i` becomes `3`, so `3` and `4` are not printed."
+                },
+                {
+                    question: "Which statement is used to skip the rest of the current iteration of a loop and proceed to the next iteration?",
+                    options: ["break", "return", "continue", "exit"],
+                    correctAnswerIndex: 2,
+                    explanation: "The `continue` statement skips the remaining part of the current iteration and moves to the next iteration of the loop."
+                },
+                {
+                    question: "In a `switch` statement, what happens if `break` is omitted from a `case` block?",
+                    options: ["Compilation error", "The program terminates", "Execution falls through to the next `case`", "The `default` block is executed"],
+                    correctAnswerIndex: 2,
+                    explanation: "Omitting `break` leads to 'fall-through', where execution continues into the next `case` block without re-evaluating the `switch` expression."
+                },
+                {
+                    question: "What is the initial value of `i` in the `for` loop `for(i=1; i<=5; i++)`?",
+                    options: ["0", "1", "Undefined", "Garbage value"],
+                    correctAnswerIndex: 1,
+                    explanation: "The loop initialization `i=1` sets the initial value of `i` to 1."
+                },
+                {
+                    question: "Which of the following is generally considered bad practice in modern C programming due to making code harder to read and maintain?",
+                    options: ["if-else statements", "while loops", "goto statement", "switch statements"],
+                    correctAnswerIndex: 2,
+                    explanation: "The `goto` statement allows unconditional jumps, which can lead to spaghetti code and make programs difficult to debug and understand."
+                },
+                {
+                    question: "How many times will the `printf` statement execute?\n```c\nint count = 0;\nwhile (count < 3) {\n    printf(\"Hello\\n\");\n    count++;\n}\n```",
+                    options: ["0", "1", "3", "Infinite"],
+                    correctAnswerIndex: 2,
+                    explanation: "The loop runs for `count` values 0, 1, and 2. When `count` becomes 3, the condition `count < 3` becomes false, and the loop terminates. Thus, \"Hello\" is printed 3 times."
+                },
+
+                // 5. Functions
+                {
+                    question: "Which of the following statements about functions in C is true?",
+                    options: ["A function must always return a value.", "A function cannot call itself.", "Functions help in modularizing code.", "Function parameters are always passed by reference."],
+                    correctAnswerIndex: 2,
+                    explanation: "Functions allow breaking down a large program into smaller, manageable, and reusable modules."
+                },
+                {
+                    question: "What is a function prototype?",
+                    options: ["The definition of the function's body.", "A declaration that tells the compiler about the function's signature.", "The actual call to the function.", "A predefined library function."],
+                    correctAnswerIndex: 1,
+                    explanation: "A function prototype (or declaration) informs the compiler about the function's name, return type, and parameters before its actual definition."
+                },
+                {
+                    question: "In C, how are arguments typically passed to functions by default?",
+                    options: ["Call by reference", "Call by value", "Call by address", "Call by pointer"],
+                    correctAnswerIndex: 1,
+                    explanation: "By default, C uses call by value, meaning a copy of the argument's value is passed to the function. Changes to the parameter inside the function do not affect the original argument."
+                },
+                {
+                    question: "A function that calls itself is known as:",
+                    options: ["Inline function", "Recursive function", "Library function", "Nested function"],
+                    correctAnswerIndex: 1,
+                    explanation: "A recursive function is a function that calls itself until a base condition is met."
+                },
+                {
+                    question: "What will be the output of the following C code?\n```c\nvoid modify(int x) {\n    x = x + 10;\n}\nint main() {\n    int a = 5;\n    modify(a);\n    printf(\"%d\\n\", a);\n    return 0;\n}\n```",
+                    options: ["5", "15", "Undefined", "Compilation error"],
+                    correctAnswerIndex: 0,
+                    explanation: "Arguments are passed by value in C. The `modify` function receives a copy of `a`. Changing `x` inside `modify` does not affect the original `a` in `main`."
+                },
+                {
+                    question: "Which keyword is used to indicate that a function does not return any value?",
+                    options: ["null", "void", "empty", "none"],
+                    correctAnswerIndex: 1,
+                    explanation: "The `void` keyword specifies that a function does not return any value."
+                },
+
+                // 6. Arrays
+                {
+                    question: "Which of the following is the correct way to declare an integer array named `numbers` of size 10?",
+                    options: ["int numbers[];", "int numbers[10];", "numbers int[10];", "array numbers[10] int;"],
+                    correctAnswerIndex: 1,
+                    explanation: "The correct syntax for declaring an array in C is `data_type array_name[size];`."
+                },
+                {
+                    question: "What is the index of the first element in a C array?",
+                    options: ["1", "0", "-1", "Varies"],
+                    correctAnswerIndex: 1,
+                    explanation: "C arrays are 0-indexed, meaning the first element is at index 0."
+                },
+                {
+                    question: "What happens if you try to access an array element beyond its declared size in C?",
+                    options: ["A compile-time error occurs.", "A runtime error occurs with a clear message.", "The program might crash, or produce unpredictable results (undefined behavior).", "The array automatically resizes."],
+                    correctAnswerIndex: 2,
+                    explanation: "C does not perform bounds checking on array access. Accessing memory outside the array's bounds leads to undefined behavior, which can manifest as crashes, corrupted data, or seemingly random results."
+                },
+                {
+                    question: "How do you initialize an array `arr` of 5 integers with all elements set to 0?",
+                    options: ["int arr[5] = {0};", "int arr[5]; arr = {0,0,0,0,0};", "int arr[5] = {};", "memset(arr, 0, sizeof(arr));"],
+                    correctAnswerIndex: 0,
+                    explanation: "Using `int arr[5] = {0};` initializes the first element to 0 and all subsequent elements to 0 by default. `memset` (from `string.h`) can also be used for this purpose but is a function call."
+                },
+                {
+                    question: "If `int matrix[2][3];` is declared, how many elements can it store?",
+                    options: ["2", "3", "5", "6"],
+                    correctAnswerIndex: 3,
+                    explanation: "A 2D array `matrix[rows][cols]` can store `rows * cols` elements. Here, `2 * 3 = 6` elements."
+                },
+                {
+                    question: "When an array is passed to a function in C, what is actually passed?",
+                    options: ["A copy of the entire array.", "The address of the first element of the array.", "The number of elements in the array.", "A pointer to the last element of the array."],
+                    correctAnswerIndex: 1,
+                    explanation: "Arrays are passed by reference (or 'decay' to a pointer to their first element) to functions in C. A copy of the entire array is not made."
+                },
+
+                // 7. Pointers
+                {
+                    question: "A pointer variable stores:",
+                    options: ["The value of another variable.", "The memory address of another variable.", "The data type of another variable.", "The name of another variable."],
+                    correctAnswerIndex: 1,
+                    explanation: "A pointer is a variable that stores the memory address of another variable."
+                },
+                {
+                    question: "What is the output of the following code?\n```c\nint num = 25;\nint *ptr = &num;\nprintf(\"%d\", *ptr);\n```",
+                    options: ["Address of `num`", "25", "Garbage value", "Compilation error"],
+                    correctAnswerIndex: 1,
+                    explanation: "The `*` (dereference) operator retrieves the value stored at the memory address pointed to by `ptr`. Since `ptr` points to `num`, `*ptr` gives the value of `num`, which is 25."
+                },
+                {
+                    question: "Which operator is used for dereferencing a pointer?",
+                    options: ["&", "*", ".", "->"],
+                    correctAnswerIndex: 1,
+                    explanation: "The `*` operator is used to access the value stored at the address contained in a pointer."
+                },
+                {
+                    question: "If `int arr[] = {10, 20, 30}; int *p = arr;`, what does `*(p + 1)` evaluate to?",
+                    options: ["10", "20", "30", "The address of `arr[1]`"],
+                    correctAnswerIndex: 1,
+                    explanation: "Pointer arithmetic on `p + 1` moves the pointer one element forward. Dereferencing `*(p + 1)` then gives the value at that new address, which is `arr[1]` (20)."
+                },
+                {
+                    question: "What is a `NULL` pointer?",
+                    options: ["A pointer that points to the first element of an array.", "A pointer that points to no valid memory location.", "A pointer that has not been initialized.", "A pointer that points to a void type."],
+                    correctAnswerIndex: 1,
+                    explanation: "A `NULL` pointer is a special value that indicates the pointer does not point to any valid memory address. It's often used to initialize pointers or signify allocation failures."
+                },
+                {
+                    question: "Which of the following is true about pointer arithmetic?",
+                    options: ["Pointers can be multiplied.", "Pointers can be divided.", "An integer can be added to or subtracted from a pointer.", "Pointers of different types can be subtracted from each other."],
+                    correctAnswerIndex: 2,
+                    explanation: "You can add or subtract an integer to/from a pointer, which moves the pointer by that many units of its base type size. Other arithmetic operations like multiplication or division of pointers are not allowed."
+                },
+                {
+                    question: "If `int *ptr;` is declared but not initialized, what type of pointer is it?",
+                    options: ["Null pointer", "Void pointer", "Wild pointer", "Dangling pointer"],
+                    correctAnswerIndex: 2,
+                    explanation: "A pointer that has been declared but not initialized is a 'wild pointer' and contains an arbitrary (garbage) memory address. Using it leads to undefined behavior."
+                },
+
+                // 8. String Handling
+                {
+                    question: "In C, a string is an array of characters terminated by which special character?",
+                    options: ["\\t", "\\n", "\\0", "\\b"],
+                    correctAnswerIndex: 2,
+                    explanation: "C strings are null-terminated, meaning they end with a null character (`\\0`) to mark their end."
+                },
+                {
+                    question: "Which function is used to calculate the length of a string?",
+                    options: ["strlength()", "size()", "strlen()", "length()"],
+                    correctAnswerIndex: 2,
+                    explanation: "The `strlen()` function (from `string.h`) returns the length of a string, excluding the null terminator."
+                },
+                {
+                    question: "To copy string `s2` to string `s1`, which function should be used?",
+                    options: ["strcpy(s1, s2);", "s1 = s2;", "strcopy(s1, s2);", "copy(s1, s2);"],
+                    correctAnswerIndex: 0,
+                    explanation: "The `strcpy()` function (from `string.h`) is used to copy one string to another. Direct assignment `s1 = s2;` is not valid for copying string contents in C."
+                },
+                {
+                    question: "What does `strcmp(\"apple\", \"banana\")` return?",
+                    options: ["0", "A positive integer", "A negative integer", "A random value"],
+                    correctAnswerIndex: 2,
+                    explanation: "The `strcmp()` function compares two strings lexicographically. It returns a negative value if the first string is lexicographically smaller than the second, 0 if they are equal, and a positive value if the first is larger. 'apple' comes before 'banana'."
+                },
+                {
+                    question: "Which function is generally preferred for safe string input from the user?",
+                    options: ["scanf(\"%s\", ...)", "gets()", "fgets()", "getchar()"],
+                    correctAnswerIndex: 2,
+                    explanation: "`fgets()` is safer than `scanf(\"%s\")` and `gets()` because it allows specifying the maximum number of characters to read, preventing buffer overflows."
+                },
+                {
+                    question: "What is the purpose of `strcat()`?",
+                    options: ["To compare two strings.", "To concatenate (join) two strings.", "To find a substring.", "To copy a string."],
+                    correctAnswerIndex: 1,
+                    explanation: "The `strcat()` function (from `string.h`) appends (concatenates) one string to the end of another string."
+                },
+
+                // 9. Structures and Unions
+                {
+                    question: "Which keyword is used to define a structure in C?",
+                    options: ["class", "struct", "union", "type"],
+                    correctAnswerIndex: 1,
+                    explanation: "The `struct` keyword is used to define a structure, which is a user-defined data type that groups related data items of different data types."
+                },
+                {
+                    question: "In a `struct`, how are its members stored in memory?",
+                    options: ["All members share the same memory location.", "Members are stored in contiguous memory locations, each with its own distinct space.", "Members are stored randomly in memory.", "Only the first member is allocated memory."],
+                    correctAnswerIndex: 1,
+                    explanation: "Members of a structure are stored in contiguous memory locations, and each member has its own dedicated memory space."
+                },
+                {
+                    question: "To access members of a `struct` variable, which operator is used?",
+                    options: ["->", "*", ".", "&"],
+                    correctAnswerIndex: 2,
+                    explanation: "The `.` (dot) operator is used to access members of a structure variable directly."
+                },
+                {
+                    question: "What is the key difference between a `struct` and a `union` regarding memory allocation?",
+                    options: ["`struct` members share memory; `union` members have separate memory.", "`struct` members have separate memory; `union` members share the same memory location.", "Both `struct` and `union` members share memory.", "Both `struct` and `union` members have separate memory."],
+                    correctAnswerIndex: 1,
+                    explanation: "The key difference is that `struct` members occupy separate memory locations, while `union` members share the same memory location, with the size of the union being the size of its largest member."
+                },
+                {
+                    question: "If you have a pointer `ptr` to a structure, how do you access its member `data`?",
+                    options: ["(*ptr).data", "ptr->data", "ptr.data", "Both A and B"],
+                    correctAnswerIndex: 3,
+                    explanation: "Both `(*ptr).data` and `ptr->data` are valid ways to access a structure member through a pointer. The `->` operator is syntactic sugar for `(*ptr).`."
+                },
+                {
+                    question: "What is the purpose of the `typedef` keyword when used with structures?",
+                    options: ["To define a new structure.", "To create an alias (alternative name) for a data type.", "To allocate memory for a structure.", "To initialize structure members."],
+                    correctAnswerIndex: 1,
+                    explanation: "`typedef` is used to create a new name for an existing data type, which can make code more readable (e.g., `typedef struct Student Student;` allows using `Student` instead of `struct Student`)."
+                },
+
+                // 10. File Handling
+                {
+                    question: "Which function is used to open a file in C?",
+                    options: ["openfile()", "file_open()", "fopen()", "createfile()"],
+                    correctAnswerIndex: 2,
+                    explanation: "`fopen()` is the standard library function in C used to open files."
+                },
+                {
+                    question: "What is the correct mode to open a file for reading and writing, but where the file must already exist?",
+                    options: ["\"w+\"", "\"a+\"", "\"r+\"", "\"x\""],
+                    correctAnswerIndex: 2,
+                    explanation: "`\"r+\"` opens an existing file for both reading and writing. If the file doesn't exist, it returns `NULL`. `\"w+\"` creates a new file or truncates an existing one. `\"a+\"` appends to the end of a file."
+                },
+                {
+                    question: "Which function is used to close a file after operations are complete?",
+                    options: ["close()", "fileclose()", "fclose()", "endfile()"],
+                    correctAnswerIndex: 2,
+                    explanation: "The `fclose()` function closes a file stream that was previously opened by `fopen()`."
+                },
+                {
+                    question: "Which function is used to write formatted data to a file?",
+                    options: ["printf()", "scanf()", "fprintf()", "fputc()"],
+                    correctAnswerIndex: 2,
+                    explanation: "`fprintf()` is used to write formatted output to a file, similar to `printf()` but to a file stream."
+                },
+                {
+                    question: "What value does `fopen()` return if the file opening operation fails?",
+                    options: ["0", "1", "NULL", "EOF"],
+                    correctAnswerIndex: 2,
+                    explanation: "On failure, `fopen()` returns a `NULL` pointer."
+                },
+                {
+                    question: "To read a single character from a file pointed to by `fp`, which function would you use?",
+                    options: ["fgetc(fp)", "fread(fp)", "getc(fp)", "fscanf(fp, \"%c\", &ch)"],
+                    correctAnswerIndex: 0,
+                    explanation: "`fgetc()` reads a single character from the specified file stream. `getc()` is similar but can be a macro."
+                },
+                {
+                    question: "The `feof()` function is used to check for:",
+                    options: ["File open errors", "End of file condition", "File permissions", "Current file pointer position"],
+                    correctAnswerIndex: 1,
+                    explanation: "`feof()` checks the end-of-file indicator for a given stream."
+                },
+
+                // 11. Pre-Processor Directives
+                {
+                    question: "Which symbol indicates a pre-processor directive in C?",
+                    options: ["@", "#", "$", "!"],
+                    correctAnswerIndex: 1,
+                    explanation: "Pre-processor directives in C begin with the `#` symbol."
+                },
+                {
+                    question: "What is the difference between `#include <stdio.h>` and `#include \"myheader.h\"`?",
+                    options: ["There is no difference.", "The first is for user-defined headers, the second for standard library.", "The first searches standard directories, the second searches the current directory first.", "The first is for C++, the second for C."],
+                    correctAnswerIndex: 2,
+                    explanation: "Angle brackets (`< >`) instruct the preprocessor to search standard system directories for the header. Double quotes (`\" \"`) instruct it to search the current directory first, then standard directories."
+                },
+                {
+                    question: "The `#define` directive is used to:",
+                    options: ["Declare a function.", "Define a macro (text substitution).", "Create a new variable.", "Include an external file."],
+                    correctAnswerIndex: 1,
+                    explanation: "`#define` is used to define macros, which perform text substitution before compilation."
+                },
+                {
+                    question: "Which pre-processor directive is used for conditional compilation based on whether a macro is defined?",
+                    options: ["#if", "#ifdef", "#ifndef", "Both B and C"],
+                    correctAnswerIndex: 3,
+                    explanation: "`#ifdef` checks if a macro is defined, and `#ifndef` checks if a macro is NOT defined. Both are used for conditional compilation."
+                },
+                {
+                    question: "What will be the value of `PI` after preprocessing in the following code?\n`#define PI 3.14`\n`float circumference = 2 * PI * radius;`",
+                    options: ["\"PI\"", "3.14", "Undefined", "Error"],
+                    correctAnswerIndex: 1,
+                    explanation: "During preprocessing, `PI` will be replaced by its defined value `3.14` wherever it appears in the code."
+                },
+                {
+                    question: "Which directive signals the end of an `#if` or `#ifdef` block?",
+                    options: ["#end", "#terminate", "#endif", "#stop"],
+                    correctAnswerIndex: 2,
+                    explanation: "The `#endif` directive marks the end of a conditional compilation block (`#if`, `#ifdef`, `#ifndef`)."
+                },
+
+                // 12. Command Line Arguments
+                {
+                    question: "The `argc` parameter in `main(int argc, char *argv[])` represents:",
+                    options: ["The total number of characters in all arguments.", "The total number of command-line arguments, including the program name.", "The number of arguments passed by the user, excluding the program name.", "The size of the `argv` array in bytes."],
+                    correctAnswerIndex: 1,
+                    explanation: "`argc` (argument count) holds the total number of command-line arguments, including the name of the executable itself (which is always `argv[0]`)."
+                },
+                {
+                    question: "If you execute your program as `./myprogram arg1 123`, what will be the value of `argv[0]`?",
+                    options: ["myprogram", "arg1", "123", "NULL"],
+                    correctAnswerIndex: 0,
+                    explanation: "`argv[0]` always holds the name of the executable program."
+                },
+                {
+                    question: "In the same execution (`./myprogram arg1 123`), what will be the value of `argc`?",
+                    options: ["1", "2", "3", "4"],
+                    correctAnswerIndex: 2,
+                    explanation: "For `./myprogram arg1 123`, `argc` will be 3: `myprogram` (1), `arg1` (2), `123` (3)."
+                },
+                {
+                    question: "Command-line arguments are always received by the program as:",
+                    options: ["Integers", "Floating-point numbers", "Strings", "Characters"],
+                    correctAnswerIndex: 2,
+                    explanation: "All command-line arguments are passed to the `main` function as an array of strings (`char *argv[]`). You need to convert them to other data types if required (e.g., using `atoi()`, `atof()`)."
+                },
+                {
+                    question: "Which standard library function can be used to convert a command-line argument (which is a string) into an integer?",
+                    options: ["itoa()", "atoi()", "convert_to_int()", "str_to_int()"],
+                    correctAnswerIndex: 1,
+                    explanation: "`atoi()` (ASCII to integer) is a standard library function used to convert a string representation of a number into an integer."
+                }
+            ]
+        };
+
+        // DOM Elements
+        const mainSelectionScreen = document.getElementById('main-selection-screen');
+        const examScreen = document.getElementById('exam-screen');
+        const resultScreen = document.getElementById('result-screen');
+
+        const subjectSelect = document.getElementById('subject-select');
+        const durationSelect = document.getElementById('duration-select');
+        const startTestBtn = document.getElementById('start-test-btn');
+
+        const questionText = document.getElementById('question-text');
+        const optionsContainer = document.getElementById('options-container');
+        const currentQuestionNum = document.getElementById('current-question-num');
+        const totalQuestionsSpan = document.getElementById('total-questions');
+        const prevBtn = document.getElementById('prev-btn');
+        // New buttons
+        const clearAnswersBtn = document.getElementById('clear-answers-btn');
+        const markForReviewBtn = document.getElementById('mark-for-review-btn');
+        const skipQuestionBtn = document.getElementById('skip-question-btn');
+        const saveAndNextBtn = document.getElementById('save-and-next-btn'); // Renamed from next-btn
+        const submitExamBtn = document.getElementById('submit-exam-btn');
+
+
+        const timerDisplay = document.getElementById('timer');
+        const timerProgressBar = document.getElementById('timer-progress');
+        const scoreDisplay = document.getElementById('score-display');
+        const accuracyDisplay = document.getElementById('accuracy-display');
+        const totalQuestionsResult = document.getElementById('total-questions-result');
+        const timeTakenDisplay = document.getElementById('time-taken-display');
+        const feedbackArea = document.getElementById('feedback-area');
+        const retakeExamBtn = document.getElementById('retake-exam-btn');
+        const submitModalOverlay = document.getElementById('submit-modal-overlay');
+        const cancelSubmitBtn = document.getElementById('cancel-submit-btn');
+        const confirmSubmitBtn = document.getElementById('confirm-submit-btn');
+
+        // Exam State Variables
+        let currentQuestions = []; // Will hold the questions for the current exam
+        let currentQuestionIndex = 0;
+        let userAnswers = []; // Stores index of selected option for each question (null for not answered)
+        let markedForReview = []; // Stores boolean: true if marked for review, false otherwise
+        let totalScore = 0;
+        const FIXED_TIME_PER_QUESTION_SECONDS = 30; // 30 seconds per question
+        let timeLeft = FIXED_TIME_PER_QUESTION_SECONDS; // Time left for the *current* question
+        let timerInterval;
+        let examStartTime; // To store the timestamp when the exam starts
+
+        // --- Utility Functions ---
+
+        /**
+         * Shuffles an array in place using the Fisher-Yates (Knuth) algorithm.
+         * @param {Array} array The array to shuffle.
+         * @returns {Array} The shuffled array.
+         */
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+            }
+            return array;
+        }
+
+        /**
+         * Displays the current question and its options.
+         */
+        function displayQuestion() {
+            const question = currentQuestions[currentQuestionIndex];
+            if (!question) {
+                console.error("No question found for index:", currentQuestionIndex);
+                return;
+            }
+
+            questionText.textContent = question.question;
+            optionsContainer.innerHTML = ''; // Clear previous options
+
+            // Update question number display
+            currentQuestionNum.textContent = currentQuestionIndex + 1;
+            totalQuestionsSpan.textContent = currentQuestions.length;
+
+            // Create options
+            question.options.forEach((option, index) => {
+                const label = document.createElement('label');
+                label.className = 'option-label';
+                label.innerHTML = `
+                    <input type="radio" name="question${currentQuestionIndex}" value="${index}" ${userAnswers[currentQuestionIndex] === index ? 'checked' : ''}>
+                    <span>${option}</span>
+                `;
+                optionsContainer.appendChild(label);
+
+                // Add event listener for option selection
+                label.querySelector('input').addEventListener('change', (event) => {
+                    userAnswers[currentQuestionIndex] = parseInt(event.target.value);
+                });
+            });
+
+            // Update navigation button states
+            prevBtn.disabled = currentQuestionIndex === 0;
+
+            // Update Save & Next button text
+            if (currentQuestionIndex === currentQuestions.length - 1) {
+                saveAndNextBtn.textContent = 'Save & Finish';
+            } else {
+                saveAndNextBtn.textContent = 'Save & Next';
+            }
+
+            // Update Mark For Review button state
+            if (markedForReview[currentQuestionIndex]) {
+                markForReviewBtn.classList.add('marked');
+                markForReviewBtn.textContent = 'Unmark For Review';
+            } else {
+                markForReviewBtn.classList.remove('marked');
+                markForReviewBtn.textContent = 'Mark For Review';
+            }
+        }
+
+        /**
+         * Starts or resets the timer for the current question.
+         */
+        function startTimer() {
+            clearInterval(timerInterval); // Clear any existing timer
+            timeLeft = FIXED_TIME_PER_QUESTION_SECONDS; // Reset time for the new question to fixed 30s
+            timerDisplay.textContent = formatTime(timeLeft);
+            timerProgressBar.style.width = '100%';
+
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                timerDisplay.textContent = formatTime(timeLeft);
+                timerProgressBar.style.width = `${(timeLeft / FIXED_TIME_PER_QUESTION_SECONDS) * 100}%`; // Update progress bar
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    // Auto-advance logic
+                    if (currentQuestionIndex < currentQuestions.length - 1) {
+                        currentQuestionIndex++;
+                        displayQuestion();
+                        startTimer(); // Start timer for the next question
+                    } else {
+                        // If it's the last question and time runs out, auto-submit
+                        showSubmitConfirmation();
+                    }
+                }
+            }, 1000);
+        }
+
+        /**
+         * Formats seconds into MM:SS or SS format.
+         * @param {number} seconds The total seconds.
+         * @returns {string} Formatted time string.
+         */
+        function formatTime(seconds) {
+            if (seconds < 60) {
+                return `${seconds}s`;
+            }
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            return `${minutes}m ${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}s`;
+        }
+
+        /**
+         * Calculates the score and displays the results, including accuracy and time taken.
+         */
+        function calculateAndDisplayResults() {
+            totalScore = 0; // Reset total score for recalculation
+            let correctAnswersCount = 0;
+            let incorrectAnswersCount = 0;
+
+            feedbackArea.innerHTML = ''; // Clear previous feedback
+
+            // Calculate total time taken
+            const examEndTime = Date.now();
+            const timeTakenSeconds = Math.floor((examEndTime - examStartTime) / 1000);
+            timeTakenDisplay.textContent = formatTime(timeTakenSeconds);
+
+
+            currentQuestions.forEach((q, index) => {
+                const userAnswerIndex = userAnswers[index];
+                const isCorrect = userAnswerIndex === q.correctAnswerIndex;
+
+                if (userAnswerIndex !== null) { // Only count if question was attempted
+                    if (isCorrect) {
+                        totalScore += 1; // +1 for correct
+                        correctAnswersCount++;
+                    } else {
+                        totalScore -= 0.25; // -0.25 for incorrect
+                        incorrectAnswersCount++;
+                    }
+                }
+
+                // Create feedback item
+                const resultItem = document.createElement('div');
+                resultItem.className = `result-item mb-4 ${isCorrect ? 'correct' : (userAnswerIndex !== null ? 'incorrect' : '')}`; // Add incorrect class only if attempted
+                resultItem.innerHTML = `
+                    <p class="font-semibold text-gray-800 mb-2">Q${index + 1}: ${q.question}</p>
+                    <p class="text-gray-700">Your Answer: <span class="${isCorrect ? 'text-green-600' : (userAnswerIndex !== null ? 'text-red-600' : 'text-gray-500')} font-medium">
+                        ${userAnswerIndex !== null ? q.options[userAnswerIndex] : 'Not Answered'}
+                    </span></p>
+                    <p class="text-green-700">Correct Answer: <span class="font-medium">${q.options[q.correctAnswerIndex]}</span></p>
+                    <div class="explanation mt-2">
+                        <p class="font-medium">Explanation:</p>
+                        <p>${q.explanation}</p>
+                    </div>
+                `;
+                feedbackArea.appendChild(resultItem);
+            });
+
+            // Calculate Accuracy
+            let accuracy = 0;
+            if (currentQuestions.length > 0) {
+                accuracy = (correctAnswersCount / currentQuestions.length) * 100;
+            }
+
+            scoreDisplay.textContent = totalScore.toFixed(2);
+            accuracyDisplay.textContent = accuracy.toFixed(2) + '%';
+            totalQuestionsResult.textContent = currentQuestions.length;
+
+            examScreen.classList.add('hidden');
+            resultScreen.classList.remove('hidden');
+        }
+
+        /**
+         * Shows the submit confirmation modal.
+         */
+        function showSubmitConfirmation() {
+            submitModalOverlay.classList.remove('hidden');
+            clearInterval(timerInterval); // Pause timer
+        }
+
+        /**
+         * Hides the submit confirmation modal.
+         */
+        function hideSubmitConfirmation() {
+            submitModalOverlay.classList.add('hidden');
+            if (!examScreen.classList.contains('hidden')) {
+                startTimer(); // Resume timer if exam screen is still active
+            }
+        }
+
+        // --- New Button Functionalities ---
+
+        /**
+         * Clears the selected answer for the current question.
+         */
+        function clearCurrentAnswer() {
+            userAnswers[currentQuestionIndex] = null;
+            // Deselect all radio buttons for the current question
+            const radios = optionsContainer.querySelectorAll(`input[name="question${currentQuestionIndex}"]`);
+            radios.forEach(radio => radio.checked = false);
+        }
+
+        /**
+         * Skips the current question and moves to the next.
+         */
+        function skipCurrentQuestion() {
+            // No need to explicitly save answer here, as it's null by default if not selected
+            if (currentQuestionIndex < currentQuestions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion();
+                startTimer();
+            } else {
+                // If it's the last question and skipped, proceed to submit confirmation
+                showSubmitConfirmation();
+            }
+        }
+
+        /**
+         * Marks or unmakes the current question for review.
+         */
+        function toggleMarkForReview() {
+            markedForReview[currentQuestionIndex] = !markedForReview[currentQuestionIndex];
+            displayQuestion(); // Update button text/color
+        }
+
+        /**
+         * Saves the current answer and moves to the next question.
+         */
+        function saveAndNextQuestion() {
+            // The answer is already saved in userAnswers array by the radio button change listener
+            if (currentQuestionIndex < currentQuestions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion();
+                startTimer();
+            } else {
+                // If it's the last question, directly go to submit confirmation
+                showSubmitConfirmation();
+            }
+        }
+
+
+        // --- Event Listeners ---
+
+        startTestBtn.addEventListener('click', () => {
+            const selectedSubject = subjectSelect.value;
+            const selectedDuration = parseInt(durationSelect.value); // In minutes
+
+            if (!selectedSubject) {
+                alert('Please select a subject.');
+                return;
+            }
+            if (isNaN(selectedDuration) || selectedDuration <= 0) {
+                alert('Please select a valid duration.');
+                return;
+            }
+
+            const availableQuestionsForSubject = allSubjectsQuestions[selectedSubject];
+
+            if (!availableQuestionsForSubject || availableQuestionsForSubject.length === 0) {
+                alert(`No questions available for ${selectedSubject}. Please choose another subject.`);
+                return;
+            }
+
+            // Determine the number of questions to select based on duration (30s per question)
+            let desiredNumQuestions = Math.floor((selectedDuration * 60) / FIXED_TIME_PER_QUESTION_SECONDS);
+
+            // Ensure we don't select more questions than available
+            let numQuestionsToSelect = Math.min(desiredNumQuestions, availableQuestionsForSubject.length);
+
+            if (numQuestionsToSelect === 0) {
+                alert(`Not enough questions available for the selected duration (${selectedDuration} mins). Please try a shorter duration or ensure more questions are added for ${selectedSubject}.`);
+                return;
+            }
+
+            // Shuffle all available questions for the subject and then slice to get the desired number
+            let shuffledQuestions = shuffleArray([...availableQuestionsForSubject]);
+            currentQuestions = shuffledQuestions.slice(0, numQuestionsToSelect);
+
+            // Reset exam state for the new exam
+            currentQuestionIndex = 0;
+            userAnswers = new Array(currentQuestions.length).fill(null);
+            markedForReview = new Array(currentQuestions.length).fill(false); // Initialize marked questions
+            totalScore = 0;
+            examStartTime = Date.now(); // Record the exact start time of the exam
+
+            // Transition screens
+            mainSelectionScreen.classList.add('hidden');
+            examScreen.classList.remove('hidden');
+
+            displayQuestion();
+            startTimer();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                displayQuestion();
+                startTimer(); // Reset timer for new question
+            }
+        });
+
+        // Event listeners for new buttons
+        clearAnswersBtn.addEventListener('click', clearCurrentAnswer);
+        markForReviewBtn.addEventListener('click', toggleMarkForReview);
+        skipQuestionBtn.addEventListener('click', skipCurrentQuestion);
+        saveAndNextBtn.addEventListener('click', saveAndNextQuestion); // This replaces the original 'next-btn'
+
+        submitExamBtn.addEventListener('click', showSubmitConfirmation);
+
+        cancelSubmitBtn.addEventListener('click', hideSubmitConfirmation);
+
+        confirmSubmitBtn.addEventListener('click', () => {
+            hideSubmitConfirmation();
+            clearInterval(timerInterval); // Stop timer permanently
+            calculateAndDisplayResults();
+        });
+
+        retakeExamBtn.addEventListener('click', () => {
+            resultScreen.classList.add('hidden');
+            mainSelectionScreen.classList.remove('hidden'); // Go back to selection screen
+            // State will be reset by the startTestBtn click again
+        });
+
+        // Initial setup on page load: ensure exam and result screens are hidden
+        document.addEventListener('DOMContentLoaded', () => {
+            examScreen.classList.add('hidden');
+            resultScreen.classList.add('hidden');
+            // The main selection screen is visible by default
+        });
+    </script>
+</body>
+</html>

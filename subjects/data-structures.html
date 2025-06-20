@@ -3,28 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JECA-like dsa MCQ Exam</title>
-    <!-- Tailwind CSS CDN for styling -->
+    <title>JECA 2025 - Data Structures MCQ Practice Set</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
+
+    <script>
+        const questions = [
+            {
+                question: "Which of the following is a non-primitive linear data structure?",
+                options: ["Integer", "Float", "Array", "Pointer"],
+                correct: 2 // c) Array
+            },
+            {
+                question: "The term \"data structure\" refers to:",
+                options: ["The organization and storage of data in a database.", "A collection of algorithms used for data processing.", "A particular way of organizing data in a computer to use it efficiently.", "A method for encrypting data for security."],
+                correct: 2 // c) A particular way of organizing data in a computer to use it efficiently.
+            },
+            {
+                question: "Which of the following data structures allows hierarchical organization of data?",
+                options: ["Queue", "Stack", "Graph", "Tree"],
+                correct: 3 // d) Tree
+            },
+            {
+                question: "What is the primary advantage of using data structures?",
+                options: ["To complicate data handling", "To reduce memory usage and improve processing speed", "To secure data from unauthorized access", "To enable concurrent data access"],
+                correct: 1 // b) To reduce memory usage and improve processing speed
+            },
+            {
+                question: "Which search algorithm requires the data to be sorted?",
+                options: ["Linear Search", "Hash Search", "Binary Search", "Depth-First Search"],
+                correct: 2 // c) Binary Search
+            },
+            {
+                question: "What is the worst-case time complexity of Linear Search for an array of 'n' elements?",
+                options: ["O(1)", "O(log n)", "O(n)", "O(n$^2$)"],
+                correct: 2 // c) O(n)
+            },
+            {
+                question: "For an array containing 1024 elements, what is the maximum number of comparisons required to find an element using Binary Search in the worst case?",
+                options: ["1024", "10", "512", "11"],
+                correct: 1 // b) 10
+            },
+            {
+                question: "Binary search is NOT suitable for:",
+                options: ["Large datasets", "Unsorted arrays", "Small datasets", "Data stored in contiguous memory locations"],
+                correct: 1 // b) Unsorted arrays
+            },
+            {
+                question: "If an element is present at the first position in an array, what is the best-case time complexity of Linear Search?",
+                options: ["O(1)", "O(log n)", "O(n)", "O(n$^2$)"],
+                correct: 0 // a) O(1)
+            },
+            {
+                question: "Which sorting algorithm has the worst-case time complexity of O(n$^2$) but a best-case time complexity of O(n) when the array is already sorted?",
+                options: ["Merge Sort", "Selection Sort", "Insertion Sort", "Heap Sort"],
+                correct: 2 // c) Insertion Sort
+            },
+            {
+                question: "What is the time complexity of Merge Sort in all cases (best, worst, and average)?",
+                options: ["O(n$^2$)", "O(n)", "O(n log n)", "O(log n)"],
+                correct: 2 // c) O(n log n)
+            },
+            {
+                question: "Which of the following sorting algorithms is an in-place algorithm (uses O(1) auxiliary space) and has a guaranteed O(n log n) time complexity?",
+                options: ["Merge Sort", "Quick Sort", "Heap Sort", "Bubble Sort"],
+                correct: 2 // c) Heap Sort
+            },
+            {
+                question: "Which sorting algorithm is generally considered the fastest in practice for large datasets, despite its worst-case O(n$^2$) performance?",
+                options: ["Bubble Sort", "Insertion Sort", "Quick Sort", "Selection Sort"],
+                correct: 2 // c) Quick Sort
+            },
+            {
+                question: "A stable sorting algorithm:",
+                options: ["Always takes O(n log n) time.", "Preserves the relative order of equal elements.", "Always uses O(1) auxiliary space.", "Is only applicable to numerical data."],
+                correct: 1 // b) Preserves the relative order of equal elements.
+            },
+            {
+                question: "How many swaps are performed in Selection Sort in the worst case for 'n' elements?",
+                options: ["O(n)", "O(n$^2$)", "O(log n)", "O(1)"],
+                correct: 0 // a) O(n)
+            },
+            {
+                question: "Which of the following is NOT a comparison-based sorting algorithm?",
+                options: ["Quick Sort", "Merge Sort", "Bubble Sort", "Counting Sort"],
+                correct: 3 // d) Counting Sort
+            },
+            {
+                question: "The process of arranging elements in a particular order is called:",
+                options: ["Searching", "Traversal", "Sorting", "Hashing"],
+                correct: 2 // c) Sorting
+            },
+            {
+                question: "A stack follows the principle of:",
+                options: ["FIFO (First In, First Out)", "LIFO (Last In, First Out)", "LILO (Last In, Last Out)", "FILO (First In, Last Out)"],
+                correct: 1 // b) LIFO (Last In, First Out)
+            },
+            {
+                question: "Which operation is used to add an element to the top of a stack?",
+                options: ["Dequeue", "Pop", "Enqueue", "Push"],
+                correct: 3 // d) Push
+            },
+            {
+                question: "What is the condition called when you try to pop an element from an empty stack?",
+                options: ["Overflow", "Underflow", "Overrun", "Segmentation fault"],
+                correct: 1 // b) Underflow
+            },
+            {
+                question: "Which of the following is a common application of stacks?",
+                options: ["CPU scheduling", "Browser history (back button)", "Network routing", "Printing queue management"],
+                correct: 1 // b) Browser history (back button)
+            },
+            {
+                question: "If a stack is implemented using an array of size MAX_SIZE, how is the top pointer updated after a push operation?",
+                options: ["top is decremented", "top is incremented", "top remains unchanged", "top is reset to 0"],
+                correct: 1 // b) top is incremented
+            },
+            {
+                question: "A queue follows the principle of:",
+                options: ["LIFO (Last In, First Out)", "FILO (First In, Last Out)", "FIFO (First In, First Out)", "LILO (Last In, Last Out)"],
+                correct: 2 // c) FIFO (First In, First Out)
+            },
+            {
+                question: "Which operation is used to remove an element from the front of a queue?",
+                options: ["Push", "Pop", "Enqueue", "Dequeue"],
+                correct: 3 // d) Dequeue
+            },
+            {
+                question: "What is a \"circular queue\" primarily used to overcome in array-based queue implementation?",
+                options: ["The issue of fixed size", "The problem of wasted memory due to linear movement of front and rear", "The difficulty of implementing peek operation", "The inability to handle multiple data types"],
+                correct: 1 // b) The problem of wasted memory due to linear movement of front and rear
+            },
+            {
+                question: "Which data structure is typically used to implement Breadth-First Search (BFS)?",
+                options: ["Stack", "Queue", "Linked List", "Tree"],
+                correct: 1 // b) Queue
+            },
+            {
+                question: "In an array-based queue, if front = 0 and rear = 0, what does it signify?",
+                options: ["The queue is full", "The queue is empty", "The queue has only one element", "It's an invalid state"],
+                correct: 1 // b) The queue is empty
+            },
+            {
+                question: "Which of the following statements is TRUE about linked lists compared to arrays?",
+                options: ["Linked lists offer random access to elements.", "Arrays are more efficient for insertions and deletions in the middle.", "Linked lists have dynamic size.", "Arrays generally consume more memory per element."],
+                correct: 2 // c) Linked lists have dynamic size.
+            },
+            {
+                question: "In a singly linked list, what does the next pointer of the last node point to?",
+                options: ["The first node", "The second node", "NULL", "It points to itself"],
+                correct: 2 // c) NULL
+            },
+            {
+                question: "What is the time complexity for inserting a node at the beginning of a singly linked list?",
+                options: ["O(1)", "O(log n)", "O(n)", "O(n$^2$)"],
+                correct: 0 // a) O(1)
+            },
+            {
+                question: "Which type of linked list allows traversal in both forward and backward directions?",
+                options: ["Singly Linked List", "Doubly Linked List", "Circular Linked List", "Both b and c"],
+                correct: 1 // b) Doubly Linked List
+            },
+            {
+                question: "If you want to delete a specific node in a singly linked list, what information is usually needed for efficient deletion?",
+                options: ["The data of the node to be deleted", "A pointer to the previous node of the one to be deleted", "A pointer to the next node of the one to be deleted", "Only the head pointer is sufficient"],
+                correct: 1 // b) A pointer to the previous node of the one to be deleted
+            },
+            {
+                question: "Which of the following is NOT an advantage of linked lists?",
+                options: ["Dynamic size", "Ease of insertion/deletion", "Efficient random access", "Flexible memory management"],
+                correct: 2 // c) Efficient random access
+            },
+            {
+                question: "In a tree data structure, the node with no parent is called the:",
+                options: ["Leaf node", "Root node", "Internal node", "Child node"],
+                correct: 1 // b) Root node
+            },
+            {
+                question: "A binary tree where every node has either zero or two children is called a:",
+                options: ["Complete Binary Tree", "Perfect Binary Tree", "Full Binary Tree", "Skewed Binary Tree"],
+                correct: 2 // c) Full Binary Tree
+            },
+            {
+                question: "Which tree traversal visits the nodes in ascending order of their values in a Binary Search Tree (BST)?",
+                options: ["Pre-order traversal", "In-order traversal", "Post-order traversal", "Level-order traversal"],
+                correct: 1 // b) In-order traversal
+            },
+            {
+                question: "What is the worst-case time complexity for searching an element in a Binary Search Tree?",
+                options: ["O(1)", "O(log n)", "O(n)", "O(n$^2$)"],
+                correct: 2 // c) O(n)
+            },
+            {
+                question: "A tree in which the height difference between the left and right subtrees of any node is at most 1 is called a:",
+                options: ["Complete Binary Tree", "Full Binary Tree", "Balanced Binary Tree", "Skewed Binary Tree"],
+                correct: 2 // c) Balanced Binary Tree
+            },
+            {
+                question: "The height of a tree is defined as the length of the longest path from the root to a:",
+                options: ["Sibling node", "Parent node", "Leaf node", "Internal node"],
+                correct: 2 // c) Leaf node
+            },
+            {
+                question: "Which traversal method uses a queue to visit nodes level by level?",
+                options: ["Pre-order", "In-order", "Post-order", "Level-order"],
+                correct: 3 // d) Level-order
+            },
+            {
+                question: "A graph where edges have a direction associated with them is called a:",
+                options: ["Undirected Graph", "Weighted Graph", "Directed Graph (Digraph)", "Complete Graph"],
+                correct: 2 // c) Directed Graph (Digraph)
+            },
+            {
+                question: "Which graph representation is suitable for sparse graphs (graphs with few edges) to save space?",
+                options: ["Adjacency Matrix", "Adjacency List", "Incidence Matrix", "Edge List"],
+                correct: 1 // b) Adjacency List
+            },
+            {
+                question: "What is the time complexity to check if an edge exists between two vertices in an Adjacency Matrix representation?",
+                options: ["O(V)", "O(E)", "O(1)", "O(V+E)"],
+                correct: 2 // c) O(1)
+            },
+            {
+                question: "Which graph traversal algorithm uses a stack (or recursion) and explores as far as possible along each branch before backtracking?",
+                options: ["Breadth-First Search (BFS)", "Depth-First Search (DFS)", "Dijkstra's Algorithm", "Prim's Algorithm"],
+                correct: 1 // b) Depth-First Search (DFS)
+            },
+            {
+                question: "In a graph, what is a \"cycle\"?",
+                options: ["A path that visits every vertex exactly once.", "A path that starts and ends at the same vertex, with at least one edge, and no repeated vertices/edges other than the start/end.", "A collection of disconnected vertices.", "The maximum degree of any vertex in the graph."],
+                correct: 1 // b) A path that starts and ends at the same vertex, with at least one edge, and no repeated vertices/edges other than the start/end.
+            },
+            {
+                question: "If a graph has V vertices and E edges, what is the space complexity of the Adjacency List representation?",
+                options: ["O(V$^2$)", "O(E)", "O(V + E)", "O(V log E)"],
+                correct: 2 // c) O(V + E)
+            },
+            {
+                question: "Which of the following is a common application of graphs?",
+                options: ["Implementing undo/redo functionality", "Representing hierarchical data like file systems", "Social network analysis and mapping", "Evaluating arithmetic expressions"],
+                correct: 2 // c) Social network analysis and mapping
+            }
+        ];
+    </script>
 </head>
 <body>
     <div class="container">
-        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">JECA-like MCQ Exam</h1>
-        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Data Structures</h1>
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">JECA 2025 - Data Structures MCQ Practice Set</h1>
 
-        <!-- Quiz Section -->
         <div id="quiz-section">
             <div class="question-container">
                 <p id="question-text" class="text-xl font-semibold text-gray-700 mb-4"></p>
                 <div id="options-container" class="space-y-3">
-                    <!-- Options will be dynamically inserted here by script.js -->
-                </div>
+                    </div>
             </div>
         </div>
 
-        <!-- Result Section (Initially hidden) -->
         <div id="result-section" class="hidden result-container">
             <h2 class="text-2xl font-bold mb-4">Quiz Completed!</h2>
             <p class="text-xl">Final Score: <span id="score-display" class="font-bold">0</span></p>
@@ -34,7 +268,6 @@
             <button id="restart-btn" class="submit-btn mt-6">Restart Quiz</button>
         </div>
 
-        <!-- Message Box for alerts (replaces alert()) -->
         <div id="message-box" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden">
             <div class="bg-white rounded-lg p-6 shadow-lg text-center max-w-sm w-full">
                 <p id="message-text" class="text-lg mb-4"></p>
@@ -43,7 +276,6 @@
         </div>
     </div>
 
-    <!-- Link to external JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>
