@@ -2484,6 +2484,515 @@ const allSubjectsQuestions = {
     },
   ],
 
+  "computer-networking": [
+    {
+      question:
+        "Which of the following is NOT a primary benefit of a computer network?",
+      options: [
+        "Resource Sharing",
+        "High Reliability",
+        "Increased individual hardware cost",
+        "Enhanced Communication Medium",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Computer networks primarily aim to reduce costs by sharing resources. Increased individual hardware cost is a disadvantage, not a benefit.",
+      hint: "Consider the economic implications of setting up a network.",
+    },
+    {
+      question:
+        "A device that connects a computer to the network and allows it to communicate is called a:",
+      options: ["Router", "Switch", "Network Interface Card (NIC)", "Hub"],
+      correctAnswerIndex: 2,
+      explanation:
+        "A Network Interface Card (NIC) is hardware that allows a computer to connect to a network. Routers, switches, and hubs are network devices, but the NIC is what physically connects the end device.",
+      hint: "Think about the component directly installed in a computer to enable network connectivity.",
+    },
+    {
+      question: "What is the main purpose of a network operating system (NOS)?",
+      options: [
+        "To manage individual user applications",
+        "To run network games",
+        "To manage network resources and services",
+        "To connect to the internet directly",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "A Network Operating System (NOS) is designed to manage network resources such as printers, files, and applications, and to provide services to users on the network.",
+      hint: "Focus on the 'network' aspect of the operating system's function.",
+    },
+    {
+      question:
+        "Which application area primarily uses networks for online shopping, banking, and stock trading?",
+      options: [
+        "Home Applications",
+        "Business Applications",
+        "Mobile Applications",
+        "Social Applications",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Online shopping, banking, and stock trading are core activities within the realm of Business Applications, often conducted over wide-area networks.",
+      hint: "Consider the nature of commercial transactions and services.",
+    },
+    {
+      question:
+        "Telemedicine, which involves remote healthcare consultations, falls under which application area of computer networks?",
+      options: ["Home", "Business", "Mobile", "Social"],
+      correctAnswerIndex: 1,
+      explanation:
+        "While telemedicine can involve home use and mobile devices, its primary classification is as a Business Application (specifically, e-commerce or e-business in the healthcare sector) due to the professional services and organizational infrastructure involved.",
+      hint: "Think about the broader context of professional services and organized sectors.",
+    },
+    {
+      question:
+        "A network that covers a small geographical area, typically within a building or a campus, is known as a:",
+      options: ["WAN", "MAN", "LAN", "PAN"],
+      correctAnswerIndex: 2,
+      explanation:
+        "A Local Area Network (LAN) is a computer network that interconnects computers within a limited area such as a residence, school, laboratory, university campus, or office building.",
+      hint: "The 'L' in the acronym refers to the size of the area covered.",
+    },
+    {
+      question:
+        "Which network topology connects all devices to a single central cable, where a break in the cable can halt the entire network?",
+      options: ["Star", "Ring", "Bus", "Mesh"],
+      correctAnswerIndex: 2,
+      explanation:
+        "In a Bus topology, all devices are connected to a single common communication line (the 'bus'). A break in this central cable disrupts communication for all connected devices.",
+      hint: "Imagine a straight line with devices connected along its length.",
+    },
+    {
+      question: "In a client-server network architecture:",
+      options: [
+        "All devices can act as both clients and servers.",
+        "There are no dedicated servers.",
+        "Dedicated servers provide services to clients.",
+        "It is primarily used for small, temporary networks.",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "In a client-server model, specific powerful computers (servers) are dedicated to providing resources and services (like files, printing, web pages) to other computers (clients) upon request.",
+      hint: "Consider the roles and responsibilities of machines in this architecture.",
+    },
+    {
+      question:
+        "Which of the following is an example of an unguided transmission medium?",
+      options: [
+        "Fiber Optic Cable",
+        "Coaxial Cable",
+        "Twisted-Pair Cable",
+        "Radio Waves",
+      ],
+      correctAnswerIndex: 3,
+      explanation:
+        "Unguided media (or wireless media) transmit electromagnetic waves without using a physical conductor. Radio waves, microwaves, and infrared are examples. Fiber optic, coaxial, and twisted-pair cables are guided media.",
+      hint: "Think about media that do not use a physical conductor for transmission.",
+    },
+    {
+      question:
+        "Which layer of the OSI model is responsible for logical addressing and routing packets across different networks?",
+      options: [
+        "Data Link Layer",
+        "Network Layer",
+        "Transport Layer",
+        "Application Layer",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The Network Layer (Layer 3) is responsible for logical addressing (e.g., IP addresses) and finding the best path for data packets to travel from source to destination across various networks (routing).",
+      hint: "This layer deals with IP addresses and inter-network communication.",
+    },
+    {
+      question:
+        "The TCP/IP model's Application Layer combines which OSI layers?",
+      options: [
+        "Physical and Data Link",
+        "Network and Transport",
+        "Session, Presentation, and Application",
+        "Transport and Session",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "The TCP/IP model is a condensed version of the OSI model. Its Application Layer combines the functionalities of the OSI's Session (Layer 5), Presentation (Layer 6), and Application (Layer 7) layers.",
+      hint: "Consider the highest layers of the OSI model that deal with application-specific functions.",
+    },
+    {
+      question:
+        "Which device operates primarily at the Data Link Layer (Layer 2) of the OSI model?",
+      options: ["Router", "Hub", "Switch", "Repeater"],
+      correctAnswerIndex: 2,
+      explanation:
+        "A Switch operates at the Data Link Layer (Layer 2) and uses MAC addresses to forward frames to specific ports, unlike hubs which broadcast to all ports.",
+      hint: "This device intelligently forwards frames based on MAC addresses.",
+    },
+    {
+      question:
+        "The process of establishing, managing, and terminating sessions between applications is the responsibility of which OSI layer?",
+      options: [
+        "Transport Layer",
+        "Session Layer",
+        "Presentation Layer",
+        "Application Layer",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The Session Layer (Layer 5) is responsible for setting up, managing, and tearing down communication sessions between applications.",
+      hint: "This layer handles the 'conversation' or 'dialogue' between applications.",
+    },
+    {
+      question:
+        "Which guided transmission medium offers the highest bandwidth and immunity to electromagnetic interference?",
+      options: [
+        "UTP (Unshielded Twisted Pair)",
+        "STP (Shielded Twisted Pair)",
+        "Coaxial Cable",
+        "Fiber Optic Cable",
+      ],
+      correctAnswerIndex: 3,
+      explanation:
+        "Fiber optic cables transmit data using light pulses, providing significantly higher bandwidth and complete immunity to electromagnetic interference compared to copper-based cables.",
+      hint: "Think about the medium that uses light for transmission.",
+    },
+    {
+      question: "What is the IEEE standard associated with Wi-Fi technology?",
+      options: ["802.3", "802.5", "802.11", "802.16"],
+      correctAnswerIndex: 2,
+      explanation:
+        "IEEE 802.11 is a set of media access control (MAC) and physical layer (PHY) specifications for implementing wireless local area network (WLAN) computer communication in the 2.4, 5, and 60 GHz frequency bands. This is the standard for Wi-Fi.",
+      hint: "This standard is specifically for wireless local area networks.",
+    },
+    {
+      question:
+        "Which of the following wireless technologies is primarily used for short-range communication between personal devices?",
+      options: [
+        "Wi-Fi",
+        "Cellular (e.g., 5G)",
+        "Bluetooth",
+        "Satellite communication",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Bluetooth is a short-range wireless technology standard used for exchanging data between fixed and mobile devices over short distances.",
+      hint: "Consider the technology often used for connecting headphones or car systems.",
+    },
+    {
+      question:
+        "Which routing algorithm manually configures routes and is suitable for small, stable networks?",
+      options: [
+        "Distance Vector Routing",
+        "Link State Routing",
+        "Static Routing",
+        "Path Vector Routing",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Static routing involves manually configuring routing tables. It's simple for small, unchanging networks but becomes unmanageable and inflexible for larger, dynamic networks.",
+      hint: "This method doesn't involve routers dynamically exchanging routing information.",
+    },
+    {
+      question:
+        "OSPF (Open Shortest Path First) is an example of which type of dynamic routing protocol?",
+      options: ["Distance Vector", "Link State", "Path Vector", "Static"],
+      correctAnswerIndex: 1,
+      explanation:
+        "OSPF is a widely used interior gateway protocol (IGP) that falls under the Link State routing algorithm category. It builds a complete 'map' of the network topology.",
+      hint: "This protocol builds a comprehensive view of the network's links.",
+    },
+    {
+      question:
+        "What is the primary metric used by RIP (Routing Information Protocol) to determine the best path?",
+      options: ["Bandwidth", "Delay", "Hop Count", "Cost"],
+      correctAnswerIndex: 2,
+      explanation:
+        "RIP is a distance-vector routing protocol that uses hop count (the number of routers a packet must pass through) as its sole metric to determine the best path to a destination.",
+      hint: "This metric counts the number of 'jumps' a packet makes between routers.",
+    },
+    {
+      question:
+        "Which protocol operates at the Transport Layer and provides connectionless, unreliable datagram service?",
+      options: ["IP", "TCP", "UDP", "ICMP"],
+      correctAnswerIndex: 2,
+      explanation:
+        "User Datagram Protocol (UDP) is a Transport Layer protocol that provides a connectionless service, meaning it doesn't establish a connection before sending data, and it does not guarantee delivery or order of packets, making it unreliable.",
+      hint: "This protocol is often used for real-time applications where speed is more critical than guaranteed delivery.",
+    },
+    {
+      question:
+        "What is the main characteristic of TCP (Transmission Control Protocol)?",
+      options: [
+        "Connectionless and unreliable",
+        "Connection-oriented and unreliable",
+        "Connectionless and reliable",
+        "Connection-oriented and reliable",
+      ],
+      correctAnswerIndex: 3,
+      explanation:
+        "TCP is a connection-oriented protocol that establishes a connection using a 3-way handshake before data transfer and ensures reliable delivery through acknowledgments, retransmissions, and flow/congestion control.",
+      hint: "This protocol is known for guaranteeing delivery and maintaining order.",
+    },
+    {
+      question:
+        "The 3-way handshake is a mechanism used by which protocol to establish a connection?",
+      options: ["UDP", "IP", "TCP", "ICMP"],
+      correctAnswerIndex: 2,
+      explanation:
+        "The 3-way handshake (SYN, SYN-ACK, ACK) is the process by which TCP establishes a connection before data can be exchanged, ensuring both sender and receiver are ready.",
+      hint: "This mechanism is fundamental for a connection-oriented protocol.",
+    },
+    {
+      question:
+        "Which protocol is primarily responsible for logical addressing and routing packets between networks?",
+      options: ["TCP", "UDP", "IP", "HTTP"],
+      correctAnswerIndex: 2,
+      explanation:
+        "Internet Protocol (IP) is the primary protocol at the Network Layer responsible for assigning logical addresses (IP addresses) to devices and routing packets across different networks.",
+      hint: "This protocol is the foundation for addressing and delivering data across the internet.",
+    },
+    {
+      question: "What is the address length of an IPv4 address?",
+      options: ["64 bits", "128 bits", "32 bits", "48 bits"],
+      correctAnswerIndex: 2,
+      explanation:
+        "An IPv4 address is a 32-bit number, usually represented in dotted decimal notation.",
+      hint: "Think about the range of numbers in each octet of a typical IP address.",
+    },
+    {
+      question:
+        "The primary reason for the development and adoption of IPv6 is:",
+      options: [
+        "Improved security for all applications.",
+        "Exhaustion of IPv4 addresses.",
+        "Simpler header format.",
+        "Built-in mobility support.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The main driver for IPv6 adoption is the critical shortage and eventual exhaustion of available IPv4 addresses due to the massive growth of the internet and connected devices.",
+      hint: "Consider the problem that arose with the rapid expansion of the internet.",
+    },
+    {
+      question: "Which of the following is a characteristic of IPv6?",
+      options: [
+        "Dotted decimal notation",
+        "Uses classes (A, B, C)",
+        "Built-in IPsec",
+        "Variable header length",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "IPv6 addresses use hexadecimal notation, does not use classes, and has built-in IPsec for security, which was an optional add-on in IPv4. It also has a fixed header length, unlike IPv4's variable header.",
+      hint: "Think about the security features that are integral to IPv6's design.",
+    },
+    {
+      question:
+        "In reliable data transfer, what is the purpose of acknowledgments (ACKs)?",
+      options: [
+        "To indicate a corrupted packet.",
+        "To request retransmission of a packet.",
+        "To confirm successful reception of data.",
+        "To send data in reverse order.",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Acknowledgments (ACKs) are signals sent by the receiver back to the sender to confirm that data segments have been successfully received and are ready to be processed.",
+      hint: "ACKs are like a 'received' notification.",
+    },
+    {
+      question:
+        "Which reliable data transfer technique allows the sender to transmit multiple packets without waiting for an ACK for each, but retransmits all packets from the lost one onwards?",
+      options: [
+        "Stop-and-Wait ARQ",
+        "Selective Repeat ARQ",
+        "Go-Back-N (GBN) ARQ",
+        "RDT 1.0",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Go-Back-N (GBN) ARQ is a sliding window protocol where the sender can transmit multiple frames without receiving an acknowledgment for each. If a packet is lost or corrupted, the sender retransmits that packet and all subsequent packets that were sent after it.",
+      hint: "This method requires retransmitting a range of packets if one is lost.",
+    },
+    {
+      question:
+        "What is the primary role of sequence numbers in reliable data transfer?",
+      options: [
+        "To define the priority of packets.",
+        "To ensure ordered delivery and detect duplicates.",
+        "To indicate the size of the packet.",
+        "To encrypt the data.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Sequence numbers are crucial in reliable data transfer for two main reasons: they allow the receiver to reassemble packets in the correct order, and they help detect and discard duplicate packets that might have been retransmitted.",
+      hint: "Sequence numbers help keep track of the order of data segments.",
+    },
+    {
+      question:
+        "Which protocol is used for sending email messages between mail servers?",
+      options: ["POP3", "IMAP", "SMTP", "HTTP"],
+      correctAnswerIndex: 2,
+      explanation:
+        "Simple Mail Transfer Protocol (SMTP) is the standard protocol for sending email across the internet from a client to a mail server, and between mail servers.",
+      hint: "This protocol is specifically for *transferring* mail.",
+    },
+    {
+      question: "What is the default TCP port number for HTTP?",
+      options: ["21", "23", "80", "443"],
+      correctAnswerIndex: 2,
+      explanation:
+        "Hypertext Transfer Protocol (HTTP), used for web Browse, commonly uses TCP port 80. Port 443 is used for HTTPS (secure HTTP).",
+      hint: "This is a very common port used for web traffic.",
+    },
+    {
+      question:
+        "The Domain Name System (DNS) primarily performs which function?",
+      options: [
+        "Transfers files between clients and servers.",
+        "Sends and receives email.",
+        "Translates domain names to IP addresses.",
+        "Provides secure remote access.",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "The Domain Name System (DNS) is a hierarchical and decentralized naming system for computers, services, or other resources connected to the Internet or a private network. It translates easily memorable domain names (like www.google.com) into numerical IP addresses (like 172.217.160.142) that computers use to identify each other.",
+      hint: "DNS is like the internet's phonebook.",
+    },
+    {
+      question:
+        "Which protocol is used to automatically assign IP addresses to devices on a network?",
+      options: ["FTP", "SSH", "DHCP", "SNMP"],
+      correctAnswerIndex: 2,
+      explanation:
+        "Dynamic Host Configuration Protocol (DHCP) is a network management protocol used on Internet Protocol (IP) networks for dynamically distributing network configuration parameters, such as IP addresses, to devices.",
+      hint: "This protocol helps devices 'get' their network configuration automatically.",
+    },
+    {
+      question:
+        "Which of the following is NOT one of the primary goals of network security (CIA Triad)?",
+      options: ["Confidentiality", "Integrity", "Availability", "Redundancy"],
+      correctAnswerIndex: 3,
+      explanation:
+        "The CIA Triad (Confidentiality, Integrity, Availability) represents the three core principles of information security. Redundancy is a strategy to achieve availability but is not a primary goal itself.",
+      hint: "The 'CIA' acronym stands for three key security aspects.",
+    },
+    {
+      question:
+        "A network security device that monitors and filters incoming and outgoing network traffic based on predefined security rules is called a:",
+      options: ["Router", "Switch", "Firewall", "Hub"],
+      correctAnswerIndex: 2,
+      explanation:
+        "A Firewall is a network security system that monitors and controls incoming and outgoing network traffic based on predetermined security rules.",
+      hint: "This device acts as a barrier or gatekeeper for network traffic.",
+    },
+    {
+      question:
+        "What is the main advantage of using SSH over Telnet for remote access?",
+      options: [
+        "Faster connection speed",
+        "Graphical user interface",
+        "Encrypted communication",
+        "Lower bandwidth consumption",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Secure Shell (SSH) provides a secure channel over an unsecured network by encrypting the communication, unlike Telnet which sends data in plain text, making it vulnerable to eavesdropping.",
+      hint: "Think about the 'S' in SSH.",
+    },
+    {
+      question:
+        "What type of attack aims to make a system or network unavailable by overwhelming it with traffic?",
+      options: [
+        "Phishing",
+        "SQL Injection",
+        "Denial of Service (DoS)",
+        "Malware",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "A Denial of Service (DoS) attack aims to disrupt normal operations by flooding a system or network with excessive traffic, making it unable to respond to legitimate requests.",
+      hint: "The goal of this attack is to prevent users from accessing a service.",
+    },
+    {
+      question:
+        "Which network management function involves detecting, isolating, identifying, and correcting problems in the network?",
+      options: [
+        "Performance Management",
+        "Configuration Management",
+        "Fault Management",
+        "Security Management",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Fault Management is concerned with the detection, isolation, diagnosis, and correction of problems within the network.",
+      hint: "This function directly addresses issues and errors in the network.",
+    },
+    {
+      question:
+        "SNMP (Simple Network Management Protocol) primarily operates at which layer of the TCP/IP model?",
+      options: [
+        "Network Layer",
+        "Transport Layer",
+        "Application Layer",
+        "Data Link Layer",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "SNMP is an application-layer protocol used for monitoring and managing network devices.",
+      hint: "This protocol is used by network administrators for management applications.",
+    },
+    {
+      question:
+        "Which tool is commonly used to analyze network traffic by capturing and displaying packets?",
+      options: ["Ping", "Traceroute", "Wireshark", "Telnet"],
+      correctAnswerIndex: 2,
+      explanation:
+        "Wireshark is a popular free and open-source packet analyzer. It is used for network troubleshooting, analysis, software and communications protocol development, and education.",
+      hint: "This tool allows you to 'see' the individual data units flowing on a network.",
+    },
+    {
+      question:
+        "Which of the following is a major challenge in the future of communication networks due to the increasing number of connected devices?",
+      options: [
+        "Reducing the number of IP addresses",
+        "Decreased bandwidth requirements",
+        "Scalability",
+        "Eliminating the need for security",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "With the proliferation of IoT devices and growing network traffic, ensuring that networks can expand and handle an increasing workload (scalability) is a significant challenge.",
+      hint: "As more devices connect, the network must be able to grow effectively.",
+    },
+    {
+      question:
+        "What is the core concept behind Software-Defined Networking (SDN)?",
+      options: [
+        "Increasing reliance on hardware-specific configurations.",
+        "Decoupling the control plane from the data plane.",
+        "Eliminating the need for routing protocols.",
+        "Centralizing all network traffic through a single server.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "SDN aims to simplify network management and enable programmatic configuration by separating the network's control plane (decision-making) from its data plane (packet forwarding).",
+      hint: "SDN separates the 'brains' of the network from the 'brawn'.",
+    },
+    {
+      question:
+        "Which emerging technology aims to process data closer to the source (edge of the network) to reduce latency?",
+      options: [
+        "Cloud Computing",
+        "Centralized Data Centers",
+        "Quantum Networking",
+        "Edge Computing",
+      ],
+      correctAnswerIndex: 3,
+      explanation:
+        "Edge computing is a distributed computing paradigm that brings computation and data storage closer to the sources of data, improving response times and saving bandwidth.",
+      hint: "This technology moves computation to the 'outer limits' of the network.",
+    },
+  ],
+
   // You can add other subjects here when you have their questions
 };
 
