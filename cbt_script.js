@@ -2993,466 +2993,2842 @@ const allSubjectsQuestions = {
   ],
   "object-oriented-programming": [
     {
-      "question": "Which of the following is NOT a fundamental data type in C++?",
-      "options": ["int", "bool", "string", "char"],
-      "correctAnswerIndex": 2,
-      "explanation": "`int`, `bool`, and `char` are fundamental (built-in) data types in C++. `std::string` is a class from the Standard Library and is not a fundamental data type."
+      question: "Which of the following is NOT a fundamental data type in C++?",
+      options: ["int", "bool", "string", "char"],
+      correctAnswerIndex: 2,
+      explanation:
+        "`int`, `bool`, and `char` are fundamental (built-in) data types in C++. `std::string` is a class from the Standard Library and is not a fundamental data type.",
     },
     {
-      "question": "What is the purpose of the `else if` statement?",
-      "options": [
+      question: "What is the purpose of the `else if` statement?",
+      options: [
         "To execute a block of code if the `if` condition is false, regardless of other conditions.",
         "To check another condition if the preceding `if` or `else if` conditions were false.",
         "To mark the end of an `if` statement block.",
-        "To create an infinite loop."
+        "To create an infinite loop.",
       ],
-      "correctAnswerIndex": 1,
-      "explanation": "The `else if` statement provides an alternative condition to be checked only if the previous `if` or `else if` conditions evaluated to false."
+      correctAnswerIndex: 1,
+      explanation:
+        "The `else if` statement provides an alternative condition to be checked only if the previous `if` or `else if` conditions evaluated to false.",
     },
     {
-      "question": "Which loop guarantees to execute its body at least once?",
-      "options": ["for loop", "while loop", "do-while loop", "foreach loop"],
-      "correctAnswerIndex": 2,
-      "explanation": "The `do-while` loop evaluates its condition after executing the loop body, guaranteeing at least one execution. `for` and `while` loops check the condition before the first execution."
+      question: "Which loop guarantees to execute its body at least once?",
+      options: ["for loop", "while loop", "do-while loop", "foreach loop"],
+      correctAnswerIndex: 2,
+      explanation:
+        "The `do-while` loop evaluates its condition after executing the loop body, guaranteeing at least one execution. `for` and `while` loops check the condition before the first execution.",
     },
     {
-      "question": "A function that does not return any value should have which return type?",
-      "options": ["int", "void", "null", "no_return"],
-      "correctAnswerIndex": 1,
-      "explanation": "The `void` keyword is used as a return type for functions that do not return any value."
+      question:
+        "A function that does not return any value should have which return type?",
+      options: ["int", "void", "null", "no_return"],
+      correctAnswerIndex: 1,
+      explanation:
+        "The `void` keyword is used as a return type for functions that do not return any value.",
     },
     {
-      "question": "In a `switch` statement, what keyword is used to transfer control out of the `switch` block after a case is matched?",
-      "options": ["continue", "exit", "break", "return"],
-      "correctAnswerIndex": 2,
-      "explanation": "The `break` keyword is used to terminate the `switch` statement and transfer control to the statement immediately following the `switch` block."
+      question:
+        "In a `switch` statement, what keyword is used to transfer control out of the `switch` block after a case is matched?",
+      options: ["continue", "exit", "break", "return"],
+      correctAnswerIndex: 2,
+      explanation:
+        "The `break` keyword is used to terminate the `switch` statement and transfer control to the statement immediately following the `switch` block.",
     },
     {
-      "question": "What does a pointer variable store?",
-      "options": [
+      question: "What does a pointer variable store?",
+      options: [
         "The value of another variable.",
         "The memory address of another variable.",
         "The data type of another variable.",
-        "The name of another variable."
+        "The name of another variable.",
       ],
-      "correctAnswerIndex": 1,
-      "explanation": "A pointer variable stores the memory address of another variable. It 'points' to the location of that variable in memory."
+      correctAnswerIndex: 1,
+      explanation:
+        "A pointer variable stores the memory address of another variable. It 'points' to the location of that variable in memory.",
     },
     {
-      "question": "Which operator is used to dereference a pointer in C++?",
-      "options": ["&", ".", "*", "->"],
-      "correctAnswerIndex": 2,
-      "explanation": "The `*` (dereference) operator is used to access the value stored at the memory address pointed to by a pointer. The `&` operator gives the address of a variable, and `->` is used to access members of an object through a pointer."
+      question: "Which operator is used to dereference a pointer in C++?",
+      options: ["&", ".", "*", "->"],
+      correctAnswerIndex: 2,
+      explanation:
+        "The `*` (dereference) operator is used to access the value stored at the memory address pointed to by a pointer. The `&` operator gives the address of a variable, and `->` is used to access members of an object through a pointer.",
     },
     {
-      "question": "By default, members of a `struct` in C++ are:",
-      "options": ["private", "protected", "public", "virtual"],
-      "correctAnswerIndex": 2,
-      "explanation": "By default, all members (data and functions) declared within a `struct` in C++ are `public`. In contrast, members of a `class` are `private` by default."
+      question: "By default, members of a `struct` in C++ are:",
+      options: ["private", "protected", "public", "virtual"],
+      correctAnswerIndex: 2,
+      explanation:
+        "By default, all members (data and functions) declared within a `struct` in C++ are `public`. In contrast, members of a `class` are `private` by default.",
     },
     {
-      "question": "Which of the following is TRUE about arrays?",
-      "options": [
+      question: "Which of the following is TRUE about arrays?",
+      options: [
         "They can store elements of different data types.",
         "Elements are stored at non-contiguous memory locations.",
         "They are fixed in size once declared.",
-        "They are always dynamically allocated."
+        "They are always dynamically allocated.",
       ],
-      "correctAnswerIndex": 2,
-      "explanation": "Arrays in C++ are homogeneous (store elements of the same data type), store elements in contiguous memory locations, and their size is fixed at the time of declaration (for static arrays) or allocation (for dynamic arrays). They are not always dynamically allocated; static arrays are on the stack."
+      correctAnswerIndex: 2,
+      explanation:
+        "Arrays in C++ are homogeneous (store elements of the same data type), store elements in contiguous memory locations, and their size is fixed at the time of declaration (for static arrays) or allocation (for dynamic arrays). They are not always dynamically allocated; static arrays are on the stack.",
     },
     {
-      "question": "What is the primary difference between a C-style string (`char[]`) and `std::string`?",
-      "options": [
+      question:
+        "What is the primary difference between a C-style string (`char[]`) and `std::string`?",
+      options: [
         "C-style strings are mutable, `std::string` is immutable.",
         "C-style strings are null-terminated, `std::string` manages its own memory and length.",
         "`std::string` can only store numeric data.",
-        "C-style strings are dynamically allocated by default."
+        "C-style strings are dynamically allocated by default.",
       ],
-      "correctAnswerIndex": 1,
-      "explanation": "C-style strings are character arrays terminated by a null character (`\\0`) and require manual memory management. `std::string` is a class that handles its own memory allocation, deallocation, and length management, providing a more robust and safer way to work with strings."
+      correctAnswerIndex: 1,
+      explanation:
+        "C-style strings are character arrays terminated by a null character (`\\0`) and require manual memory management. `std::string` is a class that handles its own memory allocation, deallocation, and length management, providing a more robust and safer way to work with strings.",
     },
     {
-      "question": "What is the C++ feature that allows a function to have multiple definitions with the same name but different parameters?",
-      "options": [
+      question:
+        "What is the C++ feature that allows a function to have multiple definitions with the same name but different parameters?",
+      options: [
         "Function Overriding",
         "Function Hiding",
         "Function Overloading",
-        "Function Templating"
+        "Function Templating",
       ],
-      "correctAnswerIndex": 2,
-      "explanation": "Function overloading allows you to define multiple functions with the same name, as long as their parameter lists (number, type, or order of parameters) are different. The compiler distinguishes them based on the arguments provided during the call."
+      correctAnswerIndex: 2,
+      explanation:
+        "Function overloading allows you to define multiple functions with the same name, as long as their parameter lists (number, type, or order of parameters) are different. The compiler distinguishes them based on the arguments provided during the call.",
     },
     {
-      "question": "Which keyword is used to define a function template?",
-      "options": ["class", "template", "type", "generic"],
-      "correctAnswerIndex": 1,
-      "explanation": "The `template` keyword is used to declare a function or class template, allowing them to operate on generic types."
+      question: "Which keyword is used to define a function template?",
+      options: ["class", "template", "type", "generic"],
+      correctAnswerIndex: 1,
+      explanation:
+        "The `template` keyword is used to declare a function or class template, allowing them to operate on generic types.",
     },
     {
-      "question": "A variable declared inside a function has which type of scope?",
-      "options": ["Global scope", "Class scope", "Local scope", "Namespace scope"],
-      "correctAnswerIndex": 2,
-      "explanation": "Variables declared inside a function have local scope, meaning they are only accessible within that specific function block. They are created when the function is called and destroyed when it exits."
+      question:
+        "A variable declared inside a function has which type of scope?",
+      options: [
+        "Global scope",
+        "Class scope",
+        "Local scope",
+        "Namespace scope",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Variables declared inside a function have local scope, meaning they are only accessible within that specific function block. They are created when the function is called and destroyed when it exits.",
     },
     {
-      "question": "Which of the following is the modern C++ (C++11 onwards) way to create a type alias?",
-      "options": ["typedef", "using", "alias", "define"],
-      "correctAnswerIndex": 1,
-      "explanation": "While `typedef` is still valid, C++11 introduced `using` for type aliases, which provides a more consistent syntax, especially with templates. Example: `using MyInt = int;`"
+      question:
+        "Which of the following is the modern C++ (C++11 onwards) way to create a type alias?",
+      options: ["typedef", "using", "alias", "define"],
+      correctAnswerIndex: 1,
+      explanation:
+        "While `typedef` is still valid, C++11 introduced `using` for type aliases, which provides a more consistent syntax, especially with templates. Example: `using MyInt = int;`",
     },
     {
-      "question": "What is a key characteristic of a `union` in C++?",
-      "options": [
+      question: "What is a key characteristic of a `union` in C++?",
+      options: [
         "All members can hold values simultaneously.",
         "It can store only members of the same data type.",
         "Only one member can hold a value at any given time, occupying the same memory space.",
-        "It uses a linked list internally."
+        "It uses a linked list internally.",
       ],
-      "correctAnswerIndex": 2,
-      "explanation": "A `union` is a special class type that can hold only one of its non-static data members at a time. All members share the same memory location, and the size of the union is determined by its largest member."
+      correctAnswerIndex: 2,
+      explanation:
+        "A `union` is a special class type that can hold only one of its non-static data members at a time. All members share the same memory location, and the size of the union is determined by its largest member.",
     },
     {
-      "question": "What does an `enum` type primarily provide?",
-      "options": [
+      question: "What does an `enum` type primarily provide?",
+      options: [
         "A way to create new data types with dynamic values.",
         "A set of named integer constants.",
         "A mechanism for runtime type identification.",
-        "A collection of arbitrary data."
+        "A collection of arbitrary data.",
       ],
-      "correctAnswerIndex": 1,
-      "explanation": "An `enum` (enumeration) defines a set of named integer constants, making code more readable and maintainable by using meaningful names instead of raw numbers."
+      correctAnswerIndex: 1,
+      explanation:
+        "An `enum` (enumeration) defines a set of named integer constants, making code more readable and maintainable by using meaningful names instead of raw numbers.",
     },
     {
-      "question": "Which of the following is NOT an access specifier in C++ classes?",
-      "options": ["public", "private", "protected", "universal"],
-      "correctAnswerIndex": 3,
-      "explanation": "`public`, `private`, and `protected` are the three access specifiers in C++ that control the visibility and accessibility of class members. `universal` is not a valid C++ access specifier."
+      question:
+        "Which of the following is NOT an access specifier in C++ classes?",
+      options: ["public", "private", "protected", "universal"],
+      correctAnswerIndex: 3,
+      explanation:
+        "`public`, `private`, and `protected` are the three access specifiers in C++ that control the visibility and accessibility of class members. `universal` is not a valid C++ access specifier.",
     },
     {
-      "question": "What is the primary purpose of a class constructor?",
-      "options": [
+      question: "What is the primary purpose of a class constructor?",
+      options: [
         "To destroy objects when they go out of scope.",
         "To declare static members of a class.",
         "To initialize the data members of an object when it is created.",
-        "To provide an alternative name for a class."
+        "To provide an alternative name for a class.",
       ],
-      "correctAnswerIndex": 2,
-      "explanation": "A constructor is a special member function that is automatically called when an object of the class is created. Its primary purpose is to initialize the object's data members."
+      correctAnswerIndex: 2,
+      explanation:
+        "A constructor is a special member function that is automatically called when an object of the class is created. Its primary purpose is to initialize the object's data members.",
     },
     {
-      "question": "How many constructors can a class have?",
-      "options": [
+      question: "How many constructors can a class have?",
+      options: [
         "Exactly one",
         "Zero (if not explicitly defined)",
         "As many as needed, provided they have different parameter lists (overloaded).",
-        "Only a default constructor and a copy constructor."
+        "Only a default constructor and a copy constructor.",
       ],
-      "correctAnswerIndex": 2,
-      "explanation": "A class can have multiple constructors, provided they are overloaded, meaning they have different parameter lists. This allows objects to be initialized in various ways."
+      correctAnswerIndex: 2,
+      explanation:
+        "A class can have multiple constructors, provided they are overloaded, meaning they have different parameter lists. This allows objects to be initialized in various ways.",
     },
     {
-      "question": "Which method is generally preferred for initializing member variables in a constructor, especially for `const` or reference members?",
-      "options": [
+      question:
+        "Which method is generally preferred for initializing member variables in a constructor, especially for `const` or reference members?",
+      options: [
         "Assignment inside the constructor body",
         "Member initialization list",
         "Using a `friend` function",
-        "Static initialization block"
+        "Static initialization block",
       ],
-      "correctAnswerIndex": 1,
-      "explanation": "The member initialization list is preferred for initializing member variables because it performs direct initialization, which is more efficient than assignment. It's also mandatory for `const` members, reference members, and members that are objects without default constructors."
+      correctAnswerIndex: 1,
+      explanation:
+        "The member initialization list is preferred for initializing member variables because it performs direct initialization, which is more efficient than assignment. It's also mandatory for `const` members, reference members, and members that are objects without default constructors.",
     },
     {
-      "question": "If `objPtr` is a pointer to an object, how do you access its member function `calculate()`?",
-      "options": [
+      question:
+        "If `objPtr` is a pointer to an object, how do you access its member function `calculate()`?",
+      options: [
         "objPtr.calculate()",
         "objPtr::calculate()",
         "objPtr->calculate()",
-        "*objPtr.calculate()"
+        "*objPtr.calculate()",
       ],
-      "correctAnswerIndex": 2,
-      "explanation": "The `->` (arrow) operator is used to access members of an object when you have a pointer to that object. `objPtr->calculate()` is equivalent to `(*objPtr).calculate()`."
+      correctAnswerIndex: 2,
+      explanation:
+        "The `->` (arrow) operator is used to access members of an object when you have a pointer to that object. `objPtr->calculate()` is equivalent to `(*objPtr).calculate()`.",
     },
     {
-      "question": "Which of the following operators CANNOT be overloaded in C++?",
-      "options": ["+", "==", "()", "::"],
-      "correctAnswerIndex": 3,
-      "explanation": "Most operators in C++ can be overloaded, but some cannot, including the scope resolution operator (`::`), member selection operator (`.`), member pointer selection operator (`.*`), and the ternary conditional operator (`?:`). The size of operator (`sizeof`) also cannot be overloaded."
+      question: "Which of the following operators CANNOT be overloaded in C++?",
+      options: ["+", "==", "()", "::"],
+      correctAnswerIndex: 3,
+      explanation:
+        "Most operators in C++ can be overloaded, but some cannot, including the scope resolution operator (`::`), member selection operator (`.`), member pointer selection operator (`.*`), and the ternary conditional operator (`?:`). The size of operator (`sizeof`) also cannot be overloaded.",
     },
     {
-      "question": "What does the `this` pointer refer to?",
-      "options": [
+      question: "What does the `this` pointer refer to?",
+      options: [
         "The address of the class definition.",
         "The address of the `main` function.",
         "The address of the current object on which a member function is invoked.",
-        "The address of the base class."
+        "The address of the base class.",
       ],
-      "correctAnswerIndex": 2,
-      "explanation": "The `this` pointer is a constant pointer that holds the memory address of the object on which the member function is currently being executed. It allows a member function to refer to the current object."
+      correctAnswerIndex: 2,
+      explanation:
+        "The `this` pointer is a constant pointer that holds the memory address of the object on which the member function is currently being executed. It allows a member function to refer to the current object.",
     },
     {
-      "question": "What is true about a `static` member variable of a class?",
-      "options": [
+      question: "What is true about a `static` member variable of a class?",
+      options: [
         "Each object of the class has its own copy.",
         "It must be initialized within the class definition.",
         "There is only one copy shared by all objects of the class.",
-        "It can only be accessed by `static` member functions."
+        "It can only be accessed by `static` member functions.",
       ],
-      "correctAnswerIndex": 2,
-      "explanation": "A `static` member variable is a class-level variable. Only one copy of it exists, regardless of how many objects of the class are created, and it is shared among all objects. It must be defined (and optionally initialized) outside the class definition."
+      correctAnswerIndex: 2,
+      explanation:
+        "A `static` member variable is a class-level variable. Only one copy of it exists, regardless of how many objects of the class are created, and it is shared among all objects. It must be defined (and optionally initialized) outside the class definition.",
     },
     {
-      "question": "A `const` member function:",
-      "options": [
+      question: "A `const` member function:",
+      options: [
         "Can modify any data member of the object.",
         "Cannot modify any non-static data member of the object.",
         "Can only be called by `const` objects.",
-        "Must return a `const` value."
+        "Must return a `const` value.",
       ],
-      "correctAnswerIndex": 1,
-      "explanation": "A `const` member function promises not to modify the state of the object on which it is called. Therefore, it cannot modify any non-static data members of the object. It can be called by both `const` and non-`const` objects."
+      correctAnswerIndex: 1,
+      explanation:
+        "A `const` member function promises not to modify the state of the object on which it is called. Therefore, it cannot modify any non-static data members of the object. It can be called by both `const` and non-`const` objects.",
     },
     {
-      "question": "What is the primary benefit of using class templates?",
-      "options": [
+      question: "What is the primary benefit of using class templates?",
+      options: [
         "To restrict the data types that can be used with a class.",
         "To create classes that can work with generic data types, avoiding code duplication.",
         "To allow dynamic resizing of class members.",
-        "To achieve runtime polymorphism."
+        "To achieve runtime polymorphism.",
       ],
-      "correctAnswerIndex": 1,
-      "explanation": "Class templates allow you to write generic classes that can work with different data types without rewriting the entire class for each type, thereby promoting code reusability and avoiding duplication."
+      correctAnswerIndex: 1,
+      explanation:
+        "Class templates allow you to write generic classes that can work with different data types without rewriting the entire class for each type, thereby promoting code reusability and avoiding duplication.",
     },
     {
-      "question": "When is template specialization used?",
-      "options": [
+      question: "When is template specialization used?",
+      options: [
         "To make a template work with all data types uniformly.",
         "To provide a specific implementation for a template for a particular data type.",
         "To define a default template argument.",
-        "To prevent template instantiation."
+        "To prevent template instantiation.",
       ],
-      "correctAnswerIndex": 1,
-      "explanation": "Template specialization is used when the generic template implementation is not optimal or correct for a particular data type, allowing you to provide a custom implementation for that specific type."
+      correctAnswerIndex: 1,
+      explanation:
+        "Template specialization is used when the generic template implementation is not optimal or correct for a particular data type, allowing you to provide a custom implementation for that specific type.",
     },
     {
-      "question": "What is the main purpose of a `namespace`?",
-      "options": [
+      question: "What is the main purpose of a `namespace`?",
+      options: [
         "To allow direct access to private members of a class.",
         "To define global variables only.",
         "To organize code and prevent naming collisions.",
-        "To inherit properties from multiple classes."
+        "To inherit properties from multiple classes.",
       ],
-      "correctAnswerIndex": 2,
-      "explanation": "Namespaces are used to organize code into logical groups and to prevent name clashes (when two different entities have the same name) in large projects."
+      correctAnswerIndex: 2,
+      explanation:
+        "Namespaces are used to organize code into logical groups and to prevent name clashes (when two different entities have the same name) in large projects.",
     },
     {
-      "question": "If function `foo()` is declared as a `friend` of class `MyClass`, what can `foo()` access?",
-      "options": [
+      question:
+        "If function `foo()` is declared as a `friend` of class `MyClass`, what can `foo()` access?",
+      options: [
         "Only `public` members of `MyClass`.",
         "Only `protected` members of `MyClass`.",
         "All members (`public`, `private`, `protected`) of `MyClass`.",
-        "Only `static` members of `MyClass`."
+        "Only `static` members of `MyClass`.",
       ],
-      "correctAnswerIndex": 2,
-      "explanation": "A `friend` function or class is granted special access to the `private` and `protected` members of the class that declares it as a friend, in addition to its `public` members."
+      correctAnswerIndex: 2,
+      explanation:
+        "A `friend` function or class is granted special access to the `private` and `protected` members of the class that declares it as a friend, in addition to its `public` members.",
     },
     {
-      "question": "Which OOP principle describes the \"is-a\" relationship between classes?",
-      "options": ["Encapsulation", "Polymorphism", "Inheritance", "Abstraction"],
-      "correctAnswerIndex": 2,
-      "explanation": "Inheritance models the 'is-a' relationship, where a derived class 'is a' type of its base class (e.g., 'A Dog is an Animal')."
+      question:
+        'Which OOP principle describes the "is-a" relationship between classes?',
+      options: ["Encapsulation", "Polymorphism", "Inheritance", "Abstraction"],
+      correctAnswerIndex: 2,
+      explanation:
+        "Inheritance models the 'is-a' relationship, where a derived class 'is a' type of its base class (e.g., 'A Dog is an Animal').",
     },
     {
-      "question": "In C++, what is the default access specifier for inheritance if not explicitly mentioned?",
-      "options": ["public", "private", "protected", "It depends on the context."],
-      "correctAnswerIndex": 1,
-      "explanation": "When inheriting a `class` from another `class`, the default inheritance access specifier is `private`. If a `struct` inherits from a `struct` or `class`, the default is `public`."
+      question:
+        "In C++, what is the default access specifier for inheritance if not explicitly mentioned?",
+      options: ["public", "private", "protected", "It depends on the context."],
+      correctAnswerIndex: 1,
+      explanation:
+        "When inheriting a `class` from another `class`, the default inheritance access specifier is `private`. If a `struct` inherits from a `struct` or `class`, the default is `public`.",
     },
     {
-      "question": "If `ClassB` inherits `publicly` from `ClassA`, and `ClassA` has a `protected` member `x`, what is the access level of `x` in `ClassB`?",
-      "options": ["public", "private", "protected", "Inaccessible"],
-      "correctAnswerIndex": 2,
-      "explanation": "When a class is inherited publicly, `public` members of the base class remain `public` in the derived class, and `protected` members remain `protected` in the derived class. `private` members remain inaccessible."
+      question:
+        "If `ClassB` inherits `publicly` from `ClassA`, and `ClassA` has a `protected` member `x`, what is the access level of `x` in `ClassB`?",
+      options: ["public", "private", "protected", "Inaccessible"],
+      correctAnswerIndex: 2,
+      explanation:
+        "When a class is inherited publicly, `public` members of the base class remain `public` in the derived class, and `protected` members remain `protected` in the derived class. `private` members remain inaccessible.",
     },
     {
-      "question": "Which type of polymorphism is achieved through Function Overloading and Operator Overloading?",
-      "options": [
+      question:
+        "Which type of polymorphism is achieved through Function Overloading and Operator Overloading?",
+      options: [
         "Runtime Polymorphism",
         "Dynamic Polymorphism",
         "Compile-time Polymorphism",
-        "Virtual Polymorphism"
+        "Virtual Polymorphism",
       ],
-      "correctAnswerIndex": 2,
-      "explanation": "Function Overloading and Operator Overloading are resolved at compile time, meaning the compiler decides which function or operator to call based on the arguments' types and number. This is known as compile-time polymorphism (or static polymorphism)."
+      correctAnswerIndex: 2,
+      explanation:
+        "Function Overloading and Operator Overloading are resolved at compile time, meaning the compiler decides which function or operator to call based on the arguments' types and number. This is known as compile-time polymorphism (or static polymorphism).",
     },
     {
-      "question": "What keyword is used to declare a function that enables runtime polymorphism?",
-      "options": ["abstract", "dynamic", "virtual", "override"],
-      "correctAnswerIndex": 2,
-      "explanation": "The `virtual` keyword is used in the base class to declare a function as virtual, enabling runtime polymorphism through pointers or references to base class objects."
+      question:
+        "What keyword is used to declare a function that enables runtime polymorphism?",
+      options: ["abstract", "dynamic", "virtual", "override"],
+      correctAnswerIndex: 2,
+      explanation:
+        "The `virtual` keyword is used in the base class to declare a function as virtual, enabling runtime polymorphism through pointers or references to base class objects.",
     },
     {
-      "question": "Consider the following code:\n```cpp\nclass Base {\npublic:\n    virtual void show() { cout << \"Base::show\" << endl; }\n};\n\nclass Derived : public Base {\npublic:\n    void show() { cout << \"Derived::show\" << endl; }\n};\n\nint main() {\n    Base* bptr = new Derived();\n    bptr->show();\n    delete bptr;\n    return 0;\n}\n```\nWhat will be the output?",
-      "options": ["Base::show", "Derived::show", "Compile-time error", "Runtime error"],
-      "correctAnswerIndex": 1,
-      "explanation": "Since `show()` is a `virtual` function in the `Base` class, and `bptr` is a `Base` pointer pointing to a `Derived` object, runtime polymorphism is enabled. The `Derived` class's `show()` implementation will be called. This is a classic example of dynamic dispatch."
+      question:
+        'Consider the following code:\n```cpp\nclass Base {\npublic:\n    virtual void show() { cout << "Base::show" << endl; }\n};\n\nclass Derived : public Base {\npublic:\n    void show() { cout << "Derived::show" << endl; }\n};\n\nint main() {\n    Base* bptr = new Derived();\n    bptr->show();\n    delete bptr;\n    return 0;\n}\n```\nWhat will be the output?',
+      options: [
+        "Base::show",
+        "Derived::show",
+        "Compile-time error",
+        "Runtime error",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Since `show()` is a `virtual` function in the `Base` class, and `bptr` is a `Base` pointer pointing to a `Derived` object, runtime polymorphism is enabled. The `Derived` class's `show()` implementation will be called. This is a classic example of dynamic dispatch.",
     },
     {
-      "question": "A class that contains at least one pure virtual function is known as a(n):",
-      "options": ["Concrete class", "Derived class", "Abstract base class", "Final class"],
-      "correctAnswerIndex": 2,
-      "explanation": "A class with at least one pure virtual function is called an abstract base class. You cannot create direct instances (objects) of an abstract base class; it serves as an interface for derived classes."
+      question:
+        "A class that contains at least one pure virtual function is known as a(n):",
+      options: [
+        "Concrete class",
+        "Derived class",
+        "Abstract base class",
+        "Final class",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "A class with at least one pure virtual function is called an abstract base class. You cannot create direct instances (objects) of an abstract base class; it serves as an interface for derived classes.",
     },
     {
-      "question": "Which of the following statements is true about an abstract base class?",
-      "options": [
+      question:
+        "Which of the following statements is true about an abstract base class?",
+      options: [
         "Objects of an abstract base class can be created directly.",
         "It must have a default constructor.",
         "Derived classes must provide implementations for all its pure virtual functions to be instantiated.",
-        "It cannot have any non-virtual functions."
+        "It cannot have any non-virtual functions.",
       ],
-      "correctAnswerIndex": 2,
-      "explanation": "Abstract base classes cannot be instantiated directly. To create objects of a class derived from an abstract base class, the derived class must provide implementations for all the pure virtual functions inherited from the abstract base class, thereby becoming a concrete class."
+      correctAnswerIndex: 2,
+      explanation:
+        "Abstract base classes cannot be instantiated directly. To create objects of a class derived from an abstract base class, the derived class must provide implementations for all the pure virtual functions inherited from the abstract base class, thereby becoming a concrete class.",
     },
     {
-      "question": "Which of the following best describes encapsulation in OOP?",
-      "options": [
+      question: "Which of the following best describes encapsulation in OOP?",
+      options: [
         "The ability to create new classes from existing classes.",
         "The process of hiding the implementation details and exposing only the necessary interface.",
         "The ability of an object to take on many forms.",
-        "The technique of defining multiple functions with the same name."
+        "The technique of defining multiple functions with the same name.",
       ],
-      "correctAnswerIndex": 1,
-      "explanation": "Encapsulation is the bundling of data (attributes) and methods (functions) that operate on the data into a single unit (class), and restricting direct access to some of the object's components. This hiding of implementation details is a core aspect of encapsulation."
+      correctAnswerIndex: 1,
+      explanation:
+        "Encapsulation is the bundling of data (attributes) and methods (functions) that operate on the data into a single unit (class), and restricting direct access to some of the object's components. This hiding of implementation details is a core aspect of encapsulation.",
     },
     {
-      "question": "What is the consequence of not defining a destructor in a class that dynamically allocates memory?",
-      "options": [
+      question:
+        "What is the consequence of not defining a destructor in a class that dynamically allocates memory?",
+      options: [
         "Compile-time error.",
         "Runtime error.",
         "Memory leak.",
-        "The compiler automatically creates a perfectly functioning destructor."
+        "The compiler automatically creates a perfectly functioning destructor.",
       ],
-      "correctAnswerIndex": 2,
-      "explanation": "If a class dynamically allocates memory (e.g., using `new`), and you don't provide a destructor to `delete` that memory, it will not be deallocated when the object is destroyed, leading to a memory leak."
+      correctAnswerIndex: 2,
+      explanation:
+        "If a class dynamically allocates memory (e.g., using `new`), and you don't provide a destructor to `delete` that memory, it will not be deallocated when the object is destroyed, leading to a memory leak.",
     },
     {
-      "question": "When should you use `protected` access specifier for a member?",
-      "options": [
+      question:
+        "When should you use `protected` access specifier for a member?",
+      options: [
         "When the member needs to be accessed from anywhere in the program.",
         "When the member should only be accessible from within the class itself.",
         "When the member needs to be accessible within the class and by derived classes, but not by outside code.",
-        "When the member is a static constant."
+        "When the member is a static constant.",
       ],
-      "correctAnswerIndex": 2,
-      "explanation": "A `protected` member is accessible within its own class and by its derived classes, but not directly accessible from outside the class hierarchy. This provides a balance between strict private access and open public access."
+      correctAnswerIndex: 2,
+      explanation:
+        "A `protected` member is accessible within its own class and by its derived classes, but not directly accessible from outside the class hierarchy. This provides a balance between strict private access and open public access.",
     },
     {
-      "question": "Which of the following is an example of an \"is-a\" relationship?",
-      "options": [
+      question:
+        'Which of the following is an example of an "is-a" relationship?',
+      options: [
         "A Car has an Engine.",
         "A Dog is an Animal.",
         "A Book has Pages.",
-        "A Student studies a Course."
+        "A Student studies a Course.",
       ],
-      "correctAnswerIndex": 1,
-      "explanation": "The 'is-a' relationship is a core concept of inheritance. 'A Dog is an Animal' correctly represents that `Dog` is a specialized type of `Animal` and can inherit properties and behaviors from `Animal`."
+      correctAnswerIndex: 1,
+      explanation:
+        "The 'is-a' relationship is a core concept of inheritance. 'A Dog is an Animal' correctly represents that `Dog` is a specialized type of `Animal` and can inherit properties and behaviors from `Animal`.",
     },
     {
-      "question": "What is the purpose of the `virtual` keyword when defining a base class destructor?",
-      "options": [
+      question:
+        "What is the purpose of the `virtual` keyword when defining a base class destructor?",
+      options: [
         "To allow the base class destructor to be called only by derived classes.",
         "To prevent the base class destructor from being called.",
         "To ensure that the correct destructor (derived class then base class) is called when deleting an object through a base class pointer.",
-        "To make the destructor automatically public."
+        "To make the destructor automatically public.",
       ],
-      "correctAnswerIndex": 2,
-      "explanation": "Making a base class destructor `virtual` ensures that when an object of a derived class is deleted via a pointer to the base class, the destructor of the derived class is called first, followed by the base class destructor, preventing resource leaks (especially with dynamically allocated memory in derived classes)."
+      correctAnswerIndex: 2,
+      explanation:
+        "Making a base class destructor `virtual` ensures that when an object of a derived class is deleted via a pointer to the base class, the destructor of the derived class is called first, followed by the base class destructor, preventing resource leaks (especially with dynamically allocated memory in derived classes).",
     },
     {
-      "question": "In a class hierarchy, if a derived class needs to provide its own specific implementation for a function that is already present in the base class (and is virtual), what is this concept called?",
-      "options": [
+      question:
+        "In a class hierarchy, if a derived class needs to provide its own specific implementation for a function that is already present in the base class (and is virtual), what is this concept called?",
+      options: [
         "Function Overloading",
         "Function Hiding",
         "Function Overriding",
-        "Function Templating"
+        "Function Templating",
       ],
-      "correctAnswerIndex": 2,
-      "explanation": "Function overriding occurs when a derived class provides its own implementation for a virtual function that is already declared in its base class. This is fundamental to runtime polymorphism."
+      correctAnswerIndex: 2,
+      explanation:
+        "Function overriding occurs when a derived class provides its own implementation for a virtual function that is already declared in its base class. This is fundamental to runtime polymorphism.",
     },
     {
-      "question": "Consider a scenario where you have a base class `Shape` and derived classes `Circle` and `Square`. You want to store a collection of `Shape` pointers, and when you call a `draw()` method on each pointer, the correct `draw()` for `Circle` or `Square` should be invoked. Which OOP concept is essential here?",
-      "options": [
+      question:
+        "Consider a scenario where you have a base class `Shape` and derived classes `Circle` and `Square`. You want to store a collection of `Shape` pointers, and when you call a `draw()` method on each pointer, the correct `draw()` for `Circle` or `Square` should be invoked. Which OOP concept is essential here?",
+      options: [
         "Encapsulation",
         "Data Abstraction",
         "Compile-time Polymorphism",
-        "Runtime Polymorphism (using virtual functions)"
+        "Runtime Polymorphism (using virtual functions)",
       ],
-      "correctAnswerIndex": 3,
-      "explanation": "This scenario describes runtime polymorphism. By declaring the `draw()` method as `virtual` in the `Shape` base class, you can use a `Shape` pointer to call the correct `draw()` implementation of the actual object (Circle or Square) at runtime."
+      correctAnswerIndex: 3,
+      explanation:
+        "This scenario describes runtime polymorphism. By declaring the `draw()` method as `virtual` in the `Shape` base class, you can use a `Shape` pointer to call the correct `draw()` implementation of the actual object (Circle or Square) at runtime.",
     },
     {
-      "question": "Which of the following correctly declares a pure virtual function?",
-      "options": [
+      question:
+        "Which of the following correctly declares a pure virtual function?",
+      options: [
         "`virtual void func() = 0;`",
         "`void func() pure;`",
         "`abstract void func();`",
-        "`virtual void func() { /* implementation */ }`"
+        "`virtual void func() { /* implementation */ }`",
       ],
-      "correctAnswerIndex": 0,
-      "explanation": "A pure virtual function is declared by appending `= 0` to its declaration in the base class. This makes the class abstract and requires derived classes to implement this function."
+      correctAnswerIndex: 0,
+      explanation:
+        "A pure virtual function is declared by appending `= 0` to its declaration in the base class. This makes the class abstract and requires derived classes to implement this function.",
     },
     {
-      "question": "What will be the output of the following C++ code snippet?\n```cpp\n#include <iostream>\n\nclass Counter {\nprivate:\n    static int count;\npublic:\n    Counter() { count++; }\n    static int getCount() { return count; }\n};\n\nint Counter::count = 0; // Definition of static member\n\nint main() {\n    Counter c1;\n    Counter c2;\n    Counter c3;\n    std::cout << Counter::getCount() << std::endl;\n    return 0;\n}\n```",
-      "options": ["0", "1", "3", "Compiler Error"],
-      "correctAnswerIndex": 2,
-      "explanation": "The `count` variable is `static`, meaning there is only one copy shared by all objects of the `Counter` class. Each time a `Counter` object is created (c1, c2, c3), the constructor increments `count`. Therefore, after three objects are created, `count` will be 3."
+      question:
+        "What will be the output of the following C++ code snippet?\n```cpp\n#include <iostream>\n\nclass Counter {\nprivate:\n    static int count;\npublic:\n    Counter() { count++; }\n    static int getCount() { return count; }\n};\n\nint Counter::count = 0; // Definition of static member\n\nint main() {\n    Counter c1;\n    Counter c2;\n    Counter c3;\n    std::cout << Counter::getCount() << std::endl;\n    return 0;\n}\n```",
+      options: ["0", "1", "3", "Compiler Error"],
+      correctAnswerIndex: 2,
+      explanation:
+        "The `count` variable is `static`, meaning there is only one copy shared by all objects of the `Counter` class. Each time a `Counter` object is created (c1, c2, c3), the constructor increments `count`. Therefore, after three objects are created, `count` will be 3.",
     },
     {
-      "question": "What is the disadvantage of using `friend` functions/classes?",
-      "options": [
+      question: "What is the disadvantage of using `friend` functions/classes?",
+      options: [
         "They cannot access private members.",
         "They increase code complexity unnecessarily.",
         "They violate the principle of encapsulation.",
-        "They slow down program execution."
+        "They slow down program execution.",
       ],
-      "correctAnswerIndex": 2,
-      "explanation": "`friend` functions or classes are often considered a violation of encapsulation because they break the strict data hiding principle by allowing external entities to access private and protected members of a class."
+      correctAnswerIndex: 2,
+      explanation:
+        "`friend` functions or classes are often considered a violation of encapsulation because they break the strict data hiding principle by allowing external entities to access private and protected members of a class.",
     },
     {
-      "question": "You have a `typedef` declaration: `typedef int Integer;`. Which of the following is equivalent using `using`?",
-      "options": [
+      question:
+        "You have a `typedef` declaration: `typedef int Integer;`. Which of the following is equivalent using `using`?",
+      options: [
         "`using int = Integer;`",
         "`using Integer = int;`",
         "`Integer = int;`",
-        "`alias Integer = int;`"
+        "`alias Integer = int;`",
       ],
-      "correctAnswerIndex": 1,
-      "explanation": "The `using` keyword for type aliases has the syntax `using NewName = ExistingType;`. So, `using Integer = int;` creates an alias `Integer` for the type `int`."
+      correctAnswerIndex: 1,
+      explanation:
+        "The `using` keyword for type aliases has the syntax `using NewName = ExistingType;`. So, `using Integer = int;` creates an alias `Integer` for the type `int`.",
     },
     {
-      "question": "Which of the following scenarios is best suited for using a `do-while` loop?",
-      "options": [
+      question:
+        "Which of the following scenarios is best suited for using a `do-while` loop?",
+      options: [
         "Iterating through an array of a known size.",
         "Reading user input until a valid non-negative number is entered.",
         "Performing a task a fixed number of times.",
-        "Processing elements in a linked list."
+        "Processing elements in a linked list.",
       ],
-      "correctAnswerIndex": 1,
-      "explanation": "A `do-while` loop is ideal when you need the loop body to execute at least once before checking the condition. This is common for input validation where you first prompt for input and then check if it's valid."
+      correctAnswerIndex: 1,
+      explanation:
+        "A `do-while` loop is ideal when you need the loop body to execute at least once before checking the condition. This is common for input validation where you first prompt for input and then check if it's valid.",
     },
     {
-      "question": "What is the role of the copy constructor?",
-      "options": [
+      question: "What is the role of the copy constructor?",
+      options: [
         "To create a new object by copying an existing object of the same class.",
         "To assign values from one object to another existing object.",
         "To convert one data type to another.",
-        "To destroy an object when it goes out of scope."
+        "To destroy an object when it goes out of scope.",
       ],
-      "correctAnswerIndex": 0,
-      "explanation": "A copy constructor is a special constructor that is called when a new object is created as a copy of an existing object of the same class. This can happen during object initialization, passing objects by value to functions, or returning objects by value from functions."
-    }
-  ]
+      correctAnswerIndex: 0,
+      explanation:
+        "A copy constructor is a special constructor that is called when a new object is created as a copy of an existing object of the same class. This can happen during object initialization, passing objects by value to functions, or returning objects by value from functions.",
+    },
+  ],
+  "software-engineering": [
+    {
+      question:
+        "Which of the following is NOT a primary goal of Software Engineering?",
+      options: [
+        "To produce high-quality software",
+        "To develop software within budget",
+        "To deliver software on time",
+        "To eliminate the need for maintenance",
+      ],
+      correctAnswerIndex: 3,
+      explanation:
+        "Software engineering aims to manage and reduce maintenance efforts, but eliminating the need for maintenance entirely is an unrealistic goal, as software always evolves and requires ongoing support, updates, and defect fixes.",
+    },
+    {
+      question:
+        "A systematic, disciplined, and quantifiable approach to the development, operation, and maintenance of software is known as:",
+      options: [
+        "Software Programming",
+        "Software Designing",
+        "Software Engineering",
+        "Software Testing",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "This is the widely accepted definition of Software Engineering, emphasizing a rigorous and measurable approach to all aspects of the software lifecycle.",
+    },
+    {
+      question:
+        "Which attribute of good software refers to its ability to be easily modified to correct faults or adapt to new environments?",
+      options: ["Reliability", "Efficiency", "Maintainability", "Usability"],
+      correctAnswerIndex: 2,
+      explanation:
+        "Maintainability is a crucial quality attribute that describes how easily software can be modified, adapted, or corrected over its lifespan.",
+    },
+    {
+      question:
+        'Which of the following is typically NOT considered part of a "software product" in a commercial context?',
+      options: [
+        "User manuals",
+        "Source code",
+        "Configuration data",
+        "A single, standalone program written for personal use",
+      ],
+      correctAnswerIndex: 3,
+      explanation:
+        "A commercial software product typically includes the executable code, supporting data, user documentation, and configuration information. A single, personal program usually lacks the formalized documentation and support components of a commercial product.",
+    },
+    {
+      question:
+        "Which activity in the generic software process framework involves creating a plan for project scope, resources, and timeline?",
+      options: ["Communication", "Planning", "Modeling", "Construction"],
+      correctAnswerIndex: 1,
+      explanation:
+        "The planning activity in the generic process framework establishes the roadmap for the project, including scope, resource allocation, tasks, and schedule.",
+    },
+    {
+      question:
+        "In which software process model is it most difficult to accommodate changes once a phase is completed?",
+      options: [
+        "Agile Model",
+        "Spiral Model",
+        "Waterfall Model",
+        "Incremental Model",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "The Waterfall Model is a sequential, linear model where each phase must be completed before the next begins. Changes introduced late in the cycle are very costly and difficult to implement.",
+    },
+    {
+      question:
+        "The V-Model explicitly links development phases with their corresponding:",
+      options: [
+        "Coding phases",
+        "Testing phases",
+        "Deployment phases",
+        "Maintenance phases",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The V-Model, an extension of the Waterfall, emphasizes verification and validation. Each development phase on the left side of the 'V' has a corresponding testing phase on the right side.",
+    },
+    {
+      question:
+        "Which software process model is best suited for projects with high risk and evolving requirements?",
+      options: [
+        "Waterfall Model",
+        "Spiral Model",
+        "RAD Model",
+        "Incremental Model",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The Spiral Model incorporates risk management activities into each iteration, making it highly suitable for large, complex, and high-risk projects with uncertain or evolving requirements.",
+    },
+    {
+      question: "A key advantage of the Incremental Model is:",
+      options: [
+        "It eliminates the need for formal documentation.",
+        "It allows for early delivery of working software and user feedback.",
+        "It guarantees zero defects in the final product.",
+        "It is ideal for projects with completely static requirements.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The Incremental Model delivers working subsets of the software in iterations, providing early functionality to users and allowing for valuable feedback that can shape subsequent increments.",
+    },
+    {
+      question:
+        "Which of the following is a characteristic of Agile software development?",
+      options: [
+        "Rigid, detailed upfront planning",
+        "Emphasis on comprehensive documentation",
+        "Iterative and incremental approach with adaptive planning",
+        "Strict adherence to the original project plan without changes",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Agile methodologies are characterized by iterative development, frequent delivery of working software, and a high degree of adaptability to changing requirements, prioritizing 'responding to change over following a plan'.",
+    },
+    {
+      question:
+        "If a software project prioritizes getting early user feedback on the user interface and functionality, which model would be most appropriate initially?",
+      options: [
+        "Waterfall Model",
+        "V-Model",
+        "Prototyping Model",
+        "Formal Methods Model",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "The Prototyping Model is specifically designed for situations where requirements are unclear or user interface feedback is critical. It involves building a working model to elicit and refine requirements with user involvement.",
+    },
+    {
+      question: "The Rapid Application Development (RAD) model emphasizes:",
+      options: [
+        "Long development cycles",
+        "Formal, extensive documentation",
+        "Extensive user involvement and rapid prototyping",
+        "Development by a single, isolated team",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "RAD is an adaptive model that prioritizes rapid development and delivery through heavy user involvement, iterative prototyping, and the use of specialized tools and techniques.",
+    },
+    {
+      question:
+        "Which of the following is an example of a Functional Requirement?",
+      options: [
+        "The system shall be available 99.9% of the time.",
+        "The system shall encrypt user passwords.",
+        "The system shall allow users to search for products by category.",
+        "The user interface shall be responsive within 1 second.",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Functional requirements describe what the system *does*, i.e., the services it provides. Searching for products is a direct function of the system. The other options are non-functional requirements (performance, security, availability).",
+    },
+    {
+      question:
+        '"The system shall process 100 transactions per second." This is an example of a:',
+      options: [
+        "Functional Requirement",
+        "Usability Requirement",
+        "Performance Requirement",
+        "Security Requirement",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Performance requirements specify constraints on the speed, response time, throughput, or capacity of the system.",
+    },
+    {
+      question:
+        "Which characteristic of a good requirement means that it can be proven through testing?",
+      options: ["Unambiguous", "Complete", "Feasible", "Verifiable"],
+      correctAnswerIndex: 3,
+      explanation:
+        "A verifiable requirement is one for which a test procedure can be devised to confirm whether the software meets that requirement.",
+    },
+    {
+      question:
+        "The process of gathering requirements from stakeholders using various techniques is called:",
+      options: [
+        "Requirements Validation",
+        "Requirements Elaboration",
+        "Requirements Elicitation",
+        "Requirements Management",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Requirements elicitation is the initial and crucial stage of collecting information about the system's needs from various stakeholders.",
+    },
+    {
+      question:
+        "Which document formally specifies all functional and non-functional requirements of a software system?",
+      options: [
+        "Design Document Specification (DDS)",
+        "Software Test Plan (STP)",
+        "Software Requirements Specification (SRS)",
+        "User Manual",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "The Software Requirements Specification (SRS) is a comprehensive document that serves as a blueprint for the development team, detailing all user and system requirements.",
+    },
+    {
+      question:
+        "During which requirements engineering activity are conflicts between requirements resolved and priorities assigned?",
+      options: ["Inception", "Elaboration", "Negotiation", "Validation"],
+      correctAnswerIndex: 2,
+      explanation:
+        "Requirements negotiation involves reconciling conflicting requirements from different stakeholders and prioritizing them based on business value, technical feasibility, and resource constraints.",
+    },
+    {
+      question:
+        "Which of the following is a technique used during requirements validation?",
+      options: [
+        "Brainstorming",
+        "Prototyping",
+        "Use Case Modeling",
+        "Interviews",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Prototyping is a powerful validation technique where a working model of the system is built to demonstrate requirements to stakeholders and get early feedback, helping to identify missing or misinterpreted requirements.",
+    },
+    {
+      question:
+        'A requirement stating "The system must be compatible with Windows, macOS, and Linux operating systems" is an example of a:',
+      options: [
+        "Performance Requirement",
+        "Portability Requirement",
+        "Reliability Requirement",
+        "Maintainability Requirement",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Portability requirements define the ease with which software can be transferred from one hardware or software environment to another.",
+    },
+    {
+      question:
+        "A diagram that shows the boundaries of a system and its interactions with external entities is a:",
+      options: [
+        "Class Diagram",
+        "Sequence Diagram",
+        "System Context Diagram",
+        "State Machine Diagram",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "A System Context Diagram is a high-level data flow diagram that shows the system as a single process and illustrates its interfaces with external entities (actors, systems, data stores).",
+    },
+    {
+      question:
+        "Which UML diagram is used to represent the different states an object can be in and the transitions between those states?",
+      options: [
+        "Use Case Diagram",
+        "Activity Diagram",
+        "State Machine Diagram",
+        "ER Diagram",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "The State Machine Diagram (formerly Statechart Diagram) models the behavior of a single object, showing its possible states and how events cause transitions between these states.",
+    },
+    {
+      question:
+        "Which type of model describes the data structure that the system will store and manipulate?",
+      options: [
+        "Behavioral Model",
+        "Architectural Model",
+        "Data Model",
+        "Context Model",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "A data model describes the structure of data used by the system, including entities, their attributes, and relationships between them (e.g., ER Diagrams, Class Diagrams focusing on data).",
+    },
+    {
+      question:
+        "In UML, a diagram that illustrates the time-ordered interactions between objects is a:",
+      options: [
+        "Activity Diagram",
+        "Class Diagram",
+        "Sequence Diagram",
+        "Component Diagram",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "A Sequence Diagram shows the order of messages passed between objects over time to accomplish a specific task or use case.",
+    },
+    {
+      question: "An Entity-Relationship (ER) Diagram is primarily used for:",
+      options: [
+        "Modeling system behavior",
+        "Showing component interactions",
+        "Representing data structures and relationships",
+        "Defining user interfaces",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "ER Diagrams are fundamental tools in database design and information system modeling, used to visualize the relationships between different entities (data objects) in a system.",
+    },
+    {
+      question:
+        "Which design concept refers to hiding complex implementation details and showing only essential features?",
+      options: ["Modularity", "Information Hiding", "Abstraction", "Coupling"],
+      correctAnswerIndex: 2,
+      explanation:
+        "Abstraction is the process of simplifying complex reality by focusing on essential properties and omitting non-essential details. Information hiding is a mechanism to achieve abstraction by preventing outside access to internal details.",
+    },
+    {
+      question:
+        "The degree to which elements within a module belong together is known as:",
+      options: ["Coupling", "Cohesion", "Modularity", "Abstraction"],
+      correctAnswerIndex: 1,
+      explanation:
+        "Cohesion measures how strongly related and focused the responsibilities of elements within a single module are. High cohesion is desirable as it indicates a well-designed, focused module.",
+    },
+    {
+      question:
+        "Which of the following is considered desirable in software design?",
+      options: [
+        "High Coupling, High Cohesion",
+        "High Coupling, Low Cohesion",
+        "Low Coupling, High Cohesion",
+        "Low Coupling, Low Cohesion",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Good software design aims for low coupling (minimal dependencies between modules) and high cohesion (elements within a module are functionally related and focused). This leads to more maintainable and robust systems.",
+    },
+    {
+      question:
+        "Defining the overall structure of the system, its main components, and their interactions falls under:",
+      options: [
+        "Component-level design",
+        "Data design",
+        "Architectural design",
+        "Interface design",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Architectural design defines the high-level structure of the system, including its main subsystems, their responsibilities, and how they interact.",
+    },
+    {
+      question: "User Interface (UI) design is a part of:",
+      options: [
+        "Architectural design",
+        "Interface design",
+        "Data design",
+        "Component-level design",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Interface design specifically deals with how the system interacts with its users and with other systems, encompassing user interface (UI) and external system interfaces.",
+    },
+    {
+      question:
+        "Testing individual program units or components in isolation is called:",
+      options: [
+        "Integration Testing",
+        "System Testing",
+        "Unit Testing",
+        "Acceptance Testing",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Unit testing is the lowest level of testing, focusing on verifying the correctness of individual, smallest testable parts of an application, such as functions or methods.",
+    },
+    {
+      question:
+        "Which type of testing focuses on finding defects in the interfaces and interactions between integrated modules?",
+      options: [
+        "Unit Testing",
+        "Integration Testing",
+        "Performance Testing",
+        "Security Testing",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Integration testing combines individual software modules and tests them as a group to ensure that they interact correctly and that the interfaces between them are robust.",
+    },
+    {
+      question:
+        "Testing conducted by potential end-users at their own sites is known as:",
+      options: [
+        "Alpha Testing",
+        "Beta Testing",
+        "Regression Testing",
+        "Unit Testing",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Beta testing is conducted by a representative group of target users in a real-world environment before the official release, to uncover defects or issues missed during internal testing.",
+    },
+    {
+      question:
+        "Which testing approach involves testing the functionality of the software without knowing its internal structure or code?",
+      options: [
+        "White-Box Testing",
+        "Black-Box Testing",
+        "Grey-Box Testing",
+        "Structural Testing",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Black-Box Testing (also known as functional testing) focuses solely on the inputs and outputs of the software based on its specifications, without concern for its internal implementation details.",
+    },
+    {
+      question:
+        "Equivalence Partitioning and Boundary Value Analysis are techniques primarily used in:",
+      options: [
+        "White-Box Testing",
+        "Unit Testing",
+        "Black-Box Testing",
+        "Performance Testing",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Equivalence Partitioning and Boundary Value Analysis are widely used black-box testing techniques to select a representative set of test cases that cover different input conditions efficiently.",
+    },
+    {
+      question:
+        "Re-running tests to ensure that changes or bug fixes have not introduced new defects is called:",
+      options: [
+        "System Testing",
+        "Acceptance Testing",
+        "Regression Testing",
+        "Stress Testing",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Regression testing is crucial to ensure that new code, code changes, or bug fixes have not negatively impacted existing functionality or introduced new bugs.",
+    },
+    {
+      question:
+        '"The system must handle 1000 concurrent users without degradation in response time." This statement would primarily be verified during:',
+      options: [
+        "Usability Testing",
+        "Security Testing",
+        "Performance Testing",
+        "Reliability Testing",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "This is a performance requirement related to the system's capacity and responsiveness under load, which is validated through performance testing (specifically, load or stress testing).",
+    },
+    {
+      question:
+        "Which type of testing aims to identify vulnerabilities and weaknesses in the software's protection mechanisms?",
+      options: [
+        "Usability Testing",
+        "Compatibility Testing",
+        "Security Testing",
+        "Portability Testing",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Security testing focuses on validating the security features of the software and identifying potential vulnerabilities to unauthorized access, data breaches, or other malicious activities.",
+    },
+    {
+      question:
+        'The testing principle that states "Testing shows the presence of defects, not their absence" highlights:',
+      options: [
+        "The impossibility of exhaustive testing.",
+        "The importance of early testing.",
+        "The pesticide paradox.",
+        "The need for automated testing.",
+      ],
+      correctAnswerIndex: 0,
+      explanation:
+        "This fundamental principle acknowledges that testing can only prove that defects exist, but it cannot definitively prove that there are no defects remaining. It implies that exhaustive testing is usually impossible.",
+    },
+    {
+      question:
+        "Which product metric is independent of the programming language used?",
+      options: [
+        "Lines of Code (LOC)",
+        "Cyclomatic Complexity",
+        "Function Points (FPs)",
+        "Defects per KLOC",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Function Points are a measure of software size based on the functionality delivered to the user, making them independent of the programming language and implementation details. LOC and Cyclomatic Complexity are language-dependent.",
+    },
+    {
+      question: "A higher value for Cyclomatic Complexity usually indicates:",
+      options: [
+        "Lower code complexity",
+        "Easier maintainability",
+        "More independent paths, thus higher complexity",
+        "Better test coverage",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Cyclomatic Complexity measures the number of linearly independent paths through a program's source code. A higher value indicates more decision points and paths, leading to higher complexity and potentially more challenging testing and maintenance.",
+    },
+    {
+      question: "Defect Density is typically measured as:",
+      options: [
+        "Number of defects per Function Point",
+        "Total defects found",
+        "Time between failures",
+        "Number of defects found per person-hour",
+      ],
+      correctAnswerIndex: 0,
+      explanation:
+        "Defect Density is a measure of the concentration of defects in software. It's commonly expressed as the number of defects per unit of size, such as per Function Point (FP) or per thousand Lines of Code (KLOC).",
+    },
+    {
+      question:
+        "Which metric directly assesses the efficiency of defect detection activities?",
+      options: [
+        "Mean Time To Failure (MTTF)",
+        "Defect Density",
+        "Defect Removal Efficiency (DRE)",
+        "Cyclomatic Complexity",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Defect Removal Efficiency (DRE) is calculated as (Number of defects found before release / Total defects (found before release + found after release)). It indicates how effective the development process is at removing defects before the software reaches the customer.",
+    },
+    {
+      question: "Which of the following is primarily a process metric?",
+      options: [
+        "Number of Function Points",
+        "Defects reported by customers",
+        "Cyclomatic Complexity of a module",
+        "Lines of code",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Process metrics evaluate the effectiveness and efficiency of the software development process. Defects reported by customers reflect how well the development and quality assurance processes prevented defects from escaping to the field, making it a process metric (as opposed to product metrics like FP, Cyclomatic Complexity, or LOC).",
+    },
+    {
+      question:
+        'If the "Defect Injection Rate" during the coding phase is very high, what impact might it have on product quality?',
+      options: [
+        "It ensures higher product quality due to extensive coding.",
+        'It likely leads to a higher "Defect Density" in the final product.',
+        "It will reduce the need for testing in later stages.",
+        "It has no direct relation to product quality.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "A high defect injection rate means many defects are being introduced into the code. Unless these are all caught and removed in subsequent phases, it will inevitably lead to a higher defect density in the delivered product, negatively impacting quality.",
+    },
+    {
+      question:
+        "A potential problem that might occur in the future and could negatively impact a software project is defined as a:",
+      options: ["Issue", "Bug", "Requirement", "Risk"],
+      correctAnswerIndex: 3,
+      explanation:
+        "A risk is a potential future event that, if it occurs, could have a negative impact on the project, its schedule, resources, or outcome.",
+    },
+    {
+      question:
+        "Which type of risk threatens the project plan, schedule, and resources?",
+      options: [
+        "Technical Risk",
+        "Business Risk",
+        "Project Risk",
+        "Financial Risk",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Project risks are those that affect the project management aspects, such as schedule delays, budget overruns, resource availability, or scope creep.",
+    },
+    {
+      question:
+        "The product of the probability of a risk occurring and its impact (loss) is known as:",
+      options: [
+        "Risk Mitigation",
+        "Risk Exposure",
+        "Risk Contingency",
+        "Risk Identification",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Risk Exposure (or Risk Magnitude) quantifies the total potential impact of a risk. It's calculated as the probability of the risk occurring multiplied by the severity of its impact.",
+    },
+    {
+      question:
+        "Developing alternative plans to execute if a risk materializes despite efforts to reduce its likelihood is called:",
+      options: [
+        "Risk Identification",
+        "Risk Mitigation",
+        "Risk Contingency Planning",
+        "Risk Monitoring",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Contingency planning involves preparing fallback plans or actions to be taken if a specific risk actually occurs, providing a 'Plan B'.",
+    },
+    {
+      question:
+        "Identifying potential difficulties related to unproven technology or complex designs falls under:",
+      options: [
+        "Project Risks",
+        "Technical Risks",
+        "Business Risks",
+        "Personnel Risks",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Technical risks are associated with the technology, design, implementation, and interfaces of the software itself, such as challenges with new algorithms, integration issues, or performance bottlenecks.",
+    },
+    {
+      question:
+        "Which activity in Software Quality Management is primarily preventative in nature, focusing on process adherence?",
+      options: [
+        "Quality Control",
+        "Quality Assurance",
+        "Testing",
+        "Defect Removal",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Quality Assurance (QA) is a proactive process-oriented approach focused on preventing defects from occurring in the first place, often through establishing and ensuring adherence to standards, processes, and procedures. Quality Control (QC) and Testing are more reactive, focusing on defect detection.",
+    },
+    {
+      question:
+        'The "fitness for purpose" or conformance to requirements defines:',
+      options: ["Efficiency", "Reliability", "Quality", "Usability"],
+      correctAnswerIndex: 2,
+      explanation:
+        "Quality in software engineering is often defined as the degree to which a software product meets its specified requirements and satisfies the needs of its stakeholders (fitness for purpose).",
+    },
+    {
+      question:
+        "Which standard is an international framework for quality management systems?",
+      options: ["Agile Manifesto", "IEEE 802.11", "ISO 9001", "TCP/IP"],
+      correctAnswerIndex: 2,
+      explanation:
+        "ISO 9001 is an internationally recognized standard for quality management systems, providing a framework for organizations to ensure they consistently meet customer and regulatory requirements and improve customer satisfaction.",
+    },
+    {
+      question:
+        "If a software team performs code reviews and design reviews to ensure adherence to standards, this activity is part of:",
+      options: [
+        "Quality Control",
+        "Testing",
+        "Quality Assurance",
+        "Risk Management",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Code reviews and design reviews are preventative measures aimed at ensuring that the development process and its outputs conform to established quality standards and best practices, thus falling under Quality Assurance.",
+    },
+    {
+      question:
+        'According to McCall\'s quality factors, "Maintainability" falls under which category?',
+      options: [
+        "Product Operation",
+        "Product Revision",
+        "Product Transition",
+        "Product Design",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "McCall's quality factors are categorized into three groups: Product Operation (e.g., correctness, reliability, efficiency, usability, integrity), Product Revision (e.g., maintainability, flexibility, testability), and Product Transition (e.g., portability, reusability, interoperability).",
+    },
+    {
+      question:
+        "The CMMI (Capability Maturity Model Integration) primarily aims to:",
+      options: [
+        "Provide a specific software development methodology.",
+        "Offer a framework for process improvement.",
+        "Certify software products as defect-free.",
+        "Dictate specific programming languages.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "CMMI is a process improvement training and appraisal program. It provides a framework that helps organizations improve their processes and enhance their ability to develop, acquire, and maintain products and services.",
+    },
+    {
+      question:
+        'Which of the following is more associated with "detection" of defects rather than "prevention"?',
+      options: [
+        "Quality Assurance Audits",
+        "Process Standards",
+        "Testing",
+        "Training on best practices",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Testing is primarily a defect detection activity, aiming to find existing bugs in the software. Quality Assurance audits, process standards, and training are typically preventative measures designed to stop defects from being introduced in the first place.",
+    },
+  ],
+  "dbms": [
+    {
+      question:
+        "Which of the following is NOT a primary purpose of a Database Management System (DBMS)?",
+      options: [
+        "Controlling data redundancy",
+        "Ensuring data inconsistency",
+        "Facilitating data sharing",
+        "Providing data security",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "A primary goal of a DBMS is to *control* or *reduce* data inconsistency, not ensure it. It aims to maintain data integrity and consistency across the database.",
+    },
+    {
+      question:
+        "Which level of data abstraction describes *what* data is stored in the database and the relationships among that data?",
+      options: [
+        "Physical level",
+        "Conceptual level",
+        "External level",
+        "Internal level",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The conceptual level (or logical level) describes the overall logical structure of the entire database for the database administrator, independent of how the data is physically stored.",
+    },
+    {
+      question:
+        "The ability to modify the conceptual schema without affecting the external schemas is known as:",
+      options: [
+        "Physical data independence",
+        "Logical data independence",
+        "Data redundancy",
+        "Data integrity",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Logical data independence refers to the ability to change the conceptual schema without needing to change the external schemas or application programs. Physical data independence allows changes to the physical schema without affecting the conceptual schema.",
+    },
+    {
+      question:
+        "Which type of DBMS organizes data in a tree-like structure with a parent-child relationship?",
+      options: [
+        "Relational DBMS",
+        "Network DBMS",
+        "Hierarchical DBMS",
+        "Object-Oriented DBMS",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Hierarchical DBMS uses a tree-like structure where each 'child' record has only one 'parent' record, forming a one-to-many relationship from parent to child.",
+    },
+    {
+      question: "A collection of related data is called a:",
+      options: ["Program", "File", "Database", "Report"],
+      correctAnswerIndex: 2,
+      explanation:
+        "A database is an organized collection of structured information, or data, typically stored electronically in a computer system. It is designed for efficient storage and retrieval of data.",
+    },
+    {
+      question:
+        "Which of the following is a disadvantage of the file processing system compared to DBMS?",
+      options: [
+        "Increased data security",
+        "Better data sharing",
+        "Data isolation",
+        "Reduced data redundancy",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "In file processing systems, data is typically stored in separate files for each application, leading to data isolation where it's difficult to combine data from different files for new queries. DBMS addresses this through integrated data management.",
+    },
+    {
+      question: "In an ER diagram, a strong entity is represented by:",
+      options: [
+        "A double rectangle",
+        "A single rectangle",
+        "A diamond",
+        "An oval",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "A strong entity set, which has a primary key of its own, is represented by a single rectangle in an ER diagram. A weak entity set is represented by a double rectangle.",
+    },
+    {
+      question:
+        "An attribute that can have multiple values for a single entity (e.g., phone numbers) is represented as a:",
+      options: [
+        "Key attribute",
+        "Composite attribute",
+        "Multivalued attribute",
+        "Derived attribute",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "A multivalued attribute is depicted with a double oval in an ER diagram, indicating that an entity can have multiple values for that attribute.",
+    },
+    {
+      question: "What does a double diamond symbol in an ER diagram represent?",
+      options: [
+        "A unary relationship",
+        "An identifying relationship for a weak entity",
+        "A many-to-many relationship",
+        "An aggregation",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "A double diamond represents the identifying relationship type that links a weak entity set to its identifying strong entity set. Without this identifying relationship, a weak entity cannot be uniquely identified.",
+    },
+    {
+      question:
+        "A relationship where each entity in set A can be related to at most one entity in set B, and each entity in set B can be related to at most one entity in set A, is called:",
+      options: ["One-to-many", "Many-to-one", "One-to-one", "Many-to-many"],
+      correctAnswerIndex: 2,
+      explanation:
+        "This describes a one-to-one (1:1) relationship, where each entity in one set is associated with at most one entity in the other set.",
+    },
+    {
+      question:
+        "If every entity in an entity set *must* participate in a relationship, it is known as:",
+      options: [
+        "Partial participation",
+        "Total participation",
+        "Mandatory participation",
+        "Optional participation",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Total participation (also called mandatory participation) means that every entity in the entity set must be involved in at least one relationship instance. It's represented by a double line connecting the entity set to the relationship set.",
+    },
+    {
+      question:
+        'Consider an ER diagram with "Employees" and "Departments". If each employee works in exactly one department, and each department can have multiple employees, the cardinality ratio between Employee and Department is:',
+      options: ["1:1", "1:N", "N:1", "M:N"],
+      correctAnswerIndex: 2,
+      explanation:
+        "If one department can have N employees, and each employee belongs to 1 department, the relationship is Many (Employees) to One (Department), hence N:1 from Employee to Department (or 1:N from Department to Employee, depending on perspective).",
+    },
+    {
+      question:
+        "Which relational algebra operation filters rows (tuples) from a relation based on a given condition?",
+      options: [
+        "Projection ($\\pi$)",
+        "Selection ($\\sigma$)",
+        "Union ($\\cup$)",
+        "Cartesian Product ($\\times$)",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The Selection operation ($\\sigma$) selects a subset of rows (tuples) from a relation that satisfy a specified condition. Projection ($\\pi$) selects a subset of columns.",
+    },
+    {
+      question:
+        "The operation that removes duplicate rows and selects specific columns from a relation is:",
+      options: ["$\\sigma$", "$\\pi$", "$\\rho$", "$\\cup$"],
+      correctAnswerIndex: 1,
+      explanation:
+        "The Projection operation ($\\pi$) selects specified columns from a relation and implicitly removes duplicate tuples in the resulting relation.",
+    },
+    {
+      question:
+        "Given two relations R and S, both with attributes (A, B, C). Which operation returns all tuples that are in R but not in S?",
+      options: ["$R \\cup S$", "$R \\cap S$", "$R - S$", "$R \\times S$"],
+      correctAnswerIndex: 2,
+      explanation:
+        "The Set Difference operation ($R - S$) returns tuples that are present in relation R but not in relation S. Both relations must be union-compatible (same number of attributes and corresponding domains).",
+    },
+    {
+      question:
+        "Which type of join combines related tuples from two relations based on an equality condition on common attributes, eliminating duplicate common attributes?",
+      options: ["Theta Join", "Equijoin", "Natural Join", "Outer Join"],
+      correctAnswerIndex: 2,
+      explanation:
+        "A Natural Join combines tuples from two relations based on equality of values in their common attributes, and it automatically removes duplicate columns from the result.",
+    },
+    {
+      question:
+        "If relation $R(A, B)$ has tuples ${(1, x), (2, y)}$ and relation $S(B, C)$ has tuples ${(x, p), (y, q)}$, what is the result of $R \\bowtie S$?",
+      options: [
+        "$\\{(1, x, p), (2, y, q)\\}$",
+        "$\\{(1, x), (2, y), (x, p), (y, q)\\}$",
+        "$\\{(1, p), (2, q)\\}$",
+        "$\\{(1, x, p), (2, y, q), (\\text{null}, \\text{null}, \\text{null})\\}$",
+      ],
+      correctAnswerIndex: 0,
+      explanation:
+        "The Natural Join ($R \\bowtie S$) matches tuples where the common attribute (B) has equal values. For (1, x) in R, it matches (x, p) in S, resulting in (1, x, p). For (2, y) in R, it matches (y, q) in S, resulting in (2, y, q).",
+    },
+    {
+      question:
+        'To find departments that employ *all* the employees listed in a separate "RequiredEmployees" relation, which relational algebra operation would be most appropriate?',
+      options: ["Union", "Intersection", "Join", "Division"],
+      correctAnswerIndex: 3,
+      explanation:
+        "The Division operation is used to find entities in one relation that are related to *all* entities in another set. It's typically used for 'all' or 'every' type of queries.",
+    },
+    {
+      question:
+        "Which of the following is a declarative query language based on mathematical logic?",
+      options: ["Relational Algebra", "SQL", "Relational Calculus", "DDL"],
+      correctAnswerIndex: 2,
+      explanation:
+        "Relational Calculus (Tuple Relational Calculus and Domain Relational Calculus) are declarative, non-procedural query languages based on mathematical predicate logic, where you specify *what* you want, not *how* to get it.",
+    },
+    {
+      question: "In Tuple Relational Calculus (TRC), variables range over:",
+      options: [
+        "Attribute values",
+        "Tuples of relations",
+        "Domains of attributes",
+        "Relations themselves",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "In Tuple Relational Calculus, variables represent tuples (rows) in relations, and conditions are specified on these tuples and their components.",
+    },
+    {
+      question:
+        "The expression $\\{t | \\text{Student}(t) \\land t.\\text{Age} > 20\\}$ is an example of a query in:",
+      options: [
+        "Domain Relational Calculus",
+        "Tuple Relational Calculus",
+        "Relational Algebra",
+        "SQL",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "This expression uses a tuple variable `t` that ranges over the `Student` relation and applies a condition on an attribute `t.Age`, which is characteristic of Tuple Relational Calculus.",
+    },
+    {
+      question: 'Which quantifier means "There exists" in Relational Calculus?',
+      options: ["$\\forall$", "$\\exists$", "$\\in$", "$\\notin$"],
+      correctAnswerIndex: 1,
+      explanation:
+        "The symbol $\\exists$ is the existential quantifier, meaning 'there exists' or 'for some'. The symbol $\\forall$ is the universal quantifier, meaning 'for all'.",
+    },
+    {
+      question:
+        "Which of the following is TRUE regarding Relational Completeness?",
+      options: [
+        "Relational Algebra is more powerful than Relational Calculus.",
+        "SQL is not relationally complete.",
+        "Both TRC and DRC are relationally complete.",
+        "Relational Calculus cannot express all queries expressible in Relational Algebra.",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Relational completeness means a language can express all queries expressible by Relational Algebra. Both Tuple Relational Calculus (TRC) and Domain Relational Calculus (DRC) are relationally complete. SQL, with features like aggregation and recursion, extends beyond pure relational completeness.",
+    },
+    {
+      question: "Which SQL command is used to add new rows to a table?",
+      options: ["`UPDATE`", "`MODIFY`", "`INSERT INTO`", "`ADD ROW`"],
+      correctAnswerIndex: 2,
+      explanation:
+        "The `INSERT INTO` SQL command is used to add one or more new records (rows) into a table in a database.",
+    },
+    {
+      question:
+        "To permanently save the changes made during a transaction, which TCL command is used?",
+      options: ["`ROLLBACK`", "`SAVEPOINT`", "`COMMIT`", "`BEGIN TRANSACTION`"],
+      correctAnswerIndex: 2,
+      explanation:
+        "The `COMMIT` command in Transaction Control Language (TCL) saves all the changes made by the transaction permanently to the database. `ROLLBACK` undoes changes, `SAVEPOINT` sets a marker, and `BEGIN TRANSACTION` starts one.",
+    },
+    {
+      question:
+        "Which SQL clause is used to filter groups based on aggregate conditions?",
+      options: ["`WHERE`", "`ORDER BY`", "`GROUP BY`", "`HAVING`"],
+      correctAnswerIndex: 3,
+      explanation:
+        "The `HAVING` clause is used with the `GROUP BY` clause to filter the groups that result from an aggregation based on a condition applied to the aggregate function's result. The `WHERE` clause filters individual rows before grouping.",
+    },
+    {
+      question:
+        "Consider two tables: `Customers (CustomerID, Name)` and `Orders (OrderID, CustomerID, OrderDate)`. To get all customers and their orders, including customers who have not placed any orders, which type of JOIN would you use?",
+      options: ["`INNER JOIN`", "`RIGHT JOIN`", "`LEFT JOIN`", "`FULL JOIN`"],
+      correctAnswerIndex: 2,
+      explanation:
+        "A `LEFT JOIN` (or LEFT OUTER JOIN) returns all rows from the left table (`Customers`) and the matching rows from the right table (`Orders`). If there is no match, `NULL` is returned for the columns from the right table, effectively including customers without orders.",
+    },
+    {
+      question: "Which of the following is a DDL command?",
+      options: ["`SELECT`", "`INSERT`", "`GRANT`", "`CREATE TABLE`"],
+      correctAnswerIndex: 3,
+      explanation:
+        "DDL (Data Definition Language) commands are used to define, modify, and delete database structures. `CREATE TABLE` is used to create a new table. `SELECT` is DML, `INSERT` is DML, and `GRANT` is DCL.",
+    },
+    {
+      question: "What does the `UNIQUE` constraint ensure in a column?",
+      options: [
+        "Values in the column cannot be NULL.",
+        "Values in the column are unique across all rows.",
+        "Values in the column must be greater than zero.",
+        "Values in the column are encrypted.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The `UNIQUE` constraint ensures that all values in a column (or a set of columns) are different from each other. Unlike `PRIMARY KEY`, it allows `NULL` values (though only one `NULL` if not combined with `NOT NULL`).",
+    },
+    {
+      question:
+        "Which SQL statement is used to remove a specific table from the database?",
+      options: [
+        "`DELETE TABLE`",
+        "`REMOVE TABLE`",
+        "`DROP TABLE`",
+        "`ERASE TABLE`",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "The `DROP TABLE` command is a DDL statement used to delete an entire table from the database, including its structure and all data within it.",
+    },
+    {
+      question:
+        "Which anomaly occurs when deleting a record results in the loss of other, unrelated data?",
+      options: [
+        "Insertion Anomaly",
+        "Deletion Anomaly",
+        "Update Anomaly",
+        "Retrieval Anomaly",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "A deletion anomaly occurs when the deletion of a single record unintentionally removes other important, unrelated information from the database due to poor design (lack of normalization).",
+    },
+    {
+      question: "A relation is in 1NF if:",
+      options: [
+        "It has no partial dependencies.",
+        "It has no transitive dependencies.",
+        "All attributes are atomic.",
+        "Every determinant is a candidate key.",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "First Normal Form (1NF) requires that all attributes in a relation must be atomic (indivisible) and that there are no repeating groups or multi-valued attributes.",
+    },
+    {
+      question:
+        "Consider a relation $R(A, B, C, D)$ with functional dependencies $A \\rightarrow B$ and $B \\rightarrow C$. Which of the following is a transitive dependency?",
+      options: [
+        "$A \\rightarrow B$",
+        "$B \\rightarrow C$",
+        "$A \\rightarrow C$",
+        "$A \\rightarrow D$",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "A transitive dependency exists when a non-key attribute is indirectly dependent on the primary key through another non-key attribute. Here, $A \\rightarrow B$ and $B \\rightarrow C$ implies $A \\rightarrow C$, and if A is the primary key, $A \\rightarrow C$ is a transitive dependency.",
+    },
+    {
+      question: "A relation is in 2NF if it is in 1NF and:",
+      options: [
+        "No non-key attribute is partially dependent on a candidate key.",
+        "No non-key attribute is transitively dependent on the primary key.",
+        "Every determinant is a candidate key.",
+        "It has no multi-valued dependencies.",
+      ],
+      correctAnswerIndex: 0,
+      explanation:
+        "Second Normal Form (2NF) requires a relation to be in 1NF and that no non-key attribute is partially dependent on any candidate key (meaning it depends on only a part of a composite candidate key, not the whole key).",
+    },
+    {
+      question:
+        "Which normal form states that every determinant must be a candidate key?",
+      options: ["1NF", "2NF", "3NF", "BCNF"],
+      correctAnswerIndex: 3,
+      explanation:
+        "Boyce-Codd Normal Form (BCNF) is a stricter version of 3NF. It states that for every non-trivial functional dependency X \\rightarrow Y, X must be a superkey (or candidate key). This eliminates cases where a non-key attribute determines another non-key attribute.",
+    },
+    {
+      question:
+        "A relation $R(A, B, C)$ has primary key $A$. If we have functional dependencies $A \\rightarrow B$ and $B \\rightarrow C$, then to convert this relation to 3NF, we should:",
+      options: [
+        "Do nothing, it's already in 3NF.",
+        "Decompose it into $R1(A, B)$ and $R2(B, C)$.",
+        "Decompose it into $R1(A, C)$ and $R2(B, C)$.",
+        "Add a new attribute.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The dependency $A \\rightarrow C$ is a transitive dependency (since $A \\rightarrow B$ and $B \\rightarrow C$) with respect to the primary key A. To eliminate this and achieve 3NF, the relation should be decomposed into $R1(A, B)$ (to preserve $A \\rightarrow B$) and $R2(B, C)$ (to preserve $B \\rightarrow C$ and remove the transitive dependency from R).",
+    },
+    {
+      question: 'The "A" in ACID properties of transactions stands for:',
+      options: ["Atomicity", "Authenticity", "Availability", "Accessibility"],
+      correctAnswerIndex: 0,
+      explanation:
+        "ACID is an acronym representing Atomicity, Consistency, Isolation, and Durability – fundamental properties that guarantee reliable transaction processing in databases.",
+    },
+    {
+      question:
+        "Which property ensures that a transaction, once committed, its changes are permanently stored and survive system failures?",
+      options: ["Atomicity", "Consistency", "Isolation", "Durability"],
+      correctAnswerIndex: 3,
+      explanation:
+        "Durability ensures that once a transaction has been committed, it will remain committed even in the event of power loss, crashes, or other system failures. This is typically achieved through logging and recovery mechanisms.",
+    },
+    {
+      question:
+        "The problem where one transaction reads data written by another uncommitted transaction is known as:",
+      options: [
+        "Lost Update",
+        "Dirty Read",
+        "Unrepeatable Read",
+        "Phantom Read",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "A Dirty Read (or uncommitted dependency) occurs when a transaction reads data that has been modified by another transaction but has not yet been committed. If the modifying transaction later rolls back, the first transaction would have read invalid data.",
+    },
+    {
+      question:
+        "In Two-Phase Locking (2PL), the phase during which a transaction can only release locks, not acquire new ones, is called the:",
+      options: [
+        "Growing phase",
+        "Shrinking phase",
+        "Commit phase",
+        "Rollback phase",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Two-Phase Locking (2PL) has two phases: the Growing Phase (acquiring phase) where a transaction can acquire locks but not release any, and the Shrinking Phase (releasing phase) where it can release locks but not acquire new ones. This protocol ensures serializability.",
+    },
+    {
+      question:
+        "A situation where two or more transactions are waiting indefinitely for each other to release locks is called:",
+      options: ["Concurrency", "Starvation", "Deadlock", "Livelock"],
+      correctAnswerIndex: 2,
+      explanation:
+        "Deadlock is a condition where two or more transactions are permanently blocked because each is waiting for the other to release a resource that it has locked.",
+    },
+    {
+      question:
+        "Which of the following is a common technique for database recovery after a system failure?",
+      options: [
+        "Normalization",
+        "Query optimization",
+        "Log-based recovery",
+        "Indexing",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Log-based recovery is a standard technique where all changes made by transactions are recorded in a transaction log. After a failure, the DBMS uses this log to undo uncommitted transactions and redo committed transactions to restore the database to a consistent state.",
+    },
+    {
+      question:
+        "Which type of index physically orders the data rows in the same order as the index?",
+      options: [
+        "Secondary index",
+        "Non-clustering index",
+        "Clustering index",
+        "Hash index",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "A clustering index dictates the physical storage order of data rows in the table. There can only be one clustering index per table because data can only be physically sorted in one way.",
+    },
+    {
+      question:
+        "A B+ tree is commonly used for indexing in relational databases primarily because:",
+      options: [
+        "It allows very fast equality searches only.",
+        "It stores all data pointers at leaf nodes, linked for efficient range queries.",
+        "It eliminates data redundancy.",
+        "It is a simple binary tree.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "B+ trees are optimized for disk-based storage and retrieval. All data pointers are stored in the leaf nodes, which are linked together, making them highly efficient for both equality searches and range queries.",
+    },
+    {
+      question: "Which of the following is a disadvantage of using indexes?",
+      options: [
+        "Slower data retrieval for `SELECT` queries.",
+        "Increased storage space and overhead for writes (INSERT, UPDATE, DELETE).",
+        "Cannot be used on `PRIMARY KEY` columns.",
+        "Only supports numerical data.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "While indexes speed up `SELECT` queries, they introduce overhead for data modification operations (`INSERT`, `UPDATE`, `DELETE`) because the index structure itself must also be updated. They also consume additional storage space.",
+    },
+    {
+      question:
+        "An index on a non-key attribute that does not physically order the data is known as a:",
+      options: [
+        "Primary index",
+        "Clustering index",
+        "Secondary index (non-clustering)",
+        "Unique index",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "A secondary index (or non-clustering index) is an index on a non-ordering key attribute. It does not determine the physical order of the data rows, but rather provides pointers to the actual data locations.",
+    },
+    {
+      question: "The primary goal of query optimization is to:",
+      options: [
+        "Increase data redundancy.",
+        "Select the most efficient execution plan for a query.",
+        "Ensure data inconsistency.",
+        "Reduce the number of tables in the database.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Query optimization is the process of finding the most efficient way to execute a given query, which involves choosing the optimal plan from various alternatives to minimize resource consumption (e.g., I/O, CPU time).",
+    },
+    {
+      question:
+        "Which phase of query processing involves generating multiple execution plans and estimating their costs?",
+      options: [
+        "Parsing and Translation",
+        "Evaluation",
+        "Optimization",
+        "Execution",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "The optimization phase of query processing is where the query optimizer analyzes the parsed query, generates various possible execution plans, and estimates the cost (time/resources) for each plan, ultimately selecting the cheapest one.",
+    },
+    {
+      question:
+        "Which of the following is a heuristic commonly used in query optimization?",
+      options: [
+        "Perform join operations before selection operations.",
+        "Push down selection and projection operations as early as possible.",
+        "Ignore the presence of indexes.",
+        "Prioritize Cartesian products.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "A common heuristic for query optimization is to 'push down' selection ($\\sigma$) and projection ($\\pi$) operations as early as possible in the query plan. This reduces the number of rows and columns processed by subsequent, more expensive operations (like joins), thereby improving efficiency.",
+    },
+    {
+      question:
+        "What type of information is crucial for a cost-based query optimizer to make informed decisions?",
+      options: [
+        "User interface preferences",
+        "Database statistics (e.g., number of rows, data distribution)",
+        "Operating system version",
+        "Network speed between client and server",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Cost-based optimizers rely heavily on accurate database statistics, such as the number of rows in tables, the distribution of data within columns, and index information, to estimate the cost of different execution plans accurately.",
+    },
+  ],
+  "dsa": [
+    {
+      question:
+        "Which of the following is a non-primitive linear data structure?",
+      options: ["Integer", "Float", "Array", "Pointer"],
+      correctAnswerIndex: 2,
+      explanation:
+        "Arrays are non-primitive because they are built from primitive data types (like integers or floats) and store multiple values. They are linear because elements are arranged sequentially.",
+    },
+    {
+      question: 'The term "data structure" refers to:',
+      options: [
+        "The organization and storage of data in a database.",
+        "A collection of algorithms used for data processing.",
+        "A particular way of organizing data in a computer to use it efficiently.",
+        "A method for encrypting data for security.",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "A data structure is a specific way of organizing, managing, and storing data in a computer so that it can be accessed and modified efficiently.",
+    },
+    {
+      question:
+        "Which of the following data structures allows hierarchical organization of data?",
+      options: ["Queue", "Stack", "Graph", "Tree"],
+      correctAnswerIndex: 3,
+      explanation:
+        "Trees are inherently hierarchical, with a root node, parent-child relationships, and levels of nodes. Stacks and queues are linear, and graphs are non-linear but not necessarily hierarchical.",
+    },
+    {
+      question: "What is the primary advantage of using data structures?",
+      options: [
+        "To complicate data handling",
+        "To reduce memory usage and improve processing speed",
+        "To secure data from unauthorized access",
+        "To enable concurrent data access",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Properly chosen data structures optimize the efficiency of operations (like searching, sorting, insertion, deletion), which directly leads to reduced memory usage and faster processing speed for specific tasks.",
+    },
+    {
+      question: "Which search algorithm requires the data to be sorted?",
+      options: [
+        "Linear Search",
+        "Hash Search",
+        "Binary Search",
+        "Depth-First Search",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Binary Search works by repeatedly dividing the search interval in half. This approach only works if the data is sorted in ascending or descending order.",
+    },
+    {
+      question:
+        "What is the worst-case time complexity of Linear Search for an array of 'n' elements?",
+      options: ["O(1)", "O(log n)", "O(n)", "O($n^2$)"],
+      correctAnswerIndex: 2,
+      explanation:
+        "In the worst case for Linear Search, the element is either at the very end of the array or not present at all, requiring 'n' comparisons. Hence, the complexity is O(n).",
+    },
+    {
+      question:
+        "For an array containing 1024 elements, what is the maximum number of comparisons required to find an element using Binary Search in the worst case?",
+      options: ["1024", "10", "512", "11"],
+      correctAnswerIndex: 1,
+      explanation:
+        "Binary Search has a time complexity of O(log n). For n = 1024, the number of comparisons is log2(1024) = 10.",
+    },
+    {
+      question: "Binary search is NOT suitable for:",
+      options: [
+        "Large datasets",
+        "Unsorted arrays",
+        "Small datasets",
+        "Data stored in contiguous memory locations",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Binary search critically depends on the data being sorted. It cannot be applied directly to unsorted arrays.",
+    },
+    {
+      question:
+        "If an element is present at the first position in an array, what is the best-case time complexity of Linear Search?",
+      options: ["O(1)", "O(log n)", "O(n)", "O($n^2$)"],
+      correctAnswerIndex: 0,
+      explanation:
+        "In the best case, Linear Search finds the element at the very first position, requiring only one comparison. This is constant time, O(1).",
+    },
+    {
+      question:
+        "Which sorting algorithm has the worst-case time complexity of O($n^2$) but a best-case time complexity of O(n) when the array is already sorted?",
+      options: ["Merge Sort", "Selection Sort", "Insertion Sort", "Heap Sort"],
+      correctAnswerIndex: 2,
+      explanation:
+        "Insertion Sort performs well on nearly sorted or already sorted arrays, achieving O(n) in the best case. However, its worst-case (reverse sorted array) is O($n^2$).",
+    },
+    {
+      question:
+        "What is the time complexity of Merge Sort in all cases (best, worst, and average)?",
+      options: ["O($n^2$)", "O(n)", "O(n log n)", "O(log n)"],
+      correctAnswerIndex: 2,
+      explanation:
+        "Merge Sort is a stable sorting algorithm with a consistent time complexity of O(n log n) across all cases (best, average, and worst) due to its divide-and-conquer approach.",
+    },
+    {
+      question:
+        "Which of the following sorting algorithms is an in-place algorithm (uses O(1) auxiliary space) and has a guaranteed O(n log n) time complexity?",
+      options: ["Merge Sort", "Quick Sort", "Heap Sort", "Bubble Sort"],
+      correctAnswerIndex: 2,
+      explanation:
+        "Heap Sort is an in-place sorting algorithm (or uses O(1) auxiliary space beyond the input array) and offers a guaranteed O(n log n) time complexity in all cases. Quick Sort's worst-case is O($n^2$), and Merge Sort requires O(n) auxiliary space.",
+    },
+    {
+      question:
+        "Which sorting algorithm is generally considered the fastest in practice for large datasets, despite its worst-case O($n^2$) performance?",
+      options: [
+        "Bubble Sort",
+        "Insertion Sort",
+        "Quick Sort",
+        "Selection Sort",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Quick Sort, while having a worst-case O($n^2$) (which can be avoided with good pivot selection), typically has the best average-case performance and is often the fastest in practice for large datasets due to its cache efficiency and low constant factor.",
+    },
+    {
+      question: "A stable sorting algorithm:",
+      options: [
+        "Always takes O(n log n) time.",
+        "Preserves the relative order of equal elements.",
+        "Always uses O(1) auxiliary space.",
+        "Is only applicable to numerical data.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "A stable sorting algorithm maintains the relative order of records with equal keys. If two elements have the same value, their order in the sorted output will be the same as their order in the input.",
+    },
+    {
+      question:
+        "How many swaps are performed in Selection Sort in the worst case for 'n' elements?",
+      options: ["O(n)", "O($n^2$)", "O(log n)", "O(1)"],
+      correctAnswerIndex: 0,
+      explanation:
+        "Selection Sort performs exactly (n-1) swaps (or O(n) swaps) in total, regardless of the initial arrangement of elements, as it finds the minimum element in each pass and swaps it into its correct position.",
+    },
+    {
+      question:
+        "Which of the following is NOT a comparison-based sorting algorithm?",
+      options: ["Quick Sort", "Merge Sort", "Bubble Sort", "Counting Sort"],
+      correctAnswerIndex: 3,
+      explanation:
+        "Comparison-based sorts rely on comparing elements to determine their relative order. Counting Sort (along with Radix Sort and Bucket Sort) is a non-comparison-based sort that uses other properties of the data (like integer ranges) to sort.",
+    },
+    {
+      question:
+        "The process of arranging elements in a particular order is called:",
+      options: ["Searching", "Traversal", "Sorting", "Hashing"],
+      correctAnswerIndex: 2,
+      explanation:
+        "Sorting is the process of arranging data in a specific order, such as ascending or descending.",
+    },
+    {
+      question: "A stack follows the principle of:",
+      options: [
+        "FIFO (First In, First Out)",
+        "LIFO (Last In, First Out)",
+        "LILO (Last In, Last Out)",
+        "FILO (First In, Last Out)",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "LIFO (Last In, First Out) means the last element added to the stack is the first one to be removed. Think of a stack of plates.",
+    },
+    {
+      question:
+        "Which operation is used to add an element to the top of a stack?",
+      options: ["Dequeue", "Pop", "Enqueue", "Push"],
+      correctAnswerIndex: 3,
+      explanation:
+        "The `Push` operation adds an element to the top of the stack. `Pop` removes an element from the top.",
+    },
+    {
+      question:
+        "What is the condition called when you try to pop an element from an empty stack?",
+      options: ["Overflow", "Underflow", "Overrun", "Segmentation fault"],
+      correctAnswerIndex: 1,
+      explanation:
+        "Stack Underflow occurs when an attempt is made to remove an element from an empty stack. Stack Overflow occurs when an attempt is made to push an element onto a full stack.",
+    },
+    {
+      question: "Which of the following is a common application of stacks?",
+      options: [
+        "CPU scheduling",
+        "Browser history (back button)",
+        "Network routing",
+        "Printing queue management",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The 'back' button functionality in web browsers uses a stack to store the history of visited pages, allowing users to navigate back to the previously visited page (LIFO).",
+    },
+    {
+      question:
+        "If a stack is implemented using an array of size `MAX_SIZE`, how is the `top` pointer updated after a `push` operation?",
+      options: [
+        "`top` is decremented",
+        "`top` is incremented",
+        "`top` remains unchanged",
+        "`top` is reset to 0",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "When an element is pushed onto an array-based stack, the `top` pointer (or index) is typically incremented to point to the new top element's position.",
+    },
+    {
+      question: "A queue follows the principle of:",
+      options: [
+        "LIFO (Last In, First Out)",
+        "FILO (First In, Last Out)",
+        "FIFO (First In, First Out)",
+        "LILO (Last In, Last Out)",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "FIFO (First In, First Out) means the first element added to the queue is the first one to be removed. Like a line at a ticket counter.",
+    },
+    {
+      question:
+        "Which operation is used to remove an element from the front of a queue?",
+      options: ["Push", "Pop", "Enqueue", "Dequeue"],
+      correctAnswerIndex: 3,
+      explanation:
+        "The `Dequeue` operation removes an element from the front (head) of the queue. `Enqueue` adds an element to the rear (tail).",
+    },
+    {
+      question:
+        'What is a "circular queue" primarily used to overcome in array-based queue implementation?',
+      options: [
+        "The issue of fixed size",
+        "The problem of wasted memory due to linear movement of `front` and `rear`",
+        "The difficulty of implementing `peek` operation",
+        "The inability to handle multiple data types",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "In a linear array-based queue, after several dequeues, the `front` pointer moves forward, leaving empty space at the beginning of the array. A circular queue wraps around the array, efficiently reusing this space.",
+    },
+    {
+      question:
+        "Which data structure is typically used to implement Breadth-First Search (BFS)?",
+      options: ["Stack", "Queue", "Linked List", "Tree"],
+      correctAnswerIndex: 1,
+      explanation:
+        "BFS explores neighbors level by level, systematically. A queue is used to store nodes that are to be visited, ensuring that nodes at the current level are explored before moving to the next level.",
+    },
+    {
+      question:
+        "In an array-based queue, if `front = 0` and `rear = 0`, what does it signify?",
+      options: [
+        "The queue is full",
+        "The queue is empty",
+        "The queue has only one element",
+        "It's an invalid state",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "A common convention for an empty queue in array-based implementations is `front = rear = 0` (or `front = -1` and `rear = -1`). When `front` and `rear` point to the same index after initialization or removal of the last element, it signifies an empty queue.",
+    },
+    {
+      question:
+        "Which of the following statements is TRUE about linked lists compared to arrays?",
+      options: [
+        "Linked lists offer random access to elements.",
+        "Arrays are more efficient for insertions and deletions in the middle.",
+        "Linked lists have dynamic size.",
+        "Arrays generally consume more memory per element.",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Linked lists can grow or shrink dynamically at runtime, as memory is allocated/deallocated for nodes as needed. Arrays have a fixed size defined at creation.",
+    },
+    {
+      question:
+        "In a singly linked list, what does the `next` pointer of the last node point to?",
+      options: [
+        "The first node",
+        "The second node",
+        "NULL",
+        "It points to itself",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "The `next` pointer of the last node in a singly linked list typically points to `NULL` to signify the end of the list.",
+    },
+    {
+      question:
+        "What is the time complexity for inserting a node at the beginning of a singly linked list?",
+      options: ["O(1)", "O(log n)", "O(n)", "O($n^2$)"],
+      correctAnswerIndex: 0,
+      explanation:
+        "Inserting a node at the beginning of a singly linked list involves simply creating a new node, setting its `next` pointer to the current head, and then updating the head to point to the new node. This takes constant time, O(1).",
+    },
+    {
+      question:
+        "Which type of linked list allows traversal in both forward and backward directions?",
+      options: [
+        "Singly Linked List",
+        "Doubly Linked List",
+        "Circular Linked List",
+        "Both b and c",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "A Doubly Linked List has two pointers per node: one pointing to the next node (`next`) and one pointing to the previous node (`prev`), enabling bidirectional traversal.",
+    },
+    {
+      question:
+        "If you want to delete a specific node in a singly linked list, what information is usually needed for efficient deletion?",
+      options: [
+        "The data of the node to be deleted",
+        "A pointer to the previous node of the one to be deleted",
+        "A pointer to the next node of the one to be deleted",
+        "Only the head pointer is sufficient",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "To delete a node, you need to update the `next` pointer of its *previous* node to bypass the node being deleted. Without a pointer to the previous node, you would have to traverse from the head to find it, which takes O(n) time.",
+    },
+    {
+      question: "Which of the following is NOT an advantage of linked lists?",
+      options: [
+        "Dynamic size",
+        "Ease of insertion/deletion",
+        "Efficient random access",
+        "Flexible memory management",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Linked lists do not offer efficient random access (O(1)) like arrays. To access an element at a specific index, you must traverse the list from the beginning, which takes O(n) time.",
+    },
+    {
+      question:
+        "In a tree data structure, the node with no parent is called the:",
+      options: ["Leaf node", "Root node", "Internal node", "Child node"],
+      correctAnswerIndex: 1,
+      explanation:
+        "The root node is the topmost node in a tree structure and has no parent. It's the starting point for most tree operations.",
+    },
+    {
+      question:
+        "A binary tree where every node has either zero or two children is called a:",
+      options: [
+        "Complete Binary Tree",
+        "Perfect Binary Tree",
+        "Full Binary Tree",
+        "Skewed Binary Tree",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "A Full Binary Tree (or Strict Binary Tree) is a binary tree in which every node has either 0 or 2 children. A Perfect Binary Tree also satisfies this but additionally has all leaf nodes at the same level.",
+    },
+    {
+      question:
+        "Which tree traversal visits the nodes in ascending order of their values in a Binary Search Tree (BST)?",
+      options: [
+        "Pre-order traversal",
+        "In-order traversal",
+        "Post-order traversal",
+        "Level-order traversal",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "In-order traversal (Left -> Root -> Right) of a Binary Search Tree (BST) always visits nodes in ascending order of their values.",
+    },
+    {
+      question:
+        "What is the worst-case time complexity for searching an element in a Binary Search Tree?",
+      options: ["O(1)", "O(log n)", "O(n)", "O($n^2$)"],
+      correctAnswerIndex: 2,
+      explanation:
+        "In the worst case, a BST can degenerate into a skewed tree (like a linked list) where all nodes are inserted in ascending or descending order. In this scenario, searching for an element requires traversing all 'n' nodes, leading to O(n) complexity.",
+    },
+    {
+      question:
+        "A tree in which the height difference between the left and right subtrees of any node is at most 1 is called a:",
+      options: [
+        "Complete Binary Tree",
+        "Full Binary Tree",
+        "Balanced Binary Tree",
+        "Skewed Binary Tree",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "This is the definition of a balanced binary tree, such as an AVL tree or a Red-Black tree, which ensures that the height remains logarithmic to maintain efficient search/insert/delete operations.",
+    },
+    {
+      question:
+        "The height of a tree is defined as the length of the longest path from the root to a:",
+      options: ["Sibling node", "Parent node", "Leaf node", "Internal node"],
+      correctAnswerIndex: 2,
+      explanation:
+        "The height of a tree is the maximum number of edges from the root node to the farthest leaf node. Alternatively, it can be defined as the number of nodes on the longest path from the root to a leaf node.",
+    },
+    {
+      question:
+        "Which traversal method uses a queue to visit nodes level by level?",
+      options: ["Pre-order", "In-order", "Post-order", "Level-order"],
+      correctAnswerIndex: 3,
+      explanation:
+        "Level-order traversal (also known as Breadth-First Traversal for trees) visits all nodes at the current depth before moving on to nodes at the next depth. It uses a queue to manage the nodes to be visited.",
+    },
+    {
+      question:
+        "A graph where edges have a direction associated with them is called a:",
+      options: [
+        "Undirected Graph",
+        "Weighted Graph",
+        "Directed Graph (Digraph)",
+        "Complete Graph",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "In a directed graph (or digraph), edges have a specific direction, meaning they can only be traversed from the source vertex to the destination vertex.",
+    },
+    {
+      question:
+        "Which graph representation is suitable for sparse graphs (graphs with few edges) to save space?",
+      options: [
+        "Adjacency Matrix",
+        "Adjacency List",
+        "Incidence Matrix",
+        "Edge List",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "An Adjacency List is more memory-efficient for sparse graphs because it only stores the existing edges. An Adjacency Matrix would waste space storing many zeros for non-existent edges in a sparse graph.",
+    },
+    {
+      question:
+        "What is the time complexity to check if an edge exists between two vertices in an Adjacency Matrix representation?",
+      options: ["O(V)", "O(E)", "O(1)", "O(V+E)"],
+      correctAnswerIndex: 2,
+      explanation:
+        "In an Adjacency Matrix, checking if an edge exists between two vertices (u, v) simply involves looking up the value at `matrix[u][v]`, which is a constant time operation, O(1).",
+    },
+    {
+      question:
+        "Which graph traversal algorithm uses a stack (or recursion) and explores as far as possible along each branch before backtracking?",
+      options: [
+        "Breadth-First Search (BFS)",
+        "Depth-First Search (DFS)",
+        "Dijkstra's Algorithm",
+        "Prim's Algorithm",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Depth-First Search (DFS) systematically explores as far as possible along each branch before backtracking. It can be implemented using a stack or recursion.",
+    },
+    {
+      question: 'In a graph, what is a "cycle"?',
+      options: [
+        "A path that visits every vertex exactly once.",
+        "A path that starts and ends at the same vertex, with at least one edge, and no repeated vertices/edges other than the start/end.",
+        "A collection of disconnected vertices.",
+        "The maximum degree of any vertex in the graph.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "A cycle in a graph is a path that begins and ends at the same vertex and has no repeated vertices or edges (except for the start/end vertex).",
+    },
+    {
+      question:
+        "If a graph has V vertices and E edges, what is the space complexity of the Adjacency List representation?",
+      options: ["O($V^2$)", "O(E)", "O(V + E)", "O(V log E)"],
+      correctAnswerIndex: 2,
+      explanation:
+        "The Adjacency List representation requires space proportional to the number of vertices (V) to store the list headers and space proportional to the number of edges (E) to store the connections. Hence, O(V + E).",
+    },
+    {
+      question: "Which of the following is a common application of graphs?",
+      options: [
+        "Implementing undo/redo functionality",
+        "Representing hierarchical data like file systems",
+        "Social network analysis and mapping",
+        "Evaluating arithmetic expressions",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Graphs are ideal for modeling relationships and connections, making them perfect for social network analysis (people as vertices, friendships as edges), mapping applications (locations as vertices, roads as edges), and many other real-world systems involving complex relationships.",
+    },
+  ],
+  "unix": [
+    {
+      question:
+        "Which command is used to display the full pathname of the current working directory?",
+      options: ["dir", "list", "pwd", "cwd"],
+      correctAnswerIndex: 2,
+      explanation:
+        "`pwd` stands for 'print working directory' and displays the full path of your current location in the file system.",
+    },
+    {
+      question:
+        "To list files in a long format, showing permissions, owner, group, size, and modification date, which option is used with ls?",
+      options: ["-a", "-h", "-R", "-l"],
+      correctAnswerIndex: 3,
+      explanation:
+        "The `-l` option with `ls` provides a detailed, 'long' listing of files and directories, including permissions, owner, group, size, and modification timestamp.",
+    },
+    {
+      question:
+        "Which command is used to copy a file named source.txt to destination.txt?",
+      options: [
+        "mv source.txt destination.txt",
+        "cp source.txt destination.txt",
+        "copy source.txt destination.txt",
+        "ln source.txt destination.txt",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The `cp` command is used to copy files and directories. `mv` is for moving/renaming, and `ln` is for creating links.",
+    },
+    {
+      question:
+        "What does the command touch mynewfile.txt do if mynewfile.txt does not exist?",
+      options: [
+        "Displays an error message.",
+        "Creates an empty file named mynewfile.txt.",
+        "Opens mynewfile.txt in the vi editor.",
+        "Changes the owner of mynewfile.txt.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The `touch` command updates the access and modification timestamps of a file. If the file doesn't exist, `touch` creates an empty file with that name.",
+    },
+    {
+      question:
+        "Which cat command option is used to display line numbers for all output lines?",
+      options: ["-b", "-s", "-n", "-e"],
+      correctAnswerIndex: 2,
+      explanation:
+        "The `cat -n` command displays the content of a file with line numbers prefixed to each line.",
+    },
+    {
+      question:
+        "You want to display the calendar for the entire current year. Which command would you use?",
+      options: ["cal today", "cal -y", "cal current", "cal year"],
+      correctAnswerIndex: 1,
+      explanation:
+        "The `cal -y` command displays the calendar for the entire current year.",
+    },
+    {
+      question:
+        "In vi editor, which key allows you to switch from Insert Mode back to Command Mode?",
+      options: ["Enter", "Tab", "Esc", "Ctrl+C"],
+      correctAnswerIndex: 2,
+      explanation:
+        "Pressing the `Esc` key is the standard way to exit Insert mode and return to Command mode in the vi/vim editor.",
+    },
+    {
+      question: "Which wildcard character matches any single character?",
+      options: ["*", "?", "[]", "/"],
+      correctAnswerIndex: 1,
+      explanation:
+        "The `?` wildcard matches any single character. The `*` wildcard matches zero or more characters.",
+    },
+    {
+      question:
+        "What is the purpose of the shebang line #!/bin/bash at the beginning of a shell script?",
+      options: [
+        "It's a comment indicating the script's name.",
+        "It specifies the default shell for the current user.",
+        "It tells the operating system which interpreter to use to execute the script.",
+        "It defines a variable named bash.",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "The shebang line (`#!`) is a directive to the operating system that tells it which interpreter should be used to execute the script. In this case, `/bin/bash`.",
+    },
+    {
+      question:
+        "To create a hard link named mylink to an existing file original.txt, which command is correct?",
+      options: [
+        "ln -s original.txt mylink",
+        "ln original.txt mylink",
+        "link original.txt mylink",
+        "cp -l original.txt mylink",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The `ln` command without the `-s` option creates a hard link. `ln -s` creates a symbolic (soft) link.",
+    },
+    {
+      question:
+        "Which command is used to estimate file space usage of files or directories?",
+      options: ["df", "fdisk", "du", "ls -s"],
+      correctAnswerIndex: 2,
+      explanation:
+        "The `du` command (disk usage) estimates file space usage, often for directories and their contents.",
+    },
+    {
+      question:
+        "What does the command kill PID (without any signal option) typically send to the process with that PID?",
+      options: ["SIGKILL (9)", "SIGHUP (1)", "SIGTERM (15)", "SIGSTOP (19)"],
+      correctAnswerIndex: 2,
+      explanation:
+        "By default, the `kill` command sends the SIGTERM (terminate) signal (signal number 15) to a process, requesting it to gracefully shut down.",
+    },
+    {
+      question:
+        "To pause a shell script for 10 seconds, which command would you use?",
+      options: ["wait 10", "pause 10s", "delay 10", "sleep 10"],
+      correctAnswerIndex: 3,
+      explanation:
+        "The `sleep` command pauses execution for a specified duration in seconds (or other units like m for minutes, h for hours, d for days).",
+    },
+    {
+      question:
+        "Which chmod numeric mode represents rwx for the owner, r-x for the group, and r-x for others?",
+      options: ["777", "644", "755", "666"],
+      correctAnswerIndex: 2,
+      explanation:
+        "rwx = 4+2+1 = 7. r-x = 4+0+1 = 5. So, rwx for owner (7), r-x for group (5), and r-x for others (5) becomes 755.",
+    },
+    {
+      question: "What is the primary purpose of the chown command?",
+      options: [
+        "To change file permissions.",
+        "To change the group ownership of a file.",
+        "To change the user owner and/or group owner of files.",
+        "To change file timestamps.",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "The `chown` command (change owner) is used to change the user owner and optionally the group owner of a file or directory.",
+    },
+    {
+      question:
+        "Which command provides a dynamic, real-time view of running processes?",
+      options: [
+        "ps aux",
+        "top",
+        "pstree",
+        "htop (assuming standard utility for JECA context)",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The `top` command provides a continually updated, interactive display of CPU usage, memory usage, and running processes.",
+    },
+    {
+      question:
+        "If you want to run a command with a lower CPU priority (more 'nicely'), which value would you typically assign using nice?",
+      options: [
+        "A negative value (e.g., -10)",
+        "A value of 0 (default)",
+        "A positive value (e.g., 10)",
+        "The nice command is only for increasing priority.",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "The `nice` command is used to set the niceness value of a command. A higher positive niceness value (e.g., +10 to +19) means a lower priority for the process, making it 'nicer' to other processes. Negative values increase priority (require root).",
+    },
+    {
+      question:
+        "Which command is used to display only the number of lines in a file named data.txt?",
+      options: [
+        "cat -l data.txt",
+        "wc -l data.txt",
+        "nl data.txt",
+        "lines data.txt",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The `wc` command (word count) with the `-l` option counts only the number of lines in a file.",
+    },
+    {
+      question:
+        "To compare two files, fileA.txt and fileB.txt, and show the differences between them, which command would you use?",
+      options: [
+        "cmp fileA.txt fileB.txt",
+        "diff fileA.txt fileB.txt",
+        "compare fileA.txt fileB.txt",
+        "match fileA.txt fileB.txt",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The `diff` command displays the differences between two files, line by line.",
+    },
+    {
+      question:
+        "Which grep option is used to perform a case-insensitive search?",
+      options: ["-c", "-v", "-n", "-i"],
+      correctAnswerIndex: 3,
+      explanation:
+        "The `grep -i` option ignores case distinctions in patterns and input data.",
+    },
+    {
+      question:
+        "What does the file command typically report about document.pdf?",
+      options: [
+        "The content of document.pdf.",
+        "The permissions of document.pdf.",
+        "The file type (e.g., PDF document).",
+        "The owner of document.pdf.",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "The `file` command determines the type of a file based on its magic numbers and other characteristics, not just its extension.",
+    },
+    {
+      question:
+        "Which command locates the binary, source, and manual page files for a command like ls?",
+      options: ["which ls", "locate ls", "whereis ls", "find / -name ls"],
+      correctAnswerIndex: 2,
+      explanation:
+        "The `whereis` command locates the binary, source, and manual page files for a command. `which` only finds the executable, `locate` uses a database, and `find` searches the filesystem.",
+    },
+    {
+      question: "What is the purpose of the PATH environment variable?",
+      options: [
+        "It stores the current user's password.",
+        "It specifies the directories where the shell looks for executable commands.",
+        "It defines the default text editor.",
+        "It indicates the path to the current working directory.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The `PATH` environment variable contains a colon-separated list of directories. When you type a command, the shell searches these directories for the executable program.",
+    },
+    {
+      question: "In vi editor's Command Mode, what does typing dd do?",
+      options: [
+        "Deletes the current character.",
+        "Duplicates the current line.",
+        "Deletes the current line.",
+        "Moves the cursor down two lines.",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "In vi's Command mode, `dd` is a powerful command that deletes the entire current line and stores it in a buffer.",
+    },
+    {
+      question:
+        "Which shell operator is used to redirect the standard output of a command to a file, appending the output if the file already exists?",
+      options: [">", ">>", "<", "|"],
+      correctAnswerIndex: 1,
+      explanation:
+        "The `>>` operator appends the standard output of a command to an existing file. If the file doesn't exist, it creates it. The `>` operator overwrites the file if it exists.",
+    },
+    {
+      question: "What does ls -lh display?",
+      options: [
+        "Hidden files in long format.",
+        "Human-readable sizes in long format.",
+        "Only symbolic links in long format.",
+        "Recursive listing with human-readable sizes.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The `-l` option provides a long listing, and the `-h` option (human-readable) displays file sizes in easy-to-read formats (e.g., 1K, 234M, 2G).",
+    },
+    {
+      question:
+        "To rename oldname.txt to newname.txt, which command would you use?",
+      options: [
+        "rename oldname.txt newname.txt",
+        "mv oldname.txt newname.txt",
+        "cp oldname.txt newname.txt && rm oldname.txt",
+        "mod oldname.txt newname.txt",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The `mv` command (move) is used to rename files or directories, as well as to move them to a different location.",
+    },
+    {
+      question:
+        "If a script starts with #!/bin/sh, which shell is typically used to execute it?",
+      options: [
+        "Bash",
+        "Zsh",
+        "The system's default shell (often a symbolic link to bash or dash)",
+        "Python",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "`#!/bin/sh` refers to the system's default shell, which is often a symbolic link to `bash`, `dash`, or another POSIX-compliant shell, depending on the Linux distribution.",
+    },
+    {
+      question:
+        'What is the output of echo "My name is $NAME" if the variable NAME has not been set?',
+      options: [
+        "My name is $NAME",
+        "My name is",
+        "An error message",
+        "My name is NAME",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "If a shell variable is unset, its expansion results in an empty string. So, `$NAME` becomes an empty string, and `echo` prints 'My name is'.",
+    },
+    {
+      question:
+        "Which command would you use to change the group ownership of report.xlsx to accounts?",
+      options: [
+        "chown :accounts report.xlsx",
+        "chgrp accounts report.xlsx",
+        "chmod g+w accounts report.xlsx",
+        "Both a and b",
+      ],
+      correctAnswerIndex: 3,
+      explanation:
+        "Both `chown :accounts report.xlsx` (changing only group) and `chgrp accounts report.xlsx` are valid ways to change the group ownership of a file.",
+    },
+    {
+      question:
+        "To find all files with a .log extension in the current directory and its subdirectories, which find command is appropriate?",
+      options: [
+        'find . -name "*.log"',
+        'grep ".log" .',
+        "locate *.log",
+        "search -ext .log",
+      ],
+      correctAnswerIndex: 0,
+      explanation:
+        'The `find` command is used to search for files in a directory hierarchy. `.` specifies the current directory, and `-name "*.log"` searches for files ending with `.log`.',
+    },
+    {
+      question: "What is the primary use of the bc command?",
+      options: [
+        "To browse file contents.",
+        "To compile C programs.",
+        "To perform arbitrary-precision arithmetic calculations.",
+        "To backup file systems.",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "The `bc` command is an arbitrary precision calculator language. It can perform calculations with a high degree of precision, specified by the `scale` variable.",
+    },
+    {
+      question:
+        "Which comm command option would display only the lines common to both file1.txt and file2.txt (assuming both are sorted)?",
+      options: [
+        "comm -1 file1.txt file2.txt",
+        "comm -2 file1.txt file2.txt",
+        "comm -3 file1.txt file2.txt",
+        "comm -12 file1.txt file2.txt",
+      ],
+      correctAnswerIndex: 3,
+      explanation:
+        "The `comm` command compares two sorted files line by line. `-1` suppresses lines unique to file1, `-2` suppresses lines unique to file2, and `-3` suppresses lines common to both. Thus, `-12` suppresses unique lines from both, leaving only common lines.",
+    },
+    {
+      question:
+        'In vi editor\'s Last Line Mode, what command would you use to search for the string "keyword" forward in the file?',
+      options: ["s/keyword", "/keyword", "?keyword", "find keyword"],
+      correctAnswerIndex: 1,
+      explanation:
+        "In vi/vim's Command mode, typing `/` followed by a search string (e.g., `/keyword`) and pressing Enter searches forward for that string.",
+    },
+    {
+      question: "What is the purpose of the CLASSPATH environment variable?",
+      options: [
+        "It specifies the directories for C++ header files.",
+        "It's used by the Java Virtual Machine to locate user-defined classes and and packages.",
+        "It defines the path to standard library files for all programming languages.",
+        "It sets the default command-line prompt.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "CLASSPATH is an environment variable that tells the Java Virtual Machine (JVM) and Java applications where to find user-defined classes and packages.",
+    },
+    {
+      question:
+        "You have a file data.csv with fields separated by commas. You want to extract only the first and third fields from each line. Which command is suitable?",
+      options: [
+        "grep -f 1,3 data.csv",
+        "cut -d ',' -f 1,3 data.csv",
+        "awk '{print $1, $3}' data.csv (assuming awk is implied as an option)",
+        "paste -d ',' 1,3 data.csv",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The `cut` command is used to extract sections from each line of files. `-d ','` specifies the delimiter as a comma, and `-f 1,3` specifies to extract the first and third fields.",
+    },
+    {
+      question:
+        "Which command would you use to run a script in the background so that it doesn't tie up your terminal?",
+      options: [
+        "script.sh --background",
+        "bg script.sh",
+        "script.sh &",
+        "nohup script.sh (assuming for persistence, but & is immediate backgrounding)",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "Adding an ampersand (`&`) at the end of a command or script execution command runs it in the background, freeing up your terminal.",
+    },
+    {
+      question: "What does echo $HOME typically display?",
+      options: [
+        "The current date and time.",
+        "The path to the user's home directory.",
+        "The name of the current user.",
+        "The size of the home directory.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The `HOME` environment variable stores the full path to the current user's home directory.",
+    },
+    {
+      question:
+        "To display only directories (not files) in the current location, which ls option combination would work effectively?",
+      options: ['ls -l | grep "^d"', "ls -d */", "ls -type d", "ls -f dir"],
+      correctAnswerIndex: 0,
+      explanation:
+        "The `ls -l` command lists files and directories in long format. The output for directories starts with 'd'. Piped to `grep \"^d\"`, it filters for lines starting with 'd', thus showing only directories. `ls -d */` is also a common and often more direct method.",
+    },
+    {
+      question: "What is the effect of the renice command?",
+      options: [
+        "It renames a process.",
+        "It changes the scheduling priority of an already running process.",
+        "It resets the CPU usage statistics for a process.",
+        "It restarts a terminated process.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The `renice` command is used to change the niceness value (scheduling priority) of a process that is already running.",
+    },
+    {
+      question:
+        "In a shell script, how would you refer to the entire set of command-line arguments as separate strings (e.g., for iterating over them)?",
+      options: ["$*", "$@", "$ALL_ARGS", "$ARGV"],
+      correctAnswerIndex: 1,
+      explanation:
+        ' `$@` expands to individual arguments, each enclosed in double quotes (e.g., "$1" "$2" "$3"), which is ideal for iterating over arguments using a `for` loop. `$*` expands to a single string containing all arguments.',
+    },
+    {
+      question:
+        "Which command is best suited for combining lines from multiple files side-by-side, column-wise?",
+      options: ["cat", "join", "paste", "merge"],
+      correctAnswerIndex: 2,
+      explanation:
+        "The `paste` command merges corresponding lines of multiple input files into a single line of output, separated by a tab (by default) or a specified delimiter.",
+    },
+    {
+      question: "Consider the command: ls -l | wc -l. What is its purpose?",
+      options: [
+        "To list files and count words.",
+        "To count the total number of files and directories in the current directory.",
+        "To count the total number of lines in all files.",
+        "To display the word count of the ls -l command itself.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The `ls -l` command produces a list of files and directories (one per line, plus a total line). Piping this output to `wc -l` counts the number of lines, effectively counting the number of items in the current directory (including the 'total' line, so usually subtract 1 for actual items).",
+    },
+    {
+      question: "What does the ps aux command typically show?",
+      options: [
+        "Only processes owned by the current user.",
+        "All processes running on the system, for all users, in a user-oriented format.",
+        "Processes that are using the most memory.",
+        "Processes that are waiting for user input.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "The `ps aux` command (a common variation of `ps`) displays a snapshot of all running processes on the system, for all users, in a BSD-style format which includes user, PID, CPU, MEM, etc.",
+    },
+    {
+      question:
+        "If you execute chmod +x my_script.sh, what change occurs to my_script.sh?",
+      options: [
+        "Its ownership changes to the executing user.",
+        "It becomes a hidden file.",
+        "It becomes executable.",
+        "It is marked as read-only.",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "The `chmod +x` command adds execute permission to the specified file, allowing it to be run as a script or program.",
+    },
+    {
+      question:
+        "Which character is used for output redirection to a file, causing the file to be truncated (emptied) if it already exists?",
+      options: [">>", "|", "<", ">"],
+      correctAnswerIndex: 3,
+      explanation:
+        "The `>` character redirects the standard output of a command to a file. If the file exists, its contents are overwritten (truncated); otherwise, a new file is created.",
+    },
+    {
+      question:
+        "In a shell script, what is the correct syntax for an if statement to check if a variable COUNT is greater than 10?",
+      options: [
+        "if [ $COUNT > 10 ]",
+        'if [ "$COUNT" -gt 10 ]',
+        "if ( $COUNT > 10 )",
+        "if [[ $COUNT > 10 ]] (while technically valid in bash, JECA might expect -gt with single brackets)",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "In shell scripting, `[ ]` (test) is used for conditional expressions. `-gt` stands for 'greater than'. Double quotes around `$COUNT` are good practice to handle cases where the variable might be empty or contain spaces.",
+    },
+    {
+      question:
+        "Which command would you use to find out where the python executable that your shell would run is located?",
+      options: [
+        "whereis python",
+        "locate python",
+        "which python",
+        "find / -name python",
+      ],
+      correctAnswerIndex: 2,
+      explanation:
+        "The `which` command displays the full path of the executable that would be run if the command were entered on the shell (i.e., it searches your `PATH`).",
+    },
+    {
+      question: 'What is a "wildcard" in Unix shell?',
+      options: [
+        "A special character that redirects command output.",
+        "A special character used for pattern matching in filenames.",
+        "A command that lists all files in a directory.",
+        "A shell built-in function for variable assignment.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "Wildcards (also known as globbing characters) like `*`, `?`, and `[]` are special characters used by the shell for pattern matching to select filenames.",
+    },
+    {
+      question:
+        "What is the primary purpose of the env command when used without arguments?",
+      options: [
+        "To open an interactive shell environment.",
+        "To display all current environment variables.",
+        "To execute a command in a new environment.",
+        "To set a new environment variable.",
+      ],
+      correctAnswerIndex: 1,
+      explanation:
+        "When executed without arguments, the `env` command displays a list of all currently set environment variables and their values.",
+    },
+  ],
+
   // You can add other subjects here when you have their questions
 };
 
