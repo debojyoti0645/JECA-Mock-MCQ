@@ -229,6 +229,13 @@
     <div class="container">
         <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">JECA 2025: Introduction to Computers - MCQ Practice Set</h1>
 
+        <!-- Back to Home Button -->
+        <div class="mb-4">
+            <a href="../index.html" class="inline-block bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors">
+                &larr; Back to Home
+            </a>
+        </div>
+
         <!-- Quiz Section -->
         <div id="quiz-section">
             <div class="question-container">
@@ -237,6 +244,14 @@
                     <!-- Options will be dynamically inserted here by script.js -->
                 </div>
             </div>
+        </div>
+
+        <!-- Add navigation and submit buttons -->
+        <div class="flex flex-wrap gap-3 mt-6 justify-center">
+            <button id="prev-btn" class="bg-gray-400 text-white px-4 py-2 rounded-lg hover:bg-gray-500 transition-colors">Previous</button>
+            <button id="skip-btn" class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors">Skip</button>
+            <button id="next-btn" class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition-colors">Next</button>
+            <button id="submit-btn" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors">Submit Exam</button>
         </div>
 
         <!-- Result Section (Initially hidden) -->
