@@ -2483,7 +2483,6 @@ const allSubjectsQuestions = {
         "Bit maps (or bit vectors) are a common method where each bit in the map corresponds to a disk block; a '0' indicates a free block, and a '1' indicates an allocated block.",
     },
   ],
-
   "computer-networking": [
     {
       question:
@@ -2992,7 +2991,468 @@ const allSubjectsQuestions = {
       hint: "This technology moves computation to the 'outer limits' of the network.",
     },
   ],
-
+  "object-oriented-programming": [
+    {
+      "question": "Which of the following is NOT a fundamental data type in C++?",
+      "options": ["int", "bool", "string", "char"],
+      "correctAnswerIndex": 2,
+      "explanation": "`int`, `bool`, and `char` are fundamental (built-in) data types in C++. `std::string` is a class from the Standard Library and is not a fundamental data type."
+    },
+    {
+      "question": "What is the purpose of the `else if` statement?",
+      "options": [
+        "To execute a block of code if the `if` condition is false, regardless of other conditions.",
+        "To check another condition if the preceding `if` or `else if` conditions were false.",
+        "To mark the end of an `if` statement block.",
+        "To create an infinite loop."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The `else if` statement provides an alternative condition to be checked only if the previous `if` or `else if` conditions evaluated to false."
+    },
+    {
+      "question": "Which loop guarantees to execute its body at least once?",
+      "options": ["for loop", "while loop", "do-while loop", "foreach loop"],
+      "correctAnswerIndex": 2,
+      "explanation": "The `do-while` loop evaluates its condition after executing the loop body, guaranteeing at least one execution. `for` and `while` loops check the condition before the first execution."
+    },
+    {
+      "question": "A function that does not return any value should have which return type?",
+      "options": ["int", "void", "null", "no_return"],
+      "correctAnswerIndex": 1,
+      "explanation": "The `void` keyword is used as a return type for functions that do not return any value."
+    },
+    {
+      "question": "In a `switch` statement, what keyword is used to transfer control out of the `switch` block after a case is matched?",
+      "options": ["continue", "exit", "break", "return"],
+      "correctAnswerIndex": 2,
+      "explanation": "The `break` keyword is used to terminate the `switch` statement and transfer control to the statement immediately following the `switch` block."
+    },
+    {
+      "question": "What does a pointer variable store?",
+      "options": [
+        "The value of another variable.",
+        "The memory address of another variable.",
+        "The data type of another variable.",
+        "The name of another variable."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "A pointer variable stores the memory address of another variable. It 'points' to the location of that variable in memory."
+    },
+    {
+      "question": "Which operator is used to dereference a pointer in C++?",
+      "options": ["&", ".", "*", "->"],
+      "correctAnswerIndex": 2,
+      "explanation": "The `*` (dereference) operator is used to access the value stored at the memory address pointed to by a pointer. The `&` operator gives the address of a variable, and `->` is used to access members of an object through a pointer."
+    },
+    {
+      "question": "By default, members of a `struct` in C++ are:",
+      "options": ["private", "protected", "public", "virtual"],
+      "correctAnswerIndex": 2,
+      "explanation": "By default, all members (data and functions) declared within a `struct` in C++ are `public`. In contrast, members of a `class` are `private` by default."
+    },
+    {
+      "question": "Which of the following is TRUE about arrays?",
+      "options": [
+        "They can store elements of different data types.",
+        "Elements are stored at non-contiguous memory locations.",
+        "They are fixed in size once declared.",
+        "They are always dynamically allocated."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Arrays in C++ are homogeneous (store elements of the same data type), store elements in contiguous memory locations, and their size is fixed at the time of declaration (for static arrays) or allocation (for dynamic arrays). They are not always dynamically allocated; static arrays are on the stack."
+    },
+    {
+      "question": "What is the primary difference between a C-style string (`char[]`) and `std::string`?",
+      "options": [
+        "C-style strings are mutable, `std::string` is immutable.",
+        "C-style strings are null-terminated, `std::string` manages its own memory and length.",
+        "`std::string` can only store numeric data.",
+        "C-style strings are dynamically allocated by default."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "C-style strings are character arrays terminated by a null character (`\\0`) and require manual memory management. `std::string` is a class that handles its own memory allocation, deallocation, and length management, providing a more robust and safer way to work with strings."
+    },
+    {
+      "question": "What is the C++ feature that allows a function to have multiple definitions with the same name but different parameters?",
+      "options": [
+        "Function Overriding",
+        "Function Hiding",
+        "Function Overloading",
+        "Function Templating"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Function overloading allows you to define multiple functions with the same name, as long as their parameter lists (number, type, or order of parameters) are different. The compiler distinguishes them based on the arguments provided during the call."
+    },
+    {
+      "question": "Which keyword is used to define a function template?",
+      "options": ["class", "template", "type", "generic"],
+      "correctAnswerIndex": 1,
+      "explanation": "The `template` keyword is used to declare a function or class template, allowing them to operate on generic types."
+    },
+    {
+      "question": "A variable declared inside a function has which type of scope?",
+      "options": ["Global scope", "Class scope", "Local scope", "Namespace scope"],
+      "correctAnswerIndex": 2,
+      "explanation": "Variables declared inside a function have local scope, meaning they are only accessible within that specific function block. They are created when the function is called and destroyed when it exits."
+    },
+    {
+      "question": "Which of the following is the modern C++ (C++11 onwards) way to create a type alias?",
+      "options": ["typedef", "using", "alias", "define"],
+      "correctAnswerIndex": 1,
+      "explanation": "While `typedef` is still valid, C++11 introduced `using` for type aliases, which provides a more consistent syntax, especially with templates. Example: `using MyInt = int;`"
+    },
+    {
+      "question": "What is a key characteristic of a `union` in C++?",
+      "options": [
+        "All members can hold values simultaneously.",
+        "It can store only members of the same data type.",
+        "Only one member can hold a value at any given time, occupying the same memory space.",
+        "It uses a linked list internally."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A `union` is a special class type that can hold only one of its non-static data members at a time. All members share the same memory location, and the size of the union is determined by its largest member."
+    },
+    {
+      "question": "What does an `enum` type primarily provide?",
+      "options": [
+        "A way to create new data types with dynamic values.",
+        "A set of named integer constants.",
+        "A mechanism for runtime type identification.",
+        "A collection of arbitrary data."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "An `enum` (enumeration) defines a set of named integer constants, making code more readable and maintainable by using meaningful names instead of raw numbers."
+    },
+    {
+      "question": "Which of the following is NOT an access specifier in C++ classes?",
+      "options": ["public", "private", "protected", "universal"],
+      "correctAnswerIndex": 3,
+      "explanation": "`public`, `private`, and `protected` are the three access specifiers in C++ that control the visibility and accessibility of class members. `universal` is not a valid C++ access specifier."
+    },
+    {
+      "question": "What is the primary purpose of a class constructor?",
+      "options": [
+        "To destroy objects when they go out of scope.",
+        "To declare static members of a class.",
+        "To initialize the data members of an object when it is created.",
+        "To provide an alternative name for a class."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A constructor is a special member function that is automatically called when an object of the class is created. Its primary purpose is to initialize the object's data members."
+    },
+    {
+      "question": "How many constructors can a class have?",
+      "options": [
+        "Exactly one",
+        "Zero (if not explicitly defined)",
+        "As many as needed, provided they have different parameter lists (overloaded).",
+        "Only a default constructor and a copy constructor."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A class can have multiple constructors, provided they are overloaded, meaning they have different parameter lists. This allows objects to be initialized in various ways."
+    },
+    {
+      "question": "Which method is generally preferred for initializing member variables in a constructor, especially for `const` or reference members?",
+      "options": [
+        "Assignment inside the constructor body",
+        "Member initialization list",
+        "Using a `friend` function",
+        "Static initialization block"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The member initialization list is preferred for initializing member variables because it performs direct initialization, which is more efficient than assignment. It's also mandatory for `const` members, reference members, and members that are objects without default constructors."
+    },
+    {
+      "question": "If `objPtr` is a pointer to an object, how do you access its member function `calculate()`?",
+      "options": [
+        "objPtr.calculate()",
+        "objPtr::calculate()",
+        "objPtr->calculate()",
+        "*objPtr.calculate()"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The `->` (arrow) operator is used to access members of an object when you have a pointer to that object. `objPtr->calculate()` is equivalent to `(*objPtr).calculate()`."
+    },
+    {
+      "question": "Which of the following operators CANNOT be overloaded in C++?",
+      "options": ["+", "==", "()", "::"],
+      "correctAnswerIndex": 3,
+      "explanation": "Most operators in C++ can be overloaded, but some cannot, including the scope resolution operator (`::`), member selection operator (`.`), member pointer selection operator (`.*`), and the ternary conditional operator (`?:`). The size of operator (`sizeof`) also cannot be overloaded."
+    },
+    {
+      "question": "What does the `this` pointer refer to?",
+      "options": [
+        "The address of the class definition.",
+        "The address of the `main` function.",
+        "The address of the current object on which a member function is invoked.",
+        "The address of the base class."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "The `this` pointer is a constant pointer that holds the memory address of the object on which the member function is currently being executed. It allows a member function to refer to the current object."
+    },
+    {
+      "question": "What is true about a `static` member variable of a class?",
+      "options": [
+        "Each object of the class has its own copy.",
+        "It must be initialized within the class definition.",
+        "There is only one copy shared by all objects of the class.",
+        "It can only be accessed by `static` member functions."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A `static` member variable is a class-level variable. Only one copy of it exists, regardless of how many objects of the class are created, and it is shared among all objects. It must be defined (and optionally initialized) outside the class definition."
+    },
+    {
+      "question": "A `const` member function:",
+      "options": [
+        "Can modify any data member of the object.",
+        "Cannot modify any non-static data member of the object.",
+        "Can only be called by `const` objects.",
+        "Must return a `const` value."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "A `const` member function promises not to modify the state of the object on which it is called. Therefore, it cannot modify any non-static data members of the object. It can be called by both `const` and non-`const` objects."
+    },
+    {
+      "question": "What is the primary benefit of using class templates?",
+      "options": [
+        "To restrict the data types that can be used with a class.",
+        "To create classes that can work with generic data types, avoiding code duplication.",
+        "To allow dynamic resizing of class members.",
+        "To achieve runtime polymorphism."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Class templates allow you to write generic classes that can work with different data types without rewriting the entire class for each type, thereby promoting code reusability and avoiding duplication."
+    },
+    {
+      "question": "When is template specialization used?",
+      "options": [
+        "To make a template work with all data types uniformly.",
+        "To provide a specific implementation for a template for a particular data type.",
+        "To define a default template argument.",
+        "To prevent template instantiation."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Template specialization is used when the generic template implementation is not optimal or correct for a particular data type, allowing you to provide a custom implementation for that specific type."
+    },
+    {
+      "question": "What is the main purpose of a `namespace`?",
+      "options": [
+        "To allow direct access to private members of a class.",
+        "To define global variables only.",
+        "To organize code and prevent naming collisions.",
+        "To inherit properties from multiple classes."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Namespaces are used to organize code into logical groups and to prevent name clashes (when two different entities have the same name) in large projects."
+    },
+    {
+      "question": "If function `foo()` is declared as a `friend` of class `MyClass`, what can `foo()` access?",
+      "options": [
+        "Only `public` members of `MyClass`.",
+        "Only `protected` members of `MyClass`.",
+        "All members (`public`, `private`, `protected`) of `MyClass`.",
+        "Only `static` members of `MyClass`."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A `friend` function or class is granted special access to the `private` and `protected` members of the class that declares it as a friend, in addition to its `public` members."
+    },
+    {
+      "question": "Which OOP principle describes the \"is-a\" relationship between classes?",
+      "options": ["Encapsulation", "Polymorphism", "Inheritance", "Abstraction"],
+      "correctAnswerIndex": 2,
+      "explanation": "Inheritance models the 'is-a' relationship, where a derived class 'is a' type of its base class (e.g., 'A Dog is an Animal')."
+    },
+    {
+      "question": "In C++, what is the default access specifier for inheritance if not explicitly mentioned?",
+      "options": ["public", "private", "protected", "It depends on the context."],
+      "correctAnswerIndex": 1,
+      "explanation": "When inheriting a `class` from another `class`, the default inheritance access specifier is `private`. If a `struct` inherits from a `struct` or `class`, the default is `public`."
+    },
+    {
+      "question": "If `ClassB` inherits `publicly` from `ClassA`, and `ClassA` has a `protected` member `x`, what is the access level of `x` in `ClassB`?",
+      "options": ["public", "private", "protected", "Inaccessible"],
+      "correctAnswerIndex": 2,
+      "explanation": "When a class is inherited publicly, `public` members of the base class remain `public` in the derived class, and `protected` members remain `protected` in the derived class. `private` members remain inaccessible."
+    },
+    {
+      "question": "Which type of polymorphism is achieved through Function Overloading and Operator Overloading?",
+      "options": [
+        "Runtime Polymorphism",
+        "Dynamic Polymorphism",
+        "Compile-time Polymorphism",
+        "Virtual Polymorphism"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Function Overloading and Operator Overloading are resolved at compile time, meaning the compiler decides which function or operator to call based on the arguments' types and number. This is known as compile-time polymorphism (or static polymorphism)."
+    },
+    {
+      "question": "What keyword is used to declare a function that enables runtime polymorphism?",
+      "options": ["abstract", "dynamic", "virtual", "override"],
+      "correctAnswerIndex": 2,
+      "explanation": "The `virtual` keyword is used in the base class to declare a function as virtual, enabling runtime polymorphism through pointers or references to base class objects."
+    },
+    {
+      "question": "Consider the following code:\n```cpp\nclass Base {\npublic:\n    virtual void show() { cout << \"Base::show\" << endl; }\n};\n\nclass Derived : public Base {\npublic:\n    void show() { cout << \"Derived::show\" << endl; }\n};\n\nint main() {\n    Base* bptr = new Derived();\n    bptr->show();\n    delete bptr;\n    return 0;\n}\n```\nWhat will be the output?",
+      "options": ["Base::show", "Derived::show", "Compile-time error", "Runtime error"],
+      "correctAnswerIndex": 1,
+      "explanation": "Since `show()` is a `virtual` function in the `Base` class, and `bptr` is a `Base` pointer pointing to a `Derived` object, runtime polymorphism is enabled. The `Derived` class's `show()` implementation will be called. This is a classic example of dynamic dispatch."
+    },
+    {
+      "question": "A class that contains at least one pure virtual function is known as a(n):",
+      "options": ["Concrete class", "Derived class", "Abstract base class", "Final class"],
+      "correctAnswerIndex": 2,
+      "explanation": "A class with at least one pure virtual function is called an abstract base class. You cannot create direct instances (objects) of an abstract base class; it serves as an interface for derived classes."
+    },
+    {
+      "question": "Which of the following statements is true about an abstract base class?",
+      "options": [
+        "Objects of an abstract base class can be created directly.",
+        "It must have a default constructor.",
+        "Derived classes must provide implementations for all its pure virtual functions to be instantiated.",
+        "It cannot have any non-virtual functions."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Abstract base classes cannot be instantiated directly. To create objects of a class derived from an abstract base class, the derived class must provide implementations for all the pure virtual functions inherited from the abstract base class, thereby becoming a concrete class."
+    },
+    {
+      "question": "Which of the following best describes encapsulation in OOP?",
+      "options": [
+        "The ability to create new classes from existing classes.",
+        "The process of hiding the implementation details and exposing only the necessary interface.",
+        "The ability of an object to take on many forms.",
+        "The technique of defining multiple functions with the same name."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "Encapsulation is the bundling of data (attributes) and methods (functions) that operate on the data into a single unit (class), and restricting direct access to some of the object's components. This hiding of implementation details is a core aspect of encapsulation."
+    },
+    {
+      "question": "What is the consequence of not defining a destructor in a class that dynamically allocates memory?",
+      "options": [
+        "Compile-time error.",
+        "Runtime error.",
+        "Memory leak.",
+        "The compiler automatically creates a perfectly functioning destructor."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "If a class dynamically allocates memory (e.g., using `new`), and you don't provide a destructor to `delete` that memory, it will not be deallocated when the object is destroyed, leading to a memory leak."
+    },
+    {
+      "question": "When should you use `protected` access specifier for a member?",
+      "options": [
+        "When the member needs to be accessed from anywhere in the program.",
+        "When the member should only be accessible from within the class itself.",
+        "When the member needs to be accessible within the class and by derived classes, but not by outside code.",
+        "When the member is a static constant."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "A `protected` member is accessible within its own class and by its derived classes, but not directly accessible from outside the class hierarchy. This provides a balance between strict private access and open public access."
+    },
+    {
+      "question": "Which of the following is an example of an \"is-a\" relationship?",
+      "options": [
+        "A Car has an Engine.",
+        "A Dog is an Animal.",
+        "A Book has Pages.",
+        "A Student studies a Course."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The 'is-a' relationship is a core concept of inheritance. 'A Dog is an Animal' correctly represents that `Dog` is a specialized type of `Animal` and can inherit properties and behaviors from `Animal`."
+    },
+    {
+      "question": "What is the purpose of the `virtual` keyword when defining a base class destructor?",
+      "options": [
+        "To allow the base class destructor to be called only by derived classes.",
+        "To prevent the base class destructor from being called.",
+        "To ensure that the correct destructor (derived class then base class) is called when deleting an object through a base class pointer.",
+        "To make the destructor automatically public."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Making a base class destructor `virtual` ensures that when an object of a derived class is deleted via a pointer to the base class, the destructor of the derived class is called first, followed by the base class destructor, preventing resource leaks (especially with dynamically allocated memory in derived classes)."
+    },
+    {
+      "question": "In a class hierarchy, if a derived class needs to provide its own specific implementation for a function that is already present in the base class (and is virtual), what is this concept called?",
+      "options": [
+        "Function Overloading",
+        "Function Hiding",
+        "Function Overriding",
+        "Function Templating"
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "Function overriding occurs when a derived class provides its own implementation for a virtual function that is already declared in its base class. This is fundamental to runtime polymorphism."
+    },
+    {
+      "question": "Consider a scenario where you have a base class `Shape` and derived classes `Circle` and `Square`. You want to store a collection of `Shape` pointers, and when you call a `draw()` method on each pointer, the correct `draw()` for `Circle` or `Square` should be invoked. Which OOP concept is essential here?",
+      "options": [
+        "Encapsulation",
+        "Data Abstraction",
+        "Compile-time Polymorphism",
+        "Runtime Polymorphism (using virtual functions)"
+      ],
+      "correctAnswerIndex": 3,
+      "explanation": "This scenario describes runtime polymorphism. By declaring the `draw()` method as `virtual` in the `Shape` base class, you can use a `Shape` pointer to call the correct `draw()` implementation of the actual object (Circle or Square) at runtime."
+    },
+    {
+      "question": "Which of the following correctly declares a pure virtual function?",
+      "options": [
+        "`virtual void func() = 0;`",
+        "`void func() pure;`",
+        "`abstract void func();`",
+        "`virtual void func() { /* implementation */ }`"
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A pure virtual function is declared by appending `= 0` to its declaration in the base class. This makes the class abstract and requires derived classes to implement this function."
+    },
+    {
+      "question": "What will be the output of the following C++ code snippet?\n```cpp\n#include <iostream>\n\nclass Counter {\nprivate:\n    static int count;\npublic:\n    Counter() { count++; }\n    static int getCount() { return count; }\n};\n\nint Counter::count = 0; // Definition of static member\n\nint main() {\n    Counter c1;\n    Counter c2;\n    Counter c3;\n    std::cout << Counter::getCount() << std::endl;\n    return 0;\n}\n```",
+      "options": ["0", "1", "3", "Compiler Error"],
+      "correctAnswerIndex": 2,
+      "explanation": "The `count` variable is `static`, meaning there is only one copy shared by all objects of the `Counter` class. Each time a `Counter` object is created (c1, c2, c3), the constructor increments `count`. Therefore, after three objects are created, `count` will be 3."
+    },
+    {
+      "question": "What is the disadvantage of using `friend` functions/classes?",
+      "options": [
+        "They cannot access private members.",
+        "They increase code complexity unnecessarily.",
+        "They violate the principle of encapsulation.",
+        "They slow down program execution."
+      ],
+      "correctAnswerIndex": 2,
+      "explanation": "`friend` functions or classes are often considered a violation of encapsulation because they break the strict data hiding principle by allowing external entities to access private and protected members of a class."
+    },
+    {
+      "question": "You have a `typedef` declaration: `typedef int Integer;`. Which of the following is equivalent using `using`?",
+      "options": [
+        "`using int = Integer;`",
+        "`using Integer = int;`",
+        "`Integer = int;`",
+        "`alias Integer = int;`"
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "The `using` keyword for type aliases has the syntax `using NewName = ExistingType;`. So, `using Integer = int;` creates an alias `Integer` for the type `int`."
+    },
+    {
+      "question": "Which of the following scenarios is best suited for using a `do-while` loop?",
+      "options": [
+        "Iterating through an array of a known size.",
+        "Reading user input until a valid non-negative number is entered.",
+        "Performing a task a fixed number of times.",
+        "Processing elements in a linked list."
+      ],
+      "correctAnswerIndex": 1,
+      "explanation": "A `do-while` loop is ideal when you need the loop body to execute at least once before checking the condition. This is common for input validation where you first prompt for input and then check if it's valid."
+    },
+    {
+      "question": "What is the role of the copy constructor?",
+      "options": [
+        "To create a new object by copying an existing object of the same class.",
+        "To assign values from one object to another existing object.",
+        "To convert one data type to another.",
+        "To destroy an object when it goes out of scope."
+      ],
+      "correctAnswerIndex": 0,
+      "explanation": "A copy constructor is a special constructor that is called when a new object is created as a copy of an existing object of the same class. This can happen during object initialization, passing objects by value to functions, or returning objects by value from functions."
+    }
+  ]
   // You can add other subjects here when you have their questions
 };
 
