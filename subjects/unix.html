@@ -266,7 +266,7 @@
     </script>
 </head>
 <body>
-    <div class="container">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
         <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">JECA Unix Commands MCQ Practice Set</h1>
 
         <!-- Back to Home Button -->
@@ -293,6 +293,11 @@
             <button id="submit-btn" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors">Submit Exam</button>
         </div>
 
+        <!-- Question Navigation Tiles -->
+        <div id="question-tiles-section" class="flex flex-wrap gap-2 justify-center mt-8 mb-4">
+            <!-- Tiles will be dynamically inserted here by script.js -->
+        </div>
+
         <!-- Result Section (Initially hidden) -->
         <div id="result-section" class="hidden result-container">
             <h2 class="text-2xl font-bold mb-4">Quiz Completed!</h2>
@@ -301,14 +306,6 @@
             <p class="text-lg">Wrong Answers: <span id="wrong-count" class="font-semibold">0</span></p>
             <p class="text-lg">Accuracy: <span id="accuracy-display" class="font-semibold">0%</span></p>
             <button id="restart-btn" class="submit-btn mt-6">Restart Quiz</button>
-        </div>
-
-        <!-- Add navigation and submit buttons -->
-        <div class="flex flex-wrap gap-3 mt-6 justify-center">
-            <button id="prev-btn" class="bg-gray-400 text-white px-4 py-2 rounded-lg hover:bg-gray-500 transition-colors">Previous</button>
-            <button id="skip-btn" class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition-colors">Skip</button>
-            <button id="next-btn" class="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition-colors">Next</button>
-            <button id="submit-btn" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors">Submit Exam</button>
         </div>
 
         <!-- Message Box for alerts (replaces alert()) -->

@@ -17,6 +17,7 @@ const messageOkButton = document.getElementById('message-ok-btn');
 const prevBtn = document.getElementById('prev-btn');
 const skipBtn = document.getElementById('skip-btn');
 const submitBtn = document.getElementById('submit-btn');
+const questionTilesSection = document.getElementById('question-tiles-section');
 
 let autoNextTimeout = null;
 let autoNextInterval = null;
@@ -131,6 +132,7 @@ function loadQuestion() {
     }
 
     prevBtn.disabled = currentQuestionIndex === 0;
+    renderQuestionTiles();
 }
 
 /**
@@ -190,6 +192,39 @@ function restartQuiz() {
     skipBtn.style.display = '';
     submitBtn.style.display = '';
     loadQuestion();
+    renderQuestionTiles();
+}
+
+// Render the question navigation tiles
+function renderQuestionTiles() {
+    questionTilesSection.innerHTML = '';
+    for (let i = 0; i < questions.length; i++) {
+        const tile = document.createElement('div');
+        tile.className = 'question-tile';
+        tile.textContent = i + 1;
+
+        // Highlight current question
+        if (i === currentQuestionIndex) {
+            tile.classList.add('active');
+        }
+
+        // Mark correct/wrong/skipped
+        if (userAnswers[i] !== null) {
+            if (userAnswers[i] === questions[i].correct) {
+                tile.classList.add('correct');
+            } else {
+                tile.classList.add('wrong');
+            }
+        } else if (userAnswers[i] === null && i < currentQuestionIndex) {
+            tile.classList.add('skipped');
+        }
+
+        tile.onclick = () => {
+            currentQuestionIndex = i;
+            loadQuestion();
+        };
+        questionTilesSection.appendChild(tile);
+    }
 }
 
 // Event Listeners
